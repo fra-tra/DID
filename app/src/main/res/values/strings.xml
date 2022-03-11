@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Digital Interaction Design</string>
+    <string name="no_account">Not have acount? <b>SignUp</b></string>
 </resources>

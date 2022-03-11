@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="it.polito.did.digitalinteractiondesign">
+    <!-- add permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalInteractionDesign">
         <activity
-            android:name=".MainActivity"
+            android:name=".SignUp_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Home_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Login_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

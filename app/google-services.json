@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "660004207382",
+    "firebase_url": "https://login-app-did-default-rtdb.firebaseio.com",
+    "project_id": "login-app-did",
+    "storage_bucket": "login-app-did.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660004207382:android:0723fd8a94d07d21e12e37",
+        "android_client_info": {
+          "package_name": "it.polito.did.digitalinteractiondesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660004207382-cvduic6qns6ealp34qtu1agmr2asidl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "it.polito.did.digitalinteractiondesign",
+            "certificate_hash": "2b7b314023973f95b42911c025a72f114d2d3575"
+          }
+        },
+        {
+          "client_id": "660004207382-rka78631cu8q38kqtktckijko6ulmin7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKx6swNUl9uqxeSfm0hNTEM4pDGC3bn2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660004207382-rka78631cu8q38kqtktckijko6ulmin7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660004207382:android:2904c734a0588753e12e37",
+        "android_client_info": {
+          "package_name": "it.polito.did.domoticaplants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660004207382-rka78631cu8q38kqtktckijko6ulmin7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKx6swNUl9uqxeSfm0hNTEM4pDGC3bn2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660004207382-rka78631cu8q38kqtktckijko6ulmin7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
