@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/piante"
+        android:name="it.polito.did.digitalinteractiondesign.Piante"
+        android:label="Piante"
+        tools:layout="@layout/fragment_piante" />
+    <fragment
+        android:id="@+id/calendarizzazione"
+        android:name="it.polito.did.digitalinteractiondesign.Calendarizzazione"
+        android:label="Calendarizzazione"
+        tools:layout="@layout/fragment_calendarizzazione" />
+    <fragment
+        android:id="@+id/profilo"
+        android:name="it.polito.did.digitalinteractiondesign.Profilo"
+        android:label="Profilo"
+        tools:layout="@layout/fragment_profilo" />
+    <fragment
+        android:id="@+id/discover"
+        android:name="it.polito.did.digitalinteractiondesign.Discover"
+        android:label="Discover"
+        tools:layout="@layout/fragment_discover" />
+    <fragment
+        android:id="@+id/home"
+        android:name="it.polito.did.digitalinteractiondesign.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>

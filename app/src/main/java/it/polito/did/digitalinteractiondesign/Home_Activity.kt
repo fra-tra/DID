@@ -4,10 +4,22 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.ActionBar
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
+import androidx.navigation.ui.NavigationUI
+
+
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+
 
 class Home_Activity : AppCompatActivity() {
     //ViewBinding
@@ -37,19 +49,30 @@ class Home_Activity : AppCompatActivity() {
         firebaseAuth= FirebaseAuth.getInstance()
         checkUser()
 
-        //handle click, logout
-        binding.logOutBtn.setOnClickListener {
-            firebaseAuth.signOut()
-            checkUser()
-        }
+        //current view like bottom menu
+        val bottomNavigationView =findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        val navController: NavController = Navigation.findNavController(this,R.id.fragment)
+        setupWithNavController(bottomNavigationView, navController);
+        // cambio del nome della bara di navigazione in base alla schermata in cui ci si trova
+        //val appBarConfiguration = AppBarConfiguration(setOf(R.id.home, R.id.discover, R.id.piante, R.id.calendarizzazione,R.id.profilo))
+        //setupWithNavController(bottomNavigationView, navController)
 
-        //configure navigation bar
-        // this line hide Action Bar
-        //supportActionBar.hide()
+       // Log.i("ciao","$navController")
+        //bottomNavigationView.setupWithNavController(navController)
 
-       // navigationView = this.findViewById(R.id.bottom_navigation)
-       // supportFragmentManager.beginTransaction().replace(R.id.body_container, HomeFragment() ).commit()
-        // navigationView.selectedItemId(R.id.nav_home)
+
+
+
+
+
+
+    //handle click, logout
+       // binding.logOutBtn.setOnClickListener {
+        //    firebaseAuth.signOut()
+        //    checkUser()
+        //}
+
+
 
 
 }
@@ -61,7 +84,7 @@ class Home_Activity : AppCompatActivity() {
             //user not null, user is logged in, get user info
             val email= firebaseUser.email
             // set to text view
-            binding.emailTv.text=email
+           // binding.emailTv.text=email
         }else {
             //user is null, user is not logged
             startActivity(Intent(this,Login_Activity::class.java))
