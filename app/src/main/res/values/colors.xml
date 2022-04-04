@@ -11,7 +11,8 @@
     <color name="grey">#636363</color>
     <color name="light_grey">#e3e3e3</color>
     <color name="green">#77a44d</color>
-    <color name="light_green">#ebf2e1</color>
+    <color name="light_green">#e9f3df</color>
+    <color name="dark_green">#386917</color>
     <color name="light_blue">#b9d7eb</color>
     <color name="blue">#4fc3f7</color>
     <color name="light_purple">#cac8d1</color>

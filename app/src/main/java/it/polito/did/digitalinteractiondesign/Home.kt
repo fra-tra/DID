@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
+import me.itangqi.waveloadingview.WaveLoadingView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,5 +57,49 @@ class Home : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //GESTIONE (TEMPORANEA) PROGRESSO ANNAFFIATOIO TRAMITE SEEK BAR
+        var wave = view.findViewById<WaveLoadingView>(R.id.waveLoadingView)
+        wave.setAnimDuration(10000);
+
+        var bar = view.findViewById<SeekBar>(R.id.seekBar)
+        wave.progressValue = bar.progress
+        wave.progressValue = bar.progress;
+
+        var amp = 30;
+
+        if(bar.progress < amp){
+            wave.setAmplitudeRatio(bar.progress)
+        }
+        else {
+            amp = 30
+            wave.setAmplitudeRatio(amp)
+        }
+
+        bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                // TODO Auto-generated method stub
+
+                wave.progressValue = progress;
+                if(progress < amp){
+                    wave.setAmplitudeRatio(progress)
+                }
+
+            }
+        })
+
+
     }
 }

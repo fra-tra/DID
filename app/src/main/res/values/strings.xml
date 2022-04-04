@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Digital Interaction Design</string>
-    <string name="no_account">Not have acount? <b>SignUp</b></string>
+    <string name="no_account">Not have account? <b>SignUp</b></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="loading_add_plant">Adding your plant</string>
-    <string name="loading_water_plant">Watering your plant</string>
-    <string name="loading_funeral_plant">Saying goodbye to your plant</string>
+    <string name="loading_add_plant"> You are contributing to increasing the global oxygen value! </string>
+    <string name="loading_water_plant">YOUR PLANT will be now lovingly tended to!</string>
+    <string name="loading_funeral_plant">We are very sorry YOUR PLANT has left us :(</string>
+    <string name="loading_add_plant_secondary">We\'re planting YOUR PLANT</string>
+    <string name="loading_water_plant_secondary"> We\'re watering YOUR PLANT </string>
+    <string name="loading_funeral_plant_secondary">We\'re celebrating YOUR  PLANT\'s funeral</string>
 </resources>

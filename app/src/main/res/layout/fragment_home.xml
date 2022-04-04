@@ -7,14 +7,96 @@
     tools:context=".Home">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+
+    <ImageView
+        android:id="@+id/wateringCan"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:text="HOME"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_watering_can"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageView
+        android:id="@+id/wateringCanBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rounded_rectangle_full"
+        app:layout_constraintBottom_toBottomOf="@+id/waveLoadingView"
+        app:layout_constraintEnd_toEndOf="@+id/waveLoadingView"
+        app:layout_constraintStart_toStartOf="@+id/waveLoadingView"
+        app:layout_constraintTop_toTopOf="@+id/waveLoadingView" />
+
+
+    <me.itangqi.waveloadingview.WaveLoadingView
+        android:id="@+id/waveLoadingView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/wateringCan"
+
+
+        app:layout_constraintEnd_toEndOf="@+id/wateringCan"
+        app:layout_constraintStart_toStartOf="@+id/wateringCan"
+        app:wlv_borderColor="@color/dark_grey"
+        app:wlv_borderWidth="3dp"
+        app:wlv_round_rectangle="true"
+        app:wlv_round_rectangle_x_and_y="30"
+        app:wlv_shapeType="rectangle"
+        app:wlv_waveAmplitude="50"
+        app:wlv_waveColor="@color/blue">
+
+    </me.itangqi.waveloadingview.WaveLoadingView>
+
+    <ImageView
+        android:id="@+id/wateringCanBorder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rounded_rectangle_watering_can"
+        app:layout_constraintBottom_toBottomOf="@+id/waveLoadingView"
+        app:layout_constraintEnd_toEndOf="@+id/waveLoadingView"
+        app:layout_constraintStart_toStartOf="@+id/waveLoadingView"
+        app:layout_constraintTop_toTopOf="@+id/waveLoadingView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/wateringCan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wateringCan" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CARDS"
+        android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
