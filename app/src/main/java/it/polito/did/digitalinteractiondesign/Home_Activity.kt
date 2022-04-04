@@ -4,6 +4,7 @@ package it.polito.did.digitalinteractiondesign
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -66,7 +67,13 @@ class Home_Activity : AppCompatActivity() {
         //    checkUser()
         //}
 
+       /* var btn = findViewById<Button>(R.id.button)
+        btn.setOnClickListener {
+            Intent(this, Login_Activity::class.java).also{
+                startActivity(it)
+            }
 
+        }*/
 
 
 }

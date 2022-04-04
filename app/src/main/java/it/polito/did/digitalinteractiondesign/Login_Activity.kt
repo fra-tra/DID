@@ -1,5 +1,6 @@
 package it.polito.did.digitalinteractiondesign
 
+import android.animation.Animator
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,9 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
+import com.airbnb.lottie.LottieAnimationView
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.databinding.ActivityLoginBinding
 
@@ -66,6 +70,41 @@ class Login_Activity : AppCompatActivity() {
                 firebaseLogin()
             }
         }
+
+        //Implementazione Animazione
+        var animInizio = findViewById<LottieAnimationView>(R.id.login_beginning)
+        animInizio.setAnimation(R.raw.login_beginning_cropped)
+        animInizio.loop(false)
+        animInizio.isVisible = true
+        animInizio.playAnimation()
+
+        var animLoop = findViewById<LottieAnimationView>(R.id.login_loop)
+        animLoop.setAnimation(R.raw.login_loop_cropped)
+        animLoop.loop(true)
+        animLoop.isInvisible = true
+
+
+        animInizio.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator) {
+
+            }
+
+            override fun onAnimationEnd(animation: Animator) {
+                animLoop.isInvisible = false
+                animInizio.isVisible = false
+                animLoop.playAnimation()
+            }
+
+            override fun onAnimationCancel(animation: Animator) {
+
+            }
+
+            override fun onAnimationRepeat(animation: Animator) {
+
+            }
+        })
+
+
     }
 
     private fun checkUser(){
