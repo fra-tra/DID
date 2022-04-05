@@ -8,8 +8,10 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.databinding.ActivitySignUpBinding
+import org.w3c.dom.Text
 
 class SignUp_Activity : AppCompatActivity() {
     //ViewBinding
@@ -23,10 +25,15 @@ class SignUp_Activity : AppCompatActivity() {
     private var email=""
     private var password=""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        var passwordTextIL = findViewById<TextInputLayout>(R.id.passwordTextIL)
+        passwordTextIL.helperText="Password must be at least 6 characters long"
 
         //Configure Actionbar
         actionBar=supportActionBar!!
@@ -56,14 +63,21 @@ class SignUp_Activity : AppCompatActivity() {
         // validate data
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             //invalid email format
-            binding.emailEditT.error="Invalid email format"
+         //  binding.emailEditT.error="Invalid email format"
+            binding.emailTextIL.error="Invalid email format"
+
         }else if(TextUtils.isEmpty(password)){
             //password isn't entered
-            binding.passwordEditT.error="Plese enter password"
+         //  binding.passwordEditT.error="Please enter password"
+            binding.emailTextIL.error=null
+            binding.passwordTextIL.error="Please enter password"
+
 
         }else if(password.length<6){
             // password lenght is less than 6 char
-            binding.passwordEditT.error="Password must atleast 6 chracter long"
+         //   binding.passwordEditT.error="Password must at least 6 characters long"
+            binding.emailTextIL.error=null
+            binding.passwordTextIL.error="Password must at least 6 characters long"
         }else {
             // data is valid, continue signup
             firebaseSignUp()
@@ -89,7 +103,7 @@ class SignUp_Activity : AppCompatActivity() {
             .addOnFailureListener { e->
                 // signup failed
                 progressDialog.dismiss()
-                Toast.makeText(this, "SignUp Failede due to ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "${e.message}", Toast.LENGTH_LONG).show()
             }
     }
 

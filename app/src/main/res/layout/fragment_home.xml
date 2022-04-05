@@ -99,4 +99,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupAlertWateringCan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="imageView2,imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginBottom="-15dp"
+        android:padding="0dp"
+        android:src="@drawable/red_outline"
+        app:layout_constraintBottom_toBottomOf="@+id/wateringCan"
+        app:layout_constraintEnd_toEndOf="@+id/wateringCan"
+        app:layout_constraintStart_toStartOf="@+id/wateringCan"
+        app:layout_constraintTop_toTopOf="@+id/wateringCan" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_danger"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

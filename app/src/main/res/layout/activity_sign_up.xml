@@ -1,70 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp"
+
     tools:context=".SignUp_Activity">
     <!-- -->
     <TextView
         android:id="@+id/titleLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="SignUp"
-        style="@style/TextAppearance.MaterialComponents.Headline2"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/titleLabel"
-        android:text="Create a new Account"
-        style="@style/TextAppearance.AppCompat.Caption"/>
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/barlow_condensed_semibold"
+        android:justificationMode="inter_word"
+        android:text="Begin your adventure on Piant-e!"
+        android:textColor="@color/green"
+        android:textSize="34sp"
+        app:layout_constraintLeft_toLeftOf="@id/glSignUpL"
+        app:layout_constraintRight_toRightOf="@id/glSignUpR"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/signUpAnimation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toTopOf="@+id/glSignUpH"
+        app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
+        app:layout_constraintStart_toStartOf="@+id/glSignUpL"
+        app:layout_constraintTop_toBottomOf="@+id/titleLabel"
+        app:lottie_rawRes="@raw/signup_cropped">
+
+    </com.airbnb.lottie.LottieAnimationView>
 
     <!-- Emails-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextIL"
-        android:layout_above="@+id/passwordTextIL"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:errorEnabled="true"
+
+        app:layout_constraintBottom_toTopOf="@+id/passwordTextIL"
+        app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/glSignUpL"
+        app:layout_constraintTop_toBottomOf="@+id/signUpAnimation">
+
         <EditText
             android:id="@+id/emailEditT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordTextIL"
-        app:passwordToggleEnabled="true"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+
+        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@id/glSignUpL"
+        app:layout_constraintRight_toRightOf="@id/glSignUpR"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextIL"
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/passwordEditT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:inputType="textPassword"
-            android:hint="Password"/>
+
+            android:hint="Password"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- SignUp Button -->
     <Button
         android:id="@+id/signUpBtn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="SignUp"
-        android:layout_below="@id/passwordTextIL"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/glSignUpL"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextIL" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glSignUpL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glSignUpR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glSignUpH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

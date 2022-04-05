@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import androidx.constraintlayout.widget.Group
+import androidx.core.view.isInvisible
 import me.itangqi.waveloadingview.WaveLoadingView
 
 // TODO: Rename parameter arguments, choose names that match
@@ -62,6 +64,10 @@ class Home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //gestione alert annaffiatoio vuoto
+        var alertEmptyWateringCan = view.findViewById<Group>(R.id.groupAlertWateringCan)
+        alertEmptyWateringCan.isInvisible=true
+
         //GESTIONE (TEMPORANEA) PROGRESSO ANNAFFIATOIO TRAMITE SEEK BAR
         var wave = view.findViewById<WaveLoadingView>(R.id.waveLoadingView)
         wave.setAnimDuration(10000);
@@ -95,10 +101,17 @@ class Home : Fragment() {
                 wave.progressValue = progress;
                 if(progress < amp){
                     wave.setAmplitudeRatio(progress)
+                    if(progress < 10) {
+                        alertEmptyWateringCan.isInvisible=false
+                    }
                 }
 
             }
         })
+
+
+
+
 
 
     }

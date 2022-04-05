@@ -3,17 +3,23 @@ package it.polito.did.digitalinteractiondesign
 import android.animation.Animator
 import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.util.Patterns
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.databinding.ActivityLoginBinding
+
 
 class Login_Activity : AppCompatActivity() {
 
@@ -32,6 +38,7 @@ class Login_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         // configure action bar
         actionBar=supportActionBar!!
@@ -57,21 +64,29 @@ class Login_Activity : AppCompatActivity() {
             //get data
             email=binding.emailEditT.text.toString().trim()
             password=binding.passwordEditT.text.toString().trim()
+
             // validate
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 //invalid email format
-                binding.emailEditT.setError("Invalid email format")
+              // binding.emailEditT.setError("Invalid email format")
+                 binding.emailTextIL.error = "Invalid email format"
 
             }else if(TextUtils.isEmpty(password)){
                 //no password entered
-                binding.passwordEditT.error="Please enter password"
+                //binding.passwordEditT.error="Please enter password"
+                binding.passwordTextIL.error = "Please enter password"
+                binding.emailTextIL.error = null
             }else{
                 //data is validated, begin login
+                binding.passwordTextIL.error = null
+                binding.emailTextIL.error = null
                 firebaseLogin()
             }
         }
 
-        //Implementazione Animazione
+
+
+        //animation setup
         var animInizio = findViewById<LottieAnimationView>(R.id.login_beginning)
         animInizio.setAnimation(R.raw.login_beginning_cropped)
         animInizio.loop(false)
@@ -105,6 +120,7 @@ class Login_Activity : AppCompatActivity() {
         })
 
 
+
     }
 
     private fun checkUser(){
@@ -134,7 +150,8 @@ class Login_Activity : AppCompatActivity() {
             .addOnFailureListener{ e->
                 //login failed
                 progressDialog.dismiss()
-                Toast.makeText(this, "Login failed due to ${e.message}", Toast.LENGTH_SHORT).show()
+               Toast.makeText(this, "${e.message}", Toast.LENGTH_LONG).show()
+
             }
     }
 }
