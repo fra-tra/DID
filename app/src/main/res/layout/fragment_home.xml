@@ -15,11 +15,11 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_watering_can"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/wateringCanBackground"
@@ -71,11 +71,13 @@
         app:cardBackgroundColor="@color/light_blue"
         app:cardCornerRadius="20dp"
         app:contentPadding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/wateringCan"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.cardview.widget.CardView>
 
     <SeekBar
         android:id="@+id/seekBar"
@@ -85,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wateringCan" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView3"
@@ -103,22 +105,19 @@
         android:id="@+id/groupAlertWateringCan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView2,imageView" />
+        app:constraint_referenced_ids="imageView2,imageView,textView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="-10dp"
-        android:layout_marginTop="-15dp"
-        android:layout_marginEnd="-10dp"
-        android:layout_marginBottom="-15dp"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
         android:padding="0dp"
         android:src="@drawable/red_outline"
-        app:layout_constraintBottom_toBottomOf="@+id/wateringCan"
-        app:layout_constraintEnd_toEndOf="@+id/wateringCan"
-        app:layout_constraintStart_toStartOf="@+id/wateringCan"
-        app:layout_constraintTop_toTopOf="@+id/wateringCan" />
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -129,5 +128,22 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/red_background"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        android:text="The watering can needs to be filled!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

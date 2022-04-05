@@ -101,10 +101,9 @@ class Home : Fragment() {
                 wave.progressValue = progress;
                 if(progress < amp){
                     wave.setAmplitudeRatio(progress)
-                    if(progress < 10) {
-                        alertEmptyWateringCan.isInvisible=false
+
                     }
-                }
+                alertEmptyWateringCan.isInvisible = progress >= 10
 
             }
         })
