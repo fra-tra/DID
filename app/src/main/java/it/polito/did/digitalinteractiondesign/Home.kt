@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.constraintlayout.widget.Group
+import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import me.itangqi.waveloadingview.WaveLoadingView
 
@@ -66,7 +67,6 @@ class Home : Fragment() {
 
         //gestione alert annaffiatoio vuoto
         var alertEmptyWateringCan = view.findViewById<Group>(R.id.groupAlertWateringCan)
-        alertEmptyWateringCan.isInvisible=true
 
         //GESTIONE (TEMPORANEA) PROGRESSO ANNAFFIATOIO TRAMITE SEEK BAR
         var wave = view.findViewById<WaveLoadingView>(R.id.waveLoadingView)
@@ -77,6 +77,9 @@ class Home : Fragment() {
         wave.progressValue = bar.progress;
 
         var amp = 30;
+
+        //either isgone or isinvisible depending on the desired effects, constraint may be changed ig we choose isinvisible for a better result
+        alertEmptyWateringCan.isGone = bar.progress >= 10
 
         if(bar.progress < amp){
             wave.setAmplitudeRatio(bar.progress)
@@ -103,7 +106,7 @@ class Home : Fragment() {
                     wave.setAmplitudeRatio(progress)
 
                     }
-                alertEmptyWateringCan.isInvisible = progress >= 10
+                alertEmptyWateringCan.isGone = progress >= 10
 
             }
         })
