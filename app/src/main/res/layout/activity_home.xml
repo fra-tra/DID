@@ -19,19 +19,19 @@
         app:menu="@menu/bottom_menu"/>
 
 
-
     <fragment
         android:id="@+id/fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="409dp"
-        android:layout_height="673dp"
-        android:layout_marginBottom="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/menu_nav"/>
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/menu_nav" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

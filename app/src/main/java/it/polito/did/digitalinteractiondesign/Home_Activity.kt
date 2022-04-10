@@ -1,24 +1,18 @@
 package it.polito.did.digitalinteractiondesign
 
+
 import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.ActionBar
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.FirebaseAuth
-import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
-import androidx.navigation.ui.NavigationUI
-
-
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
 
 
 class Home_Activity : AppCompatActivity() {
@@ -43,7 +37,8 @@ class Home_Activity : AppCompatActivity() {
 
         // configure Action Bar
         actionBar=supportActionBar!!
-        actionBar.title="Profile"
+        actionBar.title="Piant-e"
+        actionBar.hide()
 
         //init firebase auth
         firebaseAuth= FirebaseAuth.getInstance()
@@ -60,19 +55,19 @@ class Home_Activity : AppCompatActivity() {
        // Log.i("ciao","$navController")
         //bottomNavigationView.setupWithNavController(navController)
 
-
-
-
-
-
-
     //handle click, logout
        // binding.logOutBtn.setOnClickListener {
         //    firebaseAuth.signOut()
         //    checkUser()
         //}
 
+       /* var btn = findViewById<Button>(R.id.button)
+        btn.setOnClickListener {
+            Intent(this, Login_Activity::class.java).also{
+                startActivity(it)
+            }
 
+        }*/
 
 
 }
@@ -91,4 +86,5 @@ class Home_Activity : AppCompatActivity() {
             finish()
         }
     }
+
 }

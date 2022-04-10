@@ -2,39 +2,65 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayoutLoadingAddPlant"
+    android:id="@+id/constraintLayoutLoadingPlantFuneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoadingAddPlantFragment">
+    tools:context=".LoadingPlantFuneralFragment" >
 
     <ImageView
-        android:id="@+id/bg_addplant"
+        android:id="@+id/bg_funeral"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/bg_addplant"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLoadingAddPlant"
+        android:src="@drawable/bg_funeral"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLoadingFuneralPlant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/addPlantAnimation"
+        android:id="@+id/funeralPlantAnimation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/bg_addplant"
         app:layout_constraintDimensionRatio="w,1.58:1"
-        app:layout_constraintEnd_toEndOf="@+id/bg_addplant"
-        app:layout_constraintStart_toStartOf="@+id/bg_addplant"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_funeral"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8"
-        app:lottie_rawRes="@raw/addplant_cropped" />
+        app:lottie_rawRes="@raw/funeral_cropped">
+
+    </com.airbnb.lottie.LottieAnimationView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLoadingFuneralPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <TextView
+        android:id="@+id/textLoadingFuneralPlant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:justificationMode="inter_word"
+        android:text="@string/loading_funeral_plant"
+        android:textColor="@color/grey"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/funeralPlantAnimation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg_funeral"
+        app:layout_constraintVertical_bias="0.7" />
 
     <ProgressBar
-        android:id="@+id/progressBarAddPlant"
+        android:id="@+id/progressBarFuneralPlant"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -42,47 +68,17 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineLoadingAddPlant" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineLoadingFuneralPlant" />
 
     <TextView
-        android:id="@+id/textLoadingAddPlant"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:justificationMode="inter_word"
-        android:text="@string/loading_add_plant"
-
-        android:textAllCaps="false"
-        android:textColor="@color/grey"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/addPlantAnimation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg_addplant"
-        app:layout_constraintVertical_bias="0.7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLoadingAddPlant"
+        android:id="@+id/textLoadingFuneralPlantSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <TextView
-        android:id="@+id/textLoadingAddPlantSecondary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/loading_add_plant_secondary"
+        android:text="@string/loading_funeral_plant_secondary"
         android:textColor="@color/grey"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/progressBarAddPlant"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarFuneralPlant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

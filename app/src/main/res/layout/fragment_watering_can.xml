@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wateringCanConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".WateringCanFragment">
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/wateringCan"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_watering_can"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageView
+        android:id="@+id/wateringCanBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rounded_rectangle_full"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/waveLoadingView"
+        app:layout_constraintEnd_toEndOf="@+id/waveLoadingView"
+        app:layout_constraintStart_toStartOf="@+id/waveLoadingView"
+        app:layout_constraintTop_toTopOf="@+id/waveLoadingView" />
+
+    <me.itangqi.waveloadingview.WaveLoadingView
+        android:id="@+id/waveLoadingView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:visibility="visible"
+
+
+        app:layout_constraintBottom_toBottomOf="@+id/wateringCan"
+        app:layout_constraintEnd_toEndOf="@+id/wateringCan"
+        app:layout_constraintStart_toStartOf="@+id/wateringCan"
+        app:wlv_borderColor="@color/dark_grey"
+        app:wlv_borderWidth="3dp"
+        app:wlv_round_rectangle="true"
+        app:wlv_round_rectangle_x_and_y="20"
+        app:wlv_shapeType="rectangle"
+        app:wlv_waveAmplitude="50"
+        app:wlv_waveColor="@color/blue">
+
+    </me.itangqi.waveloadingview.WaveLoadingView>
+
+    <ImageView
+        android:id="@+id/wateringCanBorder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rounded_rectangle_watering_can"
+        app:layout_constraintBottom_toBottomOf="@+id/waveLoadingView"
+        app:layout_constraintEnd_toEndOf="@+id/waveLoadingView"
+        app:layout_constraintStart_toStartOf="@+id/waveLoadingView"
+        app:layout_constraintTop_toTopOf="@+id/waveLoadingView" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupAlertWateringCan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="warningEmptyWateringCanIcon,warningEmptyWateringCanBorder,warningEmptyWateringCanText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/warningEmptyWateringCanBorder"
+        android:layout_width="160dp"
+        android:layout_height="140dp"
+        android:padding="0dp"
+        android:src="@drawable/red_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageView
+        android:id="@+id/warningEmptyWateringCanIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_danger"
+        app:layout_constraintBottom_toTopOf="@+id/warningEmptyWateringCanBorder"
+        app:layout_constraintEnd_toEndOf="@+id/warningEmptyWateringCanBorder"
+        app:layout_constraintStart_toEndOf="@+id/warningEmptyWateringCanBorder"
+        app:layout_constraintTop_toTopOf="@+id/warningEmptyWateringCanBorder" />
+
+    <TextView
+        android:id="@+id/warningEmptyWateringCanText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/red_background"
+        android:gravity="center"
+        android:padding="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="The watering can needs to be filled!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warningEmptyWateringCanBorder" />
+</androidx.constraintlayout.widget.ConstraintLayout>
