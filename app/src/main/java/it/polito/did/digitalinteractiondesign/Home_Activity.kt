@@ -39,7 +39,7 @@ class Home_Activity : AppCompatActivity() {
         actionBar=supportActionBar!!
         actionBar.title="Profile"
 
-
+        actionBar.hide()
         //init firebase auth
         firebaseAuth= FirebaseAuth.getInstance()
         checkUser()
