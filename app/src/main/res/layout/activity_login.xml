@@ -50,16 +50,16 @@
 
     <TextView
         android:id="@+id/titleLabel"
-
+        style="@style/titleAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
 
 
-        android:fontFamily="@font/barlow_condensed_semibold"
+
         android:text="Piant-e"
-        android:textColor="@color/green"
+
         android:textSize="48sp"
         app:layout_constraintEnd_toStartOf="@+id/bgLogin"
         app:layout_constraintHorizontal_bias="0.5"

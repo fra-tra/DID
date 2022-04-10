@@ -62,5 +62,9 @@ class LoadingAddPlantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var a = view.findViewById<LottieAnimationView>(R.id.addPlantAnimation)
         a.playAnimation()
+
+        //configure activity status bar color
+        var window = activity?.window
+        window?.statusBarColor = resources.getColor(R.color.light_green)
     }
 }

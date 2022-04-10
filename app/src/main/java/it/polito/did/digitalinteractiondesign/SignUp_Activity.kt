@@ -37,9 +37,11 @@ class SignUp_Activity : AppCompatActivity() {
 
         //Configure Actionbar
         actionBar=supportActionBar!!
-        actionBar.title="Sign Up"
+       // actionBar.title="Sign Up"
+        actionBar.title=""
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowHomeEnabled(true)
+
 
         // configure Progress Dialog
         progressDialog= ProgressDialog(this)

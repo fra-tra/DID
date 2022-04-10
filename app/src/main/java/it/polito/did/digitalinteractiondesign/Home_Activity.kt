@@ -37,9 +37,9 @@ class Home_Activity : AppCompatActivity() {
 
         // configure Action Bar
         actionBar=supportActionBar!!
-        actionBar.title="Profile"
-
+        actionBar.title="Piant-e"
         actionBar.hide()
+
         //init firebase auth
         firebaseAuth= FirebaseAuth.getInstance()
         checkUser()
@@ -54,12 +54,6 @@ class Home_Activity : AppCompatActivity() {
 
        // Log.i("ciao","$navController")
         //bottomNavigationView.setupWithNavController(navController)
-
-
- // nascondere action bar
-       // actionBar.hide()
-
-
 
     //handle click, logout
        // binding.logOutBtn.setOnClickListener {

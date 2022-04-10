@@ -2,12 +2,14 @@ package it.polito.did.digitalinteractiondesign
 
 import android.animation.Animator
 import android.app.ProgressDialog
+import android.app.StatusBarManager
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Patterns
+import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -43,6 +45,11 @@ class Login_Activity : AppCompatActivity() {
         // configure action bar
         actionBar=supportActionBar!!
         actionBar.title="Login"
+        actionBar.hide()
+
+        //configure statusBar
+        window.statusBarColor = resources.getColor(R.color.light_green)
+
 
         //configure progress dialog
         progressDialog= ProgressDialog(this)
