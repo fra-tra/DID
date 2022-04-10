@@ -8,7 +8,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
+import android.util.Log.DEBUG
+import android.util.Log.ERROR
 import android.util.Patterns
+import android.view.View
 import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
@@ -21,6 +25,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.databinding.ActivityLoginBinding
+import org.w3c.dom.Text
 
 
 class Login_Activity : AppCompatActivity() {
@@ -65,12 +70,14 @@ class Login_Activity : AppCompatActivity() {
             startActivity(Intent(this, SignUp_Activity::class.java))
         }
 
+        email=binding.emailEditT.text.toString().trim()
+        password=binding.passwordEditT.text.toString().trim()
+
         // handle click, begin login
         binding.loginBtn.setOnClickListener {
-            // before logIn in, validate data
+            //before logIn in, validate data
             //get data
-            email=binding.emailEditT.text.toString().trim()
-            password=binding.passwordEditT.text.toString().trim()
+
 
             // validate
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -89,7 +96,66 @@ class Login_Activity : AppCompatActivity() {
                 binding.emailTextIL.error = null
                 firebaseLogin()
             }
+
         }
+
+
+        var emailEditT = findViewById<EditText>(R.id.emailEditT)
+        var passwordEditT = findViewById<EditText>(R.id.passwordEditT)
+
+       /* if(emailEditT.requestFocus()) {
+            Log.d("prova focus", "errore")
+        }
+        emailEditT.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            @Override
+            public override fun afterTextChanged(s: Editable?) {
+                // TODO Auto-generated method stub
+                // doSomething();
+                Log.d("debug focus", s.toString())
+            }
+
+        })*/
+
+
+//da verificare se memorizza contenuto email
+        emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
+
+            override fun onFocusChange(v: View, hasFocus: Boolean) {
+                if (hasFocus) {
+
+                } else {
+
+                    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
+                        binding.emailTextIL.error = "Invalid email format"
+                    }
+                    else {
+                        binding.emailTextIL.error = null
+                    }
+                }
+            }
+        });
+
+        passwordEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
+
+            override fun onFocusChange(v: View, hasFocus: Boolean) {
+                if (hasFocus) {
+
+                } else {
+
+                    if(TextUtils.isEmpty(passwordEditT.text.toString()) && emailEditT.text.toString() != ""){
+                        binding.passwordTextIL.error = "Please enter password"
+                        Log.d("email",  email)
+                    }
+                }
+            }
+        });
+
+
 
 
 
