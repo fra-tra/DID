@@ -5,7 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.util.Patterns
+import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.google.android.material.textfield.TextInputLayout
@@ -43,6 +46,7 @@ class SignUp_Activity : AppCompatActivity() {
         actionBar.setDisplayShowHomeEnabled(true)
 
 
+
         // configure Progress Dialog
         progressDialog= ProgressDialog(this)
         progressDialog.setTitle("Please wait")
@@ -51,10 +55,49 @@ class SignUp_Activity : AppCompatActivity() {
         // init firebase authentication
         firebaseAuth= FirebaseAuth.getInstance()
         // handle click, begin signup
-        binding.signUpBtn.setOnClickListener {
+       binding.signUpBtn.setOnClickListener {
             // validare data
             validateData()
         }
+
+        //controllo email e password ui
+        var emailEditT = findViewById<EditText>(R.id.emailEditT)
+        var passwordEditT = findViewById<EditText>(R.id.passwordEditT)
+
+        emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
+
+            override fun onFocusChange(v: View, hasFocus: Boolean) {
+                if (hasFocus) {
+
+                } else {
+
+                    if(!Patterns.EMAIL_ADDRESS.matcher(emailEditT.text.toString()).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
+                        binding.emailTextIL.error = "Invalid email format"
+                    }
+                    else {
+                        binding.emailTextIL.error = null
+                    }
+                }
+            }
+        });
+
+        passwordEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
+
+            override fun onFocusChange(v: View, hasFocus: Boolean) {
+                if (hasFocus) {
+
+                } else {
+
+                    if(TextUtils.isEmpty(passwordEditT.text.toString()) && emailEditT.text.toString() != ""){
+                        binding.passwordTextIL.error = "Please enter password"
+                        Log.d("email",  email)
+                    }
+                    else {
+                        binding.passwordTextIL.error = null
+                    }
+                }
+            }
+        });
 
 
     }

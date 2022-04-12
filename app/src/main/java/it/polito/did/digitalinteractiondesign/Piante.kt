@@ -1,10 +1,14 @@
 package it.polito.did.digitalinteractiondesign
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +37,9 @@ class Piante : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //Hide action bar from fragment
+        // does it need to be specified in onstart and onresume too?
+       // (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_piante, container, false)
     }
@@ -56,4 +63,6 @@ class Piante : Fragment() {
                 }
             }
     }
+
+
 }

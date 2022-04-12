@@ -70,14 +70,13 @@ class Login_Activity : AppCompatActivity() {
             startActivity(Intent(this, SignUp_Activity::class.java))
         }
 
-        email=binding.emailEditT.text.toString().trim()
-        password=binding.passwordEditT.text.toString().trim()
 
         // handle click, begin login
         binding.loginBtn.setOnClickListener {
             //before logIn in, validate data
             //get data
-
+            email=binding.emailEditT.text.toString().trim()
+            password=binding.passwordEditT.text.toString().trim()
 
             // validate
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -122,15 +121,15 @@ class Login_Activity : AppCompatActivity() {
         })*/
 
 
-//da verificare se memorizza contenuto email
-        emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
+       //da verificare se memorizza contenuto email
+       emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
 
             override fun onFocusChange(v: View, hasFocus: Boolean) {
                 if (hasFocus) {
 
                 } else {
 
-                    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
+                    if(!Patterns.EMAIL_ADDRESS.matcher(emailEditT.text.toString()).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
                         binding.emailTextIL.error = "Invalid email format"
                     }
                     else {
@@ -147,13 +146,18 @@ class Login_Activity : AppCompatActivity() {
 
                 } else {
 
-                    if(TextUtils.isEmpty(passwordEditT.text.toString()) && emailEditT.text.toString() != ""){
+                    if(TextUtils.isEmpty(passwordEditT.text.toString()) && !TextUtils.isEmpty(emailEditT.text.toString())){
                         binding.passwordTextIL.error = "Please enter password"
-                        Log.d("email",  email)
+                        Log.d("password",  passwordEditT.text.toString())
+                        Log.d("email",  passwordEditT.text.toString())
+                    }
+                    else {
+                        binding.passwordTextIL.error = null
                     }
                 }
             }
         });
+
 
 
 
