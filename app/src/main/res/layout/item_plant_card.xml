@@ -48,11 +48,13 @@
             android:clickable="true"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:visibility="visible"
             app:elevation="2dp"
             app:fabCustomSize="30dp"
             app:fabSize="auto"
             app:maxImageSize="12dp"
             tools:ignore="SpeakableTextPresentCheck" />
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

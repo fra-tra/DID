@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,6 +64,32 @@ class Piante : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //TEST DATA
+        var roomList = mutableListOf(
+            Room("Kitchen",
+                mutableListOf( Plant("Sanseveria", null, false),
+                    Plant("Basilico", null, false),
+                    Plant("Rosmarino", null, false),
+                    Plant("Cactus", null, false),
+                    Plant("Origano", null, false)
+                )),
+            Room("Plant Graveyard",
+                mutableListOf( Plant("Basilico", null, true),
+                    Plant("Rosmarino", null, true),
+                    Plant("Origano", null, true)
+                ))
+
+        )
+
+        val adapter = RoomCardListAdapter(roomList)
+        val rvRooms = view.findViewById<RecyclerView>(R.id.rvRooms)
+        rvRooms.adapter = adapter
+        rvRooms.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     }
 
 

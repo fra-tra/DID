@@ -42,11 +42,11 @@
         android:name="it.polito.did.digitalinteractiondesign.RoomFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView4"
@@ -54,35 +54,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView3"
+        app:layout_constraintBottom_toTopOf="@+id/rvRooms"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerViewRoom"
-        android:name="it.polito.did.digitalinteractiondesign.RoomCardFragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRooms"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:visibility="invisible"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline10"
-        tools:layout="@layout/fragment_room_card" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerViewGraveyard"
-        android:name="it.polito.did.digitalinteractiondesign.GraveyardCardFragment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerViewRoom"
-        tools:layout="@layout/fragment_graveyard_card" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

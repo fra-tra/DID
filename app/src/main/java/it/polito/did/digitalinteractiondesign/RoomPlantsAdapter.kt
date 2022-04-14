@@ -1,5 +1,6 @@
 package it.polito.did.digitalinteractiondesign
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,13 @@ class RoomPlantsAdapter (var plants: List <Plant>)
     override fun onBindViewHolder(holder: RoomPlantViewHolder, position: Int) {
          holder.binding.apply {
              titlePlantProva.text = plants[position].name
+
+             //SET NAVIGATION TO MY PLANT DETAIL
+             cardView.setOnClickListener {
+                 Log.d("Mostra", "${titlePlantProva.text.toString()}")
+             }
+
+             //PASS IMAGE DATA
          }
 
     }

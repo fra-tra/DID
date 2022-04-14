@@ -3,6 +3,7 @@ package it.polito.did.digitalinteractiondesign
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,9 +30,15 @@ class PlantCardListAdapter (var plants: List<Plant>)
            plantCardName.text = plants[position].name
            if(plants[position].isDead){
                plantCard.setCardBackgroundColor(context.getResources().getColor(R.color.light_grey))
+               plantDetailBtn.setOnClickListener {
+                   //SHOW DETAIL DEAD PLANT
+               }
            }
            else {
                plantCard.setCardBackgroundColor(context.getResources().getColor(R.color.light_green))
+               plantDetailBtn.setOnClickListener {
+                   //SHOW DETAIL MY PLANT
+               }
 
            }
 

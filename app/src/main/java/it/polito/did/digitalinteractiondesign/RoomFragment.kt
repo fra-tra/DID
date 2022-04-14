@@ -1,6 +1,7 @@
 package it.polito.did.digitalinteractiondesign
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.isGone
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,6 +65,8 @@ class RoomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //TEST LIST
         var plantList = mutableListOf(
             Plant("Basilico", null, false),
             Plant("Origano", null, false),
@@ -75,5 +79,7 @@ class RoomFragment : Fragment() {
         val rvPlants = view.findViewById<RecyclerView>(R.id.rvRoomPlants)
         rvPlants.adapter = adapter
         rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+
     }
 }
