@@ -5,7 +5,7 @@
     android:id="@+id/wateringCanConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".WateringCanFragment">
+    tools:context=".fragments.WateringCanFragment">
 
     <SeekBar
         android:id="@+id/seekBar"

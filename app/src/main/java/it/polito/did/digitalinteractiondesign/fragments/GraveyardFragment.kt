@@ -1,16 +1,15 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.Group
-import androidx.core.view.isGone
-import androidx.core.view.isInvisible
-import me.itangqi.waveloadingview.WaveLoadingView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,10 +18,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Home.newInstance] factory method to
+ * Use the [GraveyardFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Home : Fragment() {
+class GraveyardFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,7 +39,7 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_graveyard, container, false)
     }
 
     companion object {
@@ -50,12 +49,12 @@ class Home : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Home.
+         * @return A new instance of fragment GraveyardFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Home().apply {
+            GraveyardFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -65,17 +64,17 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var plantList = mutableListOf(
+            Plant("Basilico", null, true),
+            Plant("Origano", null, true),
+            Plant("Pothos", null, true),
+            Plant("Cactus", null, true),
+            Plant("Rosmarino", null, true),
+        )
 
+        val adapter = PlantCardListAdapter(plantList)
+        val rvPlants = view.findViewById<RecyclerView>(R.id.rvGraveyardPlants)
+        rvPlants.adapter = adapter
+        rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     }
-
-    //hide action bar
-   /* override fun onResume() {
-        super.onResume()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-    }*/
 }

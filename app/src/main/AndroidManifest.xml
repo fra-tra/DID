@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalInteractionDesign">
         <activity
-            android:name=".SignUp_Activity"
+            android:name="it.polito.did.digitalinteractiondesign.activity.SignUp_Activity"
             android:exported="false" />
         <activity
-            android:name=".Home_Activity"
+            android:name="it.polito.did.digitalinteractiondesign.activity.Home_Activity"
             android:exported="false" />
         <activity
-            android:name=".Login_Activity"
+            android:name="it.polito.did.digitalinteractiondesign.activity.Login_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

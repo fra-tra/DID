@@ -1,31 +1,23 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.activity
 
 import android.animation.Animator
 import android.app.ProgressDialog
-import android.app.StatusBarManager
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.text.TextUtils
-import android.text.TextWatcher
 import android.util.Log
-import android.util.Log.DEBUG
-import android.util.Log.ERROR
 import android.util.Patterns
 import android.view.View
-import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivityLoginBinding
-import org.w3c.dom.Text
 
 
 class Login_Activity : AppCompatActivity() {
@@ -70,14 +62,13 @@ class Login_Activity : AppCompatActivity() {
             startActivity(Intent(this, SignUp_Activity::class.java))
         }
 
-        email=binding.emailEditT.text.toString().trim()
-        password=binding.passwordEditT.text.toString().trim()
 
         // handle click, begin login
         binding.loginBtn.setOnClickListener {
             //before logIn in, validate data
             //get data
-
+            email=binding.emailEditT.text.toString().trim()
+            password=binding.passwordEditT.text.toString().trim()
 
             // validate
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -122,15 +113,15 @@ class Login_Activity : AppCompatActivity() {
         })*/
 
 
-//da verificare se memorizza contenuto email
-        emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
+       //da verificare se memorizza contenuto email
+       emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
 
             override fun onFocusChange(v: View, hasFocus: Boolean) {
                 if (hasFocus) {
 
                 } else {
 
-                    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
+                    if(!Patterns.EMAIL_ADDRESS.matcher(emailEditT.text.toString()).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
                         binding.emailTextIL.error = "Invalid email format"
                     }
                     else {
@@ -147,13 +138,18 @@ class Login_Activity : AppCompatActivity() {
 
                 } else {
 
-                    if(TextUtils.isEmpty(passwordEditT.text.toString()) && emailEditT.text.toString() != ""){
+                    if(TextUtils.isEmpty(passwordEditT.text.toString()) && !TextUtils.isEmpty(emailEditT.text.toString())){
                         binding.passwordTextIL.error = "Please enter password"
-                        Log.d("email",  email)
+                        Log.d("password",  passwordEditT.text.toString())
+                        Log.d("email",  passwordEditT.text.toString())
+                    }
+                    else {
+                        binding.passwordTextIL.error = null
                     }
                 }
             }
         });
+
 
 
 
