@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:padding="8dp"
     android:clipToPadding="false"
-    tools:context=".RoomCardFragment">
+    tools:context=".fragments.RoomCardFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/roomCard"

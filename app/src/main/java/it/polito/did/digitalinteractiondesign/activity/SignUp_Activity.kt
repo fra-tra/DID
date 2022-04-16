@@ -1,4 +1,4 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -13,8 +13,8 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivitySignUpBinding
-import org.w3c.dom.Text
 
 class SignUp_Activity : AppCompatActivity() {
     //ViewBinding
@@ -142,7 +142,7 @@ class SignUp_Activity : AppCompatActivity() {
                 val email = firebaseUser!!.email
                 Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
                 //open profile
-                startActivity(Intent(this,Home_Activity::class.java))
+                startActivity(Intent(this, Home_Activity::class.java))
                 finish()
             }
             .addOnFailureListener { e->

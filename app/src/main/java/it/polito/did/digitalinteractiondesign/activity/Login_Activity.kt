@@ -1,31 +1,23 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.activity
 
 import android.animation.Animator
 import android.app.ProgressDialog
-import android.app.StatusBarManager
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.text.TextUtils
-import android.text.TextWatcher
 import android.util.Log
-import android.util.Log.DEBUG
-import android.util.Log.ERROR
 import android.util.Patterns
 import android.view.View
-import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivityLoginBinding
-import org.w3c.dom.Text
 
 
 class Login_Activity : AppCompatActivity() {

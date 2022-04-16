@@ -1,14 +1,11 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.structures
 
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ItemPlantCardBinding
-import java.security.AccessController.getContext
 
 
 class PlantCardListAdapter (var plants: List<Plant>)

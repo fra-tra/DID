@@ -1,10 +1,12 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.airbnb.lottie.LottieAnimationView
+import it.polito.did.digitalinteractiondesign.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Profilo.newInstance] factory method to
+ * Use the [LoadingWaterPlantFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Profilo : Fragment() {
+class LoadingWaterPlantFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +36,7 @@ class Profilo : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profilo, container, false)
+        return inflater.inflate(R.layout.fragment_loading_water_plant, container, false)
     }
 
     companion object {
@@ -44,16 +46,26 @@ class Profilo : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Profilo.
+         * @return A new instance of fragment LoadingWaterPlantFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Profilo().apply {
+            LoadingWaterPlantFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var a = view.findViewById<LottieAnimationView>(R.id.waterPlantAnimation)
+        a.playAnimation()
+
+        //configure activity status bar color
+        var window = activity?.window
+        window?.statusBarColor = resources.getColor(R.color.light_blue)
     }
 }

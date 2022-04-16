@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/piante"
-        android:name="it.polito.did.digitalinteractiondesign.Piante"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.Piante"
         android:label="Piante"
         tools:layout="@layout/fragment_piante" />
     <fragment
         android:id="@+id/calendarizzazione"
-        android:name="it.polito.did.digitalinteractiondesign.Calendarizzazione"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.Calendarizzazione"
         android:label="Calendarizzazione"
         tools:layout="@layout/fragment_calendarizzazione" />
     <fragment
         android:id="@+id/profilo"
-        android:name="it.polito.did.digitalinteractiondesign.Profilo"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.Profilo"
         android:label="Profilo"
         tools:layout="@layout/fragment_profilo" />
     <fragment
         android:id="@+id/discover"
-        android:name="it.polito.did.digitalinteractiondesign.Discover"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.Discover"
         android:label="Discover"
         tools:layout="@layout/fragment_discover" />
     <fragment
         android:id="@+id/home"
-        android:name="it.polito.did.digitalinteractiondesign.Home"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>

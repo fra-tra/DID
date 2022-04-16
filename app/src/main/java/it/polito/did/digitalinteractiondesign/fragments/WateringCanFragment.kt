@@ -1,4 +1,4 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.widget.SeekBar
 import androidx.constraintlayout.widget.Group
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
+import it.polito.did.digitalinteractiondesign.R
 import me.itangqi.waveloadingview.WaveLoadingView
 
 // TODO: Rename parameter arguments, choose names that match

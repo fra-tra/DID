@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Piante">
+    tools:context=".fragments.Piante">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -39,7 +39,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
-        android:name="it.polito.did.digitalinteractiondesign.RoomFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.RoomFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="invisible"
@@ -50,7 +50,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView4"
-        android:name="it.polito.did.digitalinteractiondesign.GraveyardFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.GraveyardFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="invisible"

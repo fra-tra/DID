@@ -1,4 +1,4 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.structures
 
 import android.content.Context
 import android.util.Log
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ItemRoomCardBinding
 
 class RoomCardListAdapter(var rooms: List<Room>): RecyclerView.Adapter<RoomCardListAdapter.RoomCardListViewHolder>() {

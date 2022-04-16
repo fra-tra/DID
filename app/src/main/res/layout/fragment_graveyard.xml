@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GraveyardFragment">
+    tools:context=".fragments.GraveyardFragment">
 
     <Button
         android:id="@+id/backButtonGraveyard"

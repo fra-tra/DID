@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home"
+    tools:context=".fragments.Home"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -163,7 +163,7 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerWateringCanHome"
-                android:name="it.polito.did.digitalinteractiondesign.WateringCanFragment"
+                android:name="it.polito.did.digitalinteractiondesign.fragments.WateringCanFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_watering_can" />

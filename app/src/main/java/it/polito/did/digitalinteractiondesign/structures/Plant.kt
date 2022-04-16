@@ -1,4 +1,4 @@
-package it.polito.did.digitalinteractiondesign
+package it.polito.did.digitalinteractiondesign.structures
 
 import android.media.Image
 
