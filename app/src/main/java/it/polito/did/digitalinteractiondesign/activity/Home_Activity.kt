@@ -8,6 +8,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -48,6 +49,26 @@ class Home_Activity : AppCompatActivity() {
         val bottomNavigationView =findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController: NavController = Navigation.findNavController(this, R.id.fragment)
         setupWithNavController(bottomNavigationView, navController);
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+
+            if(item.itemId != R.id.piante) {
+                navController.popBackStack(R.id.myPlantFragment, false)
+            }
+
+            // In order to get the expected behavior, you have to call default Navigation method manually
+            NavigationUI.onNavDestinationSelected(item, navController)
+            return@setOnItemSelectedListener true
+        }
+
+
+        bottomNavigationView.setOnItemReselectedListener {
+                item ->
+            // Pop everything up to the reselected item
+            val reselectedDestinationId = item.itemId
+            navController.popBackStack(reselectedDestinationId, false)
+        }
+
         // cambio del nome della bara di navigazione in base alla schermata in cui ci si trova
         //val appBarConfiguration = AppBarConfiguration(setOf(R.id.home, R.id.discover, R.id.piante, R.id.calendarizzazione,R.id.profilo))
         //setupWithNavController(bottomNavigationView, navController)

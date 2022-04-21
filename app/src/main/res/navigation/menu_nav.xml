@@ -9,7 +9,20 @@
         android:id="@+id/piante"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Piante"
         android:label="Piante"
-        tools:layout="@layout/fragment_piante" />
+        tools:layout="@layout/fragment_piante" >
+        <action
+            android:id="@+id/action_piante_to_roomFragment"
+            app:destination="@id/roomFragment" />
+        <action
+            android:id="@+id/action_piante_to_myPlantFragment"
+            app:destination="@id/myPlantFragment" />
+        <action
+            android:id="@+id/action_piante_to_graveyardFragment"
+            app:destination="@id/graveyardFragment" />
+        <action
+            android:id="@+id/action_piante_to_myDeadPlantFragment"
+            app:destination="@id/myDeadPlantFragment" />
+    </fragment>
     <fragment
         android:id="@+id/calendarizzazione"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Calendarizzazione"
@@ -29,5 +42,62 @@
         android:id="@+id/home"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_myPlantFragment"
+            app:destination="@id/myPlantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.RoomFragment"
+        android:label="fragment_room"
+        tools:layout="@layout/fragment_room" >
+        <action
+            android:id="@+id/action_roomFragment_to_myPlantFragment"
+            app:destination="@id/myPlantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPlantFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantFragment"
+        android:label="fragment_my_plant"
+        tools:layout="@layout/fragment_my_plant" >
+        <action
+            android:id="@+id/action_myPlantFragment_to_loadingPlantFuneralFragment"
+            app:destination="@id/loadingPlantFuneralFragment" />
+        <action
+            android:id="@+id/action_myPlantFragment_to_loadingWaterPlantFragment"
+            app:destination="@id/loadingWaterPlantFragment" />
+        <action
+            android:id="@+id/action_myPlantFragment_to_loadingAddPlantFragment"
+            app:destination="@id/loadingAddPlantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/graveyardFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.GraveyardFragment"
+        android:label="fragment_graveyard"
+        tools:layout="@layout/fragment_graveyard" >
+        <action
+            android:id="@+id/action_graveyardFragment_to_myDeadPlantFragment"
+            app:destination="@id/myDeadPlantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myDeadPlantFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.MyDeadPlantFragment"
+        android:label="fragment_my_dead_plant"
+        tools:layout="@layout/fragment_my_dead_plant" />
+    <fragment
+        android:id="@+id/loadingPlantFuneralFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.LoadingPlantFuneralFragment"
+        android:label="fragment_loading_plant_funeral"
+        tools:layout="@layout/fragment_loading_plant_funeral" />
+    <fragment
+        android:id="@+id/loadingWaterPlantFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.LoadingWaterPlantFragment"
+        android:label="fragment_loading_water_plant"
+        tools:layout="@layout/fragment_loading_water_plant" />
+    <fragment
+        android:id="@+id/loadingAddPlantFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.LoadingAddPlantFragment"
+        android:label="fragment_loading_add_plant"
+        tools:layout="@layout/fragment_loading_add_plant" />
 </navigation>

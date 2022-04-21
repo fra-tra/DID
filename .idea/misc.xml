@@ -37,6 +37,7 @@
         <entry key="..\:/Users/girde/Desktop/GitProjects/DID/app/src/main/res/menu/bottom_menu.xml" value="0.259375" />
         <entry key="..\:/Users/girde/Desktop/GitProjects/DID/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2335" />
         <entry key="app/src/main/res/drawable/arrow_button_background.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/bg_transparent_button.xml" value="0.3145" />
         <entry key="app/src/main/res/drawable/circular_bar.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/city_info_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.291" />
@@ -52,9 +53,11 @@
         <entry key="app/src/main/res/layout/fragment_graveyard.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_graveyard_card.xml" value="0.27506103515624997" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3884297520661157" />
-        <entry key="app/src/main/res/layout/fragment_loading_add_plant.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_loading_plant_funeral.xml" value="0.35260416666666666" />
-        <entry key="app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_loading_add_plant.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_loading_plant_funeral.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_piante.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_room.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_room_card.xml" value="0.35260416666666666" />
@@ -63,6 +66,7 @@
         <entry key="app/src/main/res/layout/fragment_watering_can.xml" value="0.55" />
         <entry key="app/src/main/res/layout/item_plant_card.xml" value="0.7419039749248508" />
         <entry key="app/src/main/res/layout/item_plant_image.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/item_plant_summary_home.xml" value="0.45" />
         <entry key="app/src/main/res/layout/item_room_card.xml" value="0.625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2005" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_custom.xml" value="0.2005" />

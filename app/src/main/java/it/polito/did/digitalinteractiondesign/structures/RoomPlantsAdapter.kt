@@ -3,7 +3,9 @@ package it.polito.did.digitalinteractiondesign.structures
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ItemPlantImageBinding
 
 class RoomPlantsAdapter (var plants: List <Plant>)
@@ -25,9 +27,21 @@ class RoomPlantsAdapter (var plants: List <Plant>)
          holder.binding.apply {
              titlePlantProva.text = plants[position].name
 
+             if (plants[position].isDead) {
+                 imagePlant.saturation = 0F
+             }
              //SET NAVIGATION TO MY PLANT DETAIL
              cardView.setOnClickListener {
                  Log.d("Mostra", "${titlePlantProva.text.toString()}")
+
+                 if(plants[position].isDead) {
+                     Navigation.findNavController(cardView)
+                         .navigate(R.id.action_piante_to_myDeadPlantFragment)
+                 }
+                 else {
+                     Navigation.findNavController(cardView)
+                         .navigate(R.id.action_piante_to_myPlantFragment)
+                 }
              }
 
              //PASS IMAGE DATA

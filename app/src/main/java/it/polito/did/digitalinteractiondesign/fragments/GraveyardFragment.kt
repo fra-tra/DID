@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
@@ -76,5 +78,10 @@ class GraveyardFragment : Fragment() {
         val rvPlants = view.findViewById<RecyclerView>(R.id.rvGraveyardPlants)
         rvPlants.adapter = adapter
         rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        var backBtn = view.findViewById<Button>(R.id.backButtonGraveyard)
+        backBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }

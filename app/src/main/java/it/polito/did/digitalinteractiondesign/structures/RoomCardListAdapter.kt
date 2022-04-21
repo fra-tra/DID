@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
@@ -33,12 +35,22 @@ class RoomCardListAdapter(var rooms: List<Room>): RecyclerView.Adapter<RoomCardL
 
             //VERIFY IF ROOM IS PLANT GRAVEYARD: POSITION OR TITLE?
             if(rooms[position].name == "Plant Graveyard") {
-                roomCard.setCardBackgroundColor(context.getResources().getColor(R.color.light_grey))
+                roomCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_grey))
             }
 
             //SHOW DETAIL ROOM PLANTS
             seeAllRoomPlantsBtn.setOnClickListener {
                 Log.d("Mostra", "tutte le piante in ${roomCardTitle.text.toString()}")
+
+                if(rooms[position].name == "Plant Graveyard") {
+                    Navigation.findNavController(seeAllRoomPlantsBtn)
+                        .navigate(R.id.action_piante_to_graveyardFragment)
+                }
+
+                else {
+                    Navigation.findNavController(seeAllRoomPlantsBtn)
+                        .navigate(R.id.action_piante_to_roomFragment)
+                }
             }
         }
     }

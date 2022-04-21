@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
-import com.airbnb.lottie.LottieAnimationView
-import com.airbnb.lottie.LottieCompositionFactory
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import it.polito.did.digitalinteractiondesign.R
-import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,17 +16,13 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LoadingPlantFuneralFragment.newInstance] factory method to
+ * Use the [MyPlantFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoadingPlantFuneralFragment : Fragment() {
+class MyPlantFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
-    private var _binding: FragmentLoadingPlantFuneralBinding? = null
-    // This property is only valid between onCreateView and onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,22 +37,7 @@ class LoadingPlantFuneralFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentLoadingPlantFuneralBinding.inflate(inflater, container, false)
-
-        var w = binding.pbWaitingFuneral
-        w.isVisible = true
-
-        var t = binding.textLoadingFuneralPlant
-        t.isVisible = false
-        LottieCompositionFactory.fromRawRes(context, R.raw.funeral_cropped).addListener {
-            binding.funeralPlantAnimation.setComposition(it)
-            w.isVisible = false
-            t.isVisible = true
-        }
-
-        val view = binding.root
-        return view
-
+        return inflater.inflate(R.layout.fragment_my_plant, container, false)
     }
 
     companion object {
@@ -69,12 +47,12 @@ class LoadingPlantFuneralFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment LoadingPlantFuneralFragment.
+         * @return A new instance of fragment MyPlantFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LoadingPlantFuneralFragment().apply {
+            MyPlantFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -84,18 +62,19 @@ class LoadingPlantFuneralFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var a = view.findViewById<LottieAnimationView>(R.id.funeralPlantAnimation)
-        a.playAnimation()
+        var btnProvaFuneral = view.findViewById<Button>(R.id.btnProvaFuneral)
+        btnProvaFuneral.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_loadingPlantFuneralFragment)
+        }
 
-        //configure activity status bar color
-        var window = activity?.window
-        window?.statusBarColor = context?.let { ContextCompat.getColor(it, R.color.light_purple) }!!
-    }
+        var btnProvaAdd = view.findViewById<Button>(R.id.btnProvaAdd)
+        btnProvaAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_loadingAddPlantFragment)
+        }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-        var window = activity?.window
-        window?.statusBarColor = context?.let { ContextCompat.getColor(it, android.R.color.transparent) }!!
+        var btnProvaWater = view.findViewById<Button>(R.id.btnProvaWater)
+        btnProvaWater.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
+        }
     }
 }

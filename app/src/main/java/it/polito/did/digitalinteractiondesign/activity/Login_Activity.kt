@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
@@ -45,7 +46,7 @@ class Login_Activity : AppCompatActivity() {
         actionBar.hide()
 
         //configure statusBar
-        window.statusBarColor = resources.getColor(R.color.light_green)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.light_green)
 
 
         //configure progress dialog

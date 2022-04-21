@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:clipToPadding="false">
+
+    <TextView
+        android:id="@+id/myPlantTitleHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/barlow_condensed_semibold"
+        android:text="My Plant"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPlantHome"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/light_green"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPlantTitleHome">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progressBarWaterHome"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/circular_bar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/progressBarBrightnessHome"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBarTemperatureHome"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="60" />
+
+            <ProgressBar
+                android:id="@+id/progressBarBrightnessHome"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/circular_bar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/seePlantDetailHome"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBarWaterHome"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="60" />
+
+            <ProgressBar
+                android:id="@+id/progressBarTemperatureHome"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/circular_bar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/progressBarWaterHome"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/plantImageHome"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="60" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/seePlantDetailHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:elevation="2dp"
+                app:fabCustomSize="30dp"
+                app:fabSize="auto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxImageSize="12dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:id="@+id/alertTemperature"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_danger"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarTemperatureHome"
+                app:layout_constraintTop_toTopOf="@id/progressBarTemperatureHome" />
+
+            <ImageView
+                android:id="@+id/alertWater"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_danger"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarWaterHome"
+                app:layout_constraintTop_toTopOf="@+id/progressBarWaterHome" />
+
+            <ImageView
+                android:id="@+id/alertBrightness"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_danger"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarBrightnessHome"
+                app:layout_constraintTop_toTopOf="@+id/progressBarBrightnessHome" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_thermometer"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarTemperatureHome"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarTemperatureHome"
+                app:layout_constraintStart_toStartOf="@+id/progressBarTemperatureHome"
+                app:layout_constraintTop_toTopOf="@+id/progressBarTemperatureHome" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sun"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarBrightnessHome"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarBrightnessHome"
+                app:layout_constraintStart_toStartOf="@+id/progressBarBrightnessHome"
+                app:layout_constraintTop_toTopOf="@+id/progressBarBrightnessHome" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_droplet"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarWaterHome"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarWaterHome"
+                app:layout_constraintStart_toStartOf="@+id/progressBarWaterHome"
+                app:layout_constraintTop_toTopOf="@+id/progressBarWaterHome" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/plantImageHome"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/plant_placeholder"
+                app:civ_border_color="#FF000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
