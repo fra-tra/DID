@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
@@ -84,6 +85,12 @@ class LoadingAddPlantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var a = view.findViewById<LottieAnimationView>(R.id.addPlantAnimation)
         a.playAnimation()
+
+        //disable back button when loading
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+            }
+        })
 
         //configure activity status bar color
         var window = activity?.window

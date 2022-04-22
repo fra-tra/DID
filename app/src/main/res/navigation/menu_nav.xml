@@ -62,14 +62,8 @@
         android:label="fragment_my_plant"
         tools:layout="@layout/fragment_my_plant" >
         <action
-            android:id="@+id/action_myPlantFragment_to_loadingPlantFuneralFragment"
-            app:destination="@id/loadingPlantFuneralFragment" />
-        <action
-            android:id="@+id/action_myPlantFragment_to_loadingWaterPlantFragment"
-            app:destination="@id/loadingWaterPlantFragment" />
-        <action
-            android:id="@+id/action_myPlantFragment_to_loadingAddPlantFragment"
-            app:destination="@id/loadingAddPlantFragment" />
+            android:id="@+id/action_myPlantFragment_to_myPlantSettingsFragment"
+            app:destination="@id/myPlantSettingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/graveyardFragment"
@@ -89,7 +83,13 @@
         android:id="@+id/loadingPlantFuneralFragment"
         android:name="it.polito.did.digitalinteractiondesign.fragments.LoadingPlantFuneralFragment"
         android:label="fragment_loading_plant_funeral"
-        tools:layout="@layout/fragment_loading_plant_funeral" />
+        tools:layout="@layout/fragment_loading_plant_funeral" >
+        <action
+            android:id="@+id/action_loadingPlantFuneralFragment_to_myDeadPlantFragment"
+            app:destination="@id/myDeadPlantFragment"
+            app:popUpTo="@id/piante"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/loadingWaterPlantFragment"
         android:name="it.polito.did.digitalinteractiondesign.fragments.LoadingWaterPlantFragment"
@@ -100,4 +100,13 @@
         android:name="it.polito.did.digitalinteractiondesign.fragments.LoadingAddPlantFragment"
         android:label="fragment_loading_add_plant"
         tools:layout="@layout/fragment_loading_add_plant" />
+    <fragment
+        android:id="@+id/myPlantSettingsFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantSettingsFragment"
+        android:label="fragment_my_plant_settings"
+        tools:layout="@layout/fragment_my_plant_settings" >
+        <action
+            android:id="@+id/action_myPlantSettingsFragment_to_loadingPlantFuneralFragment"
+            app:destination="@id/loadingPlantFuneralFragment" />
+    </fragment>
 </navigation>

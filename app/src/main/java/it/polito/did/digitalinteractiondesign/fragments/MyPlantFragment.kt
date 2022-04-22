@@ -62,19 +62,9 @@ class MyPlantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var btnProvaFuneral = view.findViewById<Button>(R.id.btnProvaFuneral)
-        btnProvaFuneral.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantFragment_to_loadingPlantFuneralFragment)
-        }
-
-        var btnProvaAdd = view.findViewById<Button>(R.id.btnProvaAdd)
-        btnProvaAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantFragment_to_loadingAddPlantFragment)
-        }
-
-        var btnProvaWater = view.findViewById<Button>(R.id.btnProvaWater)
-        btnProvaWater.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
+        var btnSettings = view.findViewById<Button>(R.id.settings)
+        btnSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_myPlantSettingsFragment)
         }
     }
 }

@@ -4,6 +4,7 @@ package it.polito.did.digitalinteractiondesign.activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -67,6 +68,19 @@ class Home_Activity : AppCompatActivity() {
             // Pop everything up to the reselected item
             val reselectedDestinationId = item.itemId
             navController.popBackStack(reselectedDestinationId, false)
+        }
+
+        //Hide bottom navigation bar when showing loading screens
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.loadingPlantFuneralFragment ||
+                destination.id == R.id.loadingWaterPlantFragment ||
+                destination.id == R.id.loadingAddPlantFragment) {
+
+                bottomNavigationView.visibility = View.GONE
+            } else {
+
+                bottomNavigationView.visibility = View.VISIBLE
+            }
         }
 
         // cambio del nome della bara di navigazione in base alla schermata in cui ci si trova
