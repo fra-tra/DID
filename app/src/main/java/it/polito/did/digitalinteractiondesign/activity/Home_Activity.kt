@@ -76,7 +76,7 @@ class Home_Activity : AppCompatActivity() {
                 destination.id == R.id.loadingWaterPlantFragment ||
                 destination.id == R.id.loadingAddPlantFragment) {
 
-                bottomNavigationView.visibility = View.GONE
+                bottomNavigationView.visibility = View.INVISIBLE
             } else {
 
                 bottomNavigationView.visibility = View.VISIBLE
