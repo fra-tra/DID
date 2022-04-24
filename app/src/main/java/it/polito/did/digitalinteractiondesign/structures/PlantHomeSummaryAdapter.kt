@@ -9,7 +9,9 @@ import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.databinding.ItemPlantSummaryHomeBinding
 import it.polito.did.digitalinteractiondesign.databinding.ItemRoomCardBinding
 import kotlin.math.roundToInt
@@ -52,11 +54,9 @@ class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<Pl
             seePlantDetailHome.setOnClickListener {
                 Log.d("Show", "")
 
-                //MUST GO THROUGH PLANTS BEFORE REACHING MY PLANT OTHERWISE THE USER ISNT
-                //IN THE PLANTS SECTION, THEREFORE THE ICON IN THE BOTTOM NAVIGATION WOULD BE WRONG
-                Navigation.findNavController(seePlantDetailHome).navigate(R.id.piante)
-                Navigation.findNavController(seePlantDetailHome)
-                    .navigate(R.id.action_piante_to_myPlantFragment)
+                val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
+                bottomNav.selectedItemId = R.id.piante
+                Navigation.findNavController(seePlantDetailHome).navigate(R.id.myPlantFragment)
             }
         }
     }

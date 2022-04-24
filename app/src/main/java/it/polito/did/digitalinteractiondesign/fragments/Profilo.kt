@@ -5,56 +5,69 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.activity.Home_Activity
+import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
+import it.polito.did.digitalinteractiondesign.databinding.FragmentProfiloBinding
+import it.polito.did.digitalinteractiondesign.structures.Plant
+import it.polito.did.digitalinteractiondesign.structures.ProfileLikedPlantAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Profilo.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Profilo : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentProfiloBinding
+  // variables for data that come back from firebase
+
+    private lateinit var email : TextView
+    private lateinit var recyclerViewPlants: RecyclerView
+  //------------------------------------------------------------
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding= FragmentProfiloBinding.inflate(layoutInflater)
+        (activity as Home_Activity).getDataOfUser(binding.tvEmail)
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profilo, container, false)
+       // (activity as Home_Activity).getDataOfUser(email)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profilo.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Profilo().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var btnProfileSettings= view.findViewById<ImageView>(R.id.imageSettings)
+        btnProfileSettings.setOnClickListener{
+            findNavController().navigate(R.id.action_profilo_to_profiloSettings)
+        }
+
+        //adapter View Plants liked
+        var plantList = mutableListOf(
+            Plant("Basilico", null, true),
+            Plant("Origano", null, true),
+            Plant("Pothos", null, true),
+            Plant("Cactus", null, true),
+            Plant("Rosmarino", null, true),
+        )
+        val adapterPlantsLiked= ProfileLikedPlantAdapter(plantList)
+        recyclerViewPlants=view.findViewById(R.id.RV_plantsLiked)
+
+        recyclerViewPlants.adapter=adapterPlantsLiked
+
+        recyclerViewPlants.layoutManager=LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
+
     }
+
 }

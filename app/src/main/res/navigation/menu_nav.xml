@@ -32,7 +32,13 @@
         android:id="@+id/profilo"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Profilo"
         android:label="Profilo"
-        tools:layout="@layout/fragment_profilo" />
+        tools:layout="@layout/fragment_profilo">
+        <action
+            android:id="@+id/action_profilo_to_profiloSettings"
+            app:destination="@id/profiloSettings" />
+
+    </fragment>
+
     <fragment
         android:id="@+id/discover"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Discover"
@@ -119,6 +125,7 @@
             app:destination="@id/myPlantSettingsVaseFragment" />
     </fragment>
     <fragment
+
         android:id="@+id/myPlantSettingsNameFragment"
         android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantSettingsNameFragment"
         android:label="fragment_my_plant_settings_name"
@@ -142,4 +149,13 @@
         android:name="it.polito.did.digitalinteractiondesign.fragments.AddRoomFragment"
         android:label="fragment_add_room"
         tools:layout="@layout/fragment_add_room" />
+
+        android:id="@+id/profiloSettings"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.ProfiloSettings"
+        android:label="fragment_my_plant_settings"
+        tools:layout="@layout/fragment_profilo_settings" >
+
+    </fragment>
+
+
 </navigation>
