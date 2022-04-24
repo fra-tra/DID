@@ -114,13 +114,48 @@
         <action
             android:id="@+id/action_myPlantSettingsFragment_to_loadingPlantFuneralFragment"
             app:destination="@id/loadingPlantFuneralFragment" />
+        <action
+            android:id="@+id/action_myPlantSettingsFragment_to_myPlantSettingsNameFragment"
+            app:destination="@id/myPlantSettingsNameFragment" />
+        <action
+            android:id="@+id/action_myPlantSettingsFragment_to_myPlantSettingsRoomFragment"
+            app:destination="@id/myPlantSettingsRoomFragment" />
+        <action
+            android:id="@+id/action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment"
+            app:destination="@id/myPlantSettingsVaseFragment" />
     </fragment>
     <fragment
+
+        android:id="@+id/myPlantSettingsNameFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantSettingsNameFragment"
+        android:label="fragment_my_plant_settings_name"
+        tools:layout="@layout/fragment_my_plant_settings_name" />
+    <fragment
+        android:id="@+id/myPlantSettingsRoomFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantSettingsRoomFragment"
+        android:label="fragment_my_plant_settings_room"
+        tools:layout="@layout/fragment_my_plant_settings_room" >
+        <action
+            android:id="@+id/action_myPlantSettingsRoomFragment_to_addRoomFragment"
+            app:destination="@id/addRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPlantSettingsVaseFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantSettingsVaseFragment"
+        android:label="fragment_my_plant_settings_vase"
+        tools:layout="@layout/fragment_my_plant_settings_vase" />
+    <fragment
+        android:id="@+id/addRoomFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.AddRoomFragment"
+        android:label="fragment_add_room"
+        tools:layout="@layout/fragment_add_room" />
+
         android:id="@+id/profiloSettings"
         android:name="it.polito.did.digitalinteractiondesign.fragments.ProfiloSettings"
         android:label="fragment_my_plant_settings"
         tools:layout="@layout/fragment_profilo_settings" >
 
     </fragment>
+
 
 </navigation>

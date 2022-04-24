@@ -21,6 +21,8 @@
         <!-- Action Bar -->
         <item name ="actionBarTheme"> @style/customActionBarTheme</item>
 
+        <item name = "colorAccent"> @color/green</item>
+
     </style>
 
     <style name="customActionBarTheme" parent="">

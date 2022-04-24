@@ -4,5 +4,5 @@ import it.polito.did.digitalinteractiondesign.structures.Plant
 
 data class Room(
     var name: String,
-    var plants: List<Plant>
+    var plants: List<Plant> = arrayListOf()
 )

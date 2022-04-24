@@ -96,25 +96,25 @@ class MyPlantSettingsFragment : Fragment() {
 
         var btnName = view.findViewById<TextView>(R.id.plantNameSettings)
         btnName.setOnClickListener {
-            Log.d("Change Name", "OK")
+            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsNameFragment)
         }
 
         var btnRoom = view.findViewById<TextView>(R.id.roomNameSettings)
         btnRoom.setOnClickListener {
-            Log.d("Change Room", "OK")
+            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsRoomFragment)
         }
 
         var btnVaseTypeSettings = view.findViewById<TextView>(R.id.vaseTypeSettings)
         btnVaseTypeSettings.setOnClickListener {
-
+            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment)
         }
         var btnVaseSizeSettings = view.findViewById<TextView>(R.id.vaseSizeSettings)
         btnVaseSizeSettings.setOnClickListener {
-
+            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment)
         }
         var btnSoilTypeSettings = view.findViewById<TextView>(R.id.soilTypeSettings)
         btnSoilTypeSettings.setOnClickListener {
-
+            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment)
         }
     }
 }
