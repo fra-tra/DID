@@ -4,10 +4,14 @@ package it.polito.did.digitalinteractiondesign.activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -48,6 +52,46 @@ class Home_Activity : AppCompatActivity() {
         val bottomNavigationView =findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController: NavController = Navigation.findNavController(this, R.id.fragment)
         setupWithNavController(bottomNavigationView, navController);
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+
+            // gestione eccezioni da implementare
+            // eliminare elementi del back stack
+
+            if (item.itemId != R.id.piante ) {
+                navController.popBackStack(R.id.myPlantFragment, true)
+            }
+            if(item.itemId!=R.id.profilo){
+                navController.popBackStack(R.id.profilo,false)
+            }
+
+
+            // In order to get the expected behavior, you have to call default Navigation method manually
+            NavigationUI.onNavDestinationSelected(item, navController)
+            return@setOnItemSelectedListener true
+        }
+
+
+        bottomNavigationView.setOnItemReselectedListener {
+                item ->
+            // Pop everything up to the reselected item
+            val reselectedDestinationId = item.itemId
+            navController.popBackStack(reselectedDestinationId, false)
+        }
+
+        //Hide bottom navigation bar when showing loading screens
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.loadingPlantFuneralFragment ||
+                destination.id == R.id.loadingWaterPlantFragment ||
+                destination.id == R.id.loadingAddPlantFragment) {
+
+                bottomNavigationView.visibility = View.GONE
+            } else {
+
+                bottomNavigationView.visibility = View.VISIBLE
+            }
+        }
+
         // cambio del nome della bara di navigazione in base alla schermata in cui ci si trova
         //val appBarConfiguration = AppBarConfiguration(setOf(R.id.home, R.id.discover, R.id.piante, R.id.calendarizzazione,R.id.profilo))
         //setupWithNavController(bottomNavigationView, navController)
@@ -55,11 +99,7 @@ class Home_Activity : AppCompatActivity() {
        // Log.i("ciao","$navController")
         //bottomNavigationView.setupWithNavController(navController)
 
-    //handle click, logout
-       // binding.logOutBtn.setOnClickListener {
-        //    firebaseAuth.signOut()
-        //    checkUser()
-        //}
+
 
        /* var btn = findViewById<Button>(R.id.button)
         btn.setOnClickListener {
@@ -87,4 +127,17 @@ class Home_Activity : AppCompatActivity() {
         }
     }
 
+    //a method for signOut, it may be call form a FRAGMENT
+    internal fun signOut(){
+        firebaseAuth.signOut()
+        checkUser()
+    }
+
+    internal fun getDataOfUser(emailTextView: TextView){
+        val firebaseUser=firebaseAuth.currentUser
+        if (firebaseUser != null) {
+            emailTextView.text = firebaseUser.email.toString()
+        }
+
+    }
 }

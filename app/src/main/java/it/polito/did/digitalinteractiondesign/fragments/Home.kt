@@ -10,7 +10,11 @@ import android.widget.ProgressBar
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
+import it.polito.did.digitalinteractiondesign.structures.PlantHomeSummaryAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,10 +74,24 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var plantList = mutableListOf(
+            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+        )
+
+        val adapter = PlantHomeSummaryAdapter(plantList)
+        val rvPlantsHome = view.findViewById<RecyclerView>(R.id.rvPlantsHome)
+        rvPlantsHome.adapter = adapter
+        rvPlantsHome.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
     }
 
     //general function to check if either temperature, humidity or brightness measures need to be alerted with a danger or warning icon
-    private fun showMeasureAlert(progressBar: ProgressBar, imageToShow: ImageView, minMeasureDanger: Int, maxMeasureDanger: Int, minMeasureWarning: Int, maxMeasureWarning: Int) {
+   /* private fun showMeasureAlert(progressBar: ProgressBar, imageToShow: ImageView, minMeasureDanger: Int, maxMeasureDanger: Int, minMeasureWarning: Int, maxMeasureWarning: Int) {
         if(progressBar.progress <= minMeasureDanger) {
             imageToShow.isVisible = true
             imageToShow.setImageResource(R.drawable.ic_danger)
@@ -95,5 +113,5 @@ class Home : Fragment() {
         }
 
 
-    }
+    }*/
 }

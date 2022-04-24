@@ -7,11 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
-import it.polito.did.digitalinteractiondesign.structures.*
-
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [GraveyardFragment.newInstance] factory method to
+ * Use the [MyPlantFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class GraveyardFragment : Fragment() {
+class MyPlantFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,7 +37,7 @@ class GraveyardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_graveyard, container, false)
+        return inflater.inflate(R.layout.fragment_my_plant, container, false)
     }
 
     companion object {
@@ -51,12 +47,12 @@ class GraveyardFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment GraveyardFragment.
+         * @return A new instance of fragment MyPlantFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            GraveyardFragment().apply {
+            MyPlantFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -66,22 +62,9 @@ class GraveyardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var plantList = mutableListOf(
-            Plant("Basilico", null, true),
-            Plant("Origano", null, true),
-            Plant("Pothos", null, true),
-            Plant("Cactus", null, true),
-            Plant("Rosmarino", null, true),
-        )
-
-        val adapter = PlantCardListAdapter(plantList)
-        val rvPlants = view.findViewById<RecyclerView>(R.id.rvGraveyardPlants)
-        rvPlants.adapter = adapter
-        rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-
-        var backBtn = view.findViewById<Button>(R.id.backButtonGraveyard)
-        backBtn.setOnClickListener {
-            findNavController().navigateUp()
+        var btnSettings = view.findViewById<Button>(R.id.settings)
+        btnSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_myPlantSettingsFragment)
         }
     }
 }

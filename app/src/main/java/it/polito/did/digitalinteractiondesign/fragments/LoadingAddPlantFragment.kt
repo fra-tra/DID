@@ -5,8 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieCompositionFactory
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingAddPlantBinding
+import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +29,9 @@ class LoadingAddPlantFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding : FragmentLoadingAddPlantBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,8 +44,21 @@ class LoadingAddPlantFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_loading_add_plant, container, false)
+        _binding = FragmentLoadingAddPlantBinding.inflate(inflater, container, false)
+
+        var w = binding.pbWaitingAdd
+        w.isVisible = true
+
+        var t = binding.textLoadingAddPlant
+        t.isVisible = false
+        LottieCompositionFactory.fromRawRes(context, R.raw.addplant_cropped).addListener {
+            binding.addPlantAnimation.setComposition(it)
+            w.isVisible = false
+            t.isVisible = true
+        }
+
+        val view = binding.root
+        return view
     }
 
     companion object {
@@ -64,8 +86,21 @@ class LoadingAddPlantFragment : Fragment() {
         var a = view.findViewById<LottieAnimationView>(R.id.addPlantAnimation)
         a.playAnimation()
 
+        //disable back button when loading
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+            }
+        })
+
         //configure activity status bar color
         var window = activity?.window
-        window?.statusBarColor = resources.getColor(R.color.light_green)
+        window?.statusBarColor = context?.let { ContextCompat.getColor(it, R.color.light_green) }!!
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+        var window = activity?.window
+        window?.statusBarColor = context?.let { ContextCompat.getColor(it, android.R.color.transparent) }!!
     }
 }

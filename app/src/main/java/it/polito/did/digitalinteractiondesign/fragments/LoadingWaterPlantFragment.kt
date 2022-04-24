@@ -1,12 +1,19 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieCompositionFactory
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
+import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingWaterPlantBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +30,10 @@ class LoadingWaterPlantFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: FragmentLoadingWaterPlantBinding? = null
+    // This property is only valid between onCreateView and onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,8 +46,21 @@ class LoadingWaterPlantFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_loading_water_plant, container, false)
+        _binding = FragmentLoadingWaterPlantBinding.inflate(inflater, container, false)
+
+        var w = binding.pbWaitingWater
+        w.isVisible = true
+
+        var t = binding.textLoadingWaterPlant
+        t.isVisible = false
+        LottieCompositionFactory.fromRawRes(context, R.raw.watering_cropped).addListener {
+            binding.waterPlantAnimation.setComposition(it)
+            w.isVisible = false
+            t.isVisible = true
+        }
+
+        val view = binding.root
+        return view
     }
 
     companion object {
@@ -64,8 +88,21 @@ class LoadingWaterPlantFragment : Fragment() {
         var a = view.findViewById<LottieAnimationView>(R.id.waterPlantAnimation)
         a.playAnimation()
 
+        //disable back button when loading
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+            }
+        })
+
         //configure activity status bar color
         var window = activity?.window
-        window?.statusBarColor = resources.getColor(R.color.light_blue)
+        window?.statusBarColor = context?.let { ContextCompat.getColor(it, R.color.light_blue) }!!
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+        var window = activity?.window
+        window?.statusBarColor = context?.let { ContextCompat.getColor(it, android.R.color.transparent) }!!
     }
 }
