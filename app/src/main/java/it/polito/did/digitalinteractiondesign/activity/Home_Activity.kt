@@ -4,7 +4,9 @@ package it.polito.did.digitalinteractiondesign.activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -53,9 +55,16 @@ class Home_Activity : AppCompatActivity() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
 
-            if(item.itemId != R.id.piante) {
-                navController.popBackStack(R.id.myPlantFragment, false)
+            // gestione eccezioni da implementare
+            // eliminare elementi del back stack
+
+            if (item.itemId != R.id.piante ) {
+                navController.popBackStack(R.id.myPlantFragment, true)
             }
+            if(item.itemId!=R.id.profilo){
+                navController.popBackStack(R.id.profilo,false)
+            }
+
 
             // In order to get the expected behavior, you have to call default Navigation method manually
             NavigationUI.onNavDestinationSelected(item, navController)
@@ -90,11 +99,7 @@ class Home_Activity : AppCompatActivity() {
        // Log.i("ciao","$navController")
         //bottomNavigationView.setupWithNavController(navController)
 
-    //handle click, logout
-       // binding.logOutBtn.setOnClickListener {
-        //    firebaseAuth.signOut()
-        //    checkUser()
-        //}
+
 
        /* var btn = findViewById<Button>(R.id.button)
         btn.setOnClickListener {
@@ -122,4 +127,17 @@ class Home_Activity : AppCompatActivity() {
         }
     }
 
+    //a method for signOut, it may be call form a FRAGMENT
+    internal fun signOut(){
+        firebaseAuth.signOut()
+        checkUser()
+    }
+
+    internal fun getDataOfUser(emailTextView: TextView){
+        val firebaseUser=firebaseAuth.currentUser
+        if (firebaseUser != null) {
+            emailTextView.text = firebaseUser.email.toString()
+        }
+
+    }
 }
