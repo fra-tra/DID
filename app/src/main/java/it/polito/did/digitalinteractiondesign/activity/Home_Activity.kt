@@ -58,8 +58,8 @@ class Home_Activity : AppCompatActivity() {
             // gestione eccezioni da implementare
             // eliminare elementi del back stack
 
-            if (item.itemId != R.id.piante ) {
-                navController.popBackStack(R.id.myPlantFragment, true)
+            if (item.itemId != R.id.piante) {
+                navController.popBackStack(R.id.myPlantFragment, false)
             }
             if(item.itemId!=R.id.profilo){
                 navController.popBackStack(R.id.profilo,false)
