@@ -149,13 +149,12 @@
         android:name="it.polito.did.digitalinteractiondesign.fragments.AddRoomFragment"
         android:label="fragment_add_room"
         tools:layout="@layout/fragment_add_room" />
-
+    <fragment
         android:id="@+id/profiloSettings"
         android:name="it.polito.did.digitalinteractiondesign.fragments.ProfiloSettings"
-        android:label="fragment_my_plant_settings"
-        tools:layout="@layout/fragment_profilo_settings" >
+        android:label="fragment_profilo_settings"
+        tools:layout="@layout/fragment_profilo_settings" />
 
-    </fragment>
 
 
 </navigation>
