@@ -66,5 +66,10 @@ class MyPlantFragment : Fragment() {
         btnSettings.setOnClickListener {
             findNavController().navigate(R.id.action_myPlantFragment_to_myPlantSettingsFragment)
         }
+
+        var btnWaterPlant = view.findViewById<Button>(R.id.btnWaterPlant)
+        btnWaterPlant.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
+        }
     }
 }

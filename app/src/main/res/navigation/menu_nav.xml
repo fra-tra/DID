@@ -70,6 +70,9 @@
         <action
             android:id="@+id/action_myPlantFragment_to_myPlantSettingsFragment"
             app:destination="@id/myPlantSettingsFragment" />
+        <action
+            android:id="@+id/action_myPlantFragment_to_loadingWaterPlantFragment"
+            app:destination="@id/loadingWaterPlantFragment" />
     </fragment>
     <fragment
         android:id="@+id/graveyardFragment"

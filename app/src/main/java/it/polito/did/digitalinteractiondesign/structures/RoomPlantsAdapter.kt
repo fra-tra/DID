@@ -28,7 +28,7 @@ class RoomPlantsAdapter (var plants: List <Plant>)
              titlePlantProva.text = plants[position].name
 
              if (plants[position].isDead) {
-                 imagePlant.saturation = 0F
+                 imagePlant.saturation = 0.2F
              }
              //SET NAVIGATION TO MY PLANT DETAIL
              cardView.setOnClickListener {

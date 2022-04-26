@@ -66,6 +66,8 @@ class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<Pl
     }
 }
 
+//FUNCTION TO BE IMPROVED WHEN VIEW MODEL IS IMPLEMENTED: CHECK IN VIEW MODEL IF THE MEASURE IS TO BE ALERTED (WARNING OR DANGER)
+//SHOW MEASURE ALERT IF FLAG FOR THE PLANT IS RISEN
     private fun showMeasureAlert(progressBar: ProgressBar, imageToShow: ImageView, minMeasureDanger: Int, minMeasureWarning: Int,  maxMeasureWarning: Int, maxMeasureDanger: Int) {
 
         if(progressBar.progress <= minMeasureDanger) {

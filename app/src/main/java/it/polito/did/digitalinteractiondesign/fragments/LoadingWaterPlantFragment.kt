@@ -1,14 +1,18 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
 import it.polito.did.digitalinteractiondesign.R
@@ -19,6 +23,7 @@ import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingWaterPl
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+private var millsDuration : Long = 10000
 
 /**
  * A simple [Fragment] subclass.
@@ -87,6 +92,30 @@ class LoadingWaterPlantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var a = view.findViewById<LottieAnimationView>(R.id.waterPlantAnimation)
         a.playAnimation()
+
+        //show my plant after the progress bar animation is complete
+        //TO BE UPDATED: now the screen changes after three seconds
+        //the screen has to change once the plant has reached the correct amount of humidity
+        var progressBar = view.findViewById<ProgressBar>(R.id.progressBarWaterPlant)
+        val animator = ValueAnimator.ofInt(0, progressBar.max)
+        animator.duration = millsDuration
+        animator.addUpdateListener { animation ->
+            progressBar.progress = (animation.animatedValue as Int)!!
+        }
+
+        animator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+                findNavController().navigateUp()
+            }
+        })
+        animator.start()
+
+        //disable back button when loading
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+            }
+        })
 
         //disable back button when loading
         activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
