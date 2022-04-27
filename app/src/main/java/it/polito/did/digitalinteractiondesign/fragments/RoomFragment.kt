@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.cardview.widget.CardView
 import androidx.core.view.isGone
 import androidx.navigation.fragment.findNavController
@@ -56,7 +57,7 @@ class RoomFragment : Fragment() {
         rvPlants.adapter = adapter
         rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-        var backBtn = view.findViewById<Button>(R.id.backButtonRoom)
+        var backBtn = view.findViewById<ImageButton>(R.id.backButtonRoom)
         backBtn.setOnClickListener {
             findNavController().navigateUp()
         }

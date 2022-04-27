@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.FragmentMyPlantSettingsVaseBinding
@@ -50,7 +51,7 @@ class MyPlantSettingsVaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var btnBack = view.findViewById<Button>(R.id.backButtonVaseSettings)
+        var btnBack = view.findViewById<ImageButton>(R.id.backButtonVaseSettings)
         btnBack.setOnClickListener {
             findNavController().navigateUp()
         }

@@ -10,25 +10,33 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Water"
+        app:icon="@drawable/ic_wateringcan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:background="@drawable/green_outline"
+        android:minHeight="48dp"
         android:src="@drawable/ic_baseline_calendar_month_24"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline26" />
+        app:layout_constraintStart_toStartOf="@+id/guideline26"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:tint="@color/green"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tvLastWatered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="135 days ago"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
@@ -39,8 +47,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Watered:"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintEnd_toStartOf="@+id/tvLastWatered"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -49,16 +58,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Automatic Watering:"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintEnd_toStartOf="@+id/textView14"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvLastWatered"
+        app:layout_constraintEnd_toStartOf="@+id/tvAutomaticWatering"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/guideline26" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tvAutomaticWatering"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Yes"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"

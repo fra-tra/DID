@@ -56,8 +56,10 @@
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/edittext_focus.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/empty_tall_divider.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/green_outline.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/grey_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/purple_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/red_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/red_outline.xml" value="0.291" />
@@ -87,9 +89,9 @@
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_vase.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_piante.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_room.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_room_card.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_water_plant.xml" value="0.35260416666666666" />

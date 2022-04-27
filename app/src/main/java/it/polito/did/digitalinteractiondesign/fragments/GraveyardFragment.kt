@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -79,7 +80,7 @@ class GraveyardFragment : Fragment() {
         rvPlants.adapter = adapter
         rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-        var backBtn = view.findViewById<Button>(R.id.backButtonGraveyard)
+        var backBtn = view.findViewById<ImageButton>(R.id.backButtonGraveyard)
         backBtn.setOnClickListener {
             findNavController().navigateUp()
         }
