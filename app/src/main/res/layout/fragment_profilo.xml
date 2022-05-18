@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.Profilo">
-
-    <View
-        android:id="@+id/guidline"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_centerInParent="true" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/guidline"
-        android:layout_marginBottom="50dp"
-        android:background="@color/cardview_dark_background" />
+        android:background="@color/white" />
 
     <ImageView
         android:id="@+id/imageSettings"
@@ -25,9 +19,12 @@
         android:layout_height="40dp"
         android:layout_alignTop="@+id/toolbar"
         android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/ic_profile" />
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -36,7 +33,12 @@
         android:layout_height="100dp"
         android:layout_above="@+id/tvName"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/bg_watering"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_logo_did"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSettings"
         tools:ignore="MissingClass" />
 
     <TextView
@@ -45,38 +47,52 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/tvEmail"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
         android:text="GIRDEA ROBERT"
         android:textColor="@color/light_purple"
         android:textSize="16sp"
         android:textStyle="bold"
-         />
+        app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
 
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/toolbar"
-        android:hint="email_profile"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="8dp"
+        android:hint="email_profile"
         android:textColor="@color/light_purple"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
     <View
-        android:id="@+id/guidline_1"
+        android:id="@+id/guidline"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:background="?android:attr/listDivider"
-        android:layout_below="@+id/guidline"/>
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toTopOf="@+id/tableOfContents"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
     <TableLayout
         android:id="@+id/tableOfContents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/guidline_1">
+        android:layout_below="@+id/guidline_1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidline_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidline">
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -129,27 +145,37 @@
         </TableRow>
     </TableLayout>
 
-
     <View
-        android:id="@+id/guidline_2"
+        android:id="@+id/guidline_1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_below="@+id/guidline"
         android:background="?android:attr/listDivider"
-        android:layout_below="@+id/tableOfContents"/>
+        app:layout_constraintBottom_toTopOf="@+id/textsPlants"
+        app:layout_constraintTop_toBottomOf="@+id/tableOfContents" />
+
     <TextView
         android:id="@+id/textsPlants"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/guidline_2"
-        android:text="Piante Piaciute_TEXT"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Piante Piaciute_TEXT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidline_1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_plantsLiked"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textsPlants"/>
+        android:layout_height="0dp"
+        android:layout_below="@id/textsPlants"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textsPlants" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,15 +7,59 @@
     tools:context=".fragments.Calendarizzazione">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
 
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CALENDARIZZAZIONE"
-        android:textSize="24sp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/barlow_condensed_semibold"
+        android:text="Calendarizzazione"
+        android:textColor="@color/green"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1Calend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1Calend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.RoomFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1Calend" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView4"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.GraveyardFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/RVparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1Calend" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RVparent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1Calend" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
