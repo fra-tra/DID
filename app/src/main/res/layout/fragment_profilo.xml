@@ -98,13 +98,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/grid_textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Località_TEXT" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/grid_textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Torino_TEXT" />
@@ -115,13 +115,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/grid_textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Livello Abilità_TEXT" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/grid_textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Principiante_TEXT" />
@@ -132,13 +132,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/grid_textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Livello Dedizione_TEXT" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/grid_textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Base_TEXT" />
