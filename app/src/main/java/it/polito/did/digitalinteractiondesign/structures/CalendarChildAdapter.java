@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import it.polito.did.digitalinteractiondesign.R;
 
-public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdapter.ViewHolder> {
+public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdapter.CalendarChildViewHolder> {
 
     ArrayList<CalendarChild> calendarChildArrayList;
 
@@ -23,15 +23,15 @@ public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdap
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CalendarChildViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar_switch_card,
                 parent,false);
-        return new ViewHolder(view);
+        return new CalendarChildViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CalendarChildViewHolder holder, int position) {
 
         CalendarChild calendarChild = calendarChildArrayList.get(position);
 
@@ -45,11 +45,11 @@ public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdap
         return calendarChildArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class CalendarChildViewHolder extends RecyclerView.ViewHolder{
 
         TextView nestedRV_Text00;
         Switch nestedRV_switch00;
-        public ViewHolder(@NonNull View itemView) {
+        public CalendarChildViewHolder(@NonNull View itemView) {
             super(itemView);
             nestedRV_Text00 = itemView.findViewById(R.id.nestedRV_Text00);
             nestedRV_switch00 = itemView.findViewById(R.id.nestedRV_switch00);

@@ -9,8 +9,8 @@
     android:paddingBottom="8dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="400dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
         app:cardBackgroundColor="@color/light_grey"
         app:cardCornerRadius="10dp"
         app:contentPadding="0dp"

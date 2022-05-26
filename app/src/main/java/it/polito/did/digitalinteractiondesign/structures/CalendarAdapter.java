@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import it.polito.did.digitalinteractiondesign.R;
 
-public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
+public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder> {
 
     private Activity activity;
     ArrayList<Calendar> calendarArrayList;
@@ -28,16 +28,16 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar_room_card,
                 parent,false);
 
-        return new ViewHolder(view);
+        return new CalendarViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
 
         Calendar calendar = calendarArrayList.get(position);
 
@@ -55,12 +55,12 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHo
         return calendarArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class CalendarViewHolder extends RecyclerView.ViewHolder{
 
         TextView orderId;
         RecyclerView calendar_nestedRV;
 
-        public ViewHolder(@NonNull View itemView) {
+        public CalendarViewHolder(@NonNull View itemView) {
             super(itemView);
 
             orderId = itemView.findViewById(R.id.RoomCalendarTitle);
