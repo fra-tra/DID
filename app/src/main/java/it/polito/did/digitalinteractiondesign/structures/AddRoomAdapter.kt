@@ -26,6 +26,7 @@ class AddRoomAdapter (var rooms: List<Room>): RecyclerView.Adapter<AddRoomAdapte
 
             cardView.setOnClickListener {
                 //ADD SELECTED ROOM TO GLOBAL ROOMS ARRAY FIRST
+                selectionOverlay.isInvisible = false
                 Navigation.findNavController(cardView).navigateUp()
             }
         }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ItemPlantCardBinding
 
-
+//ADAPTER PER LISTA DI PIANTE IN LE MIE PIANTE - STANZA / GRAVEYARD
 class PlantCardListAdapter (var plants: List<Plant>)
     : RecyclerView.Adapter<PlantCardListAdapter.PlantCardListViewHolder>(){
 
@@ -26,7 +26,12 @@ class PlantCardListAdapter (var plants: List<Plant>)
     override fun onBindViewHolder(holder: PlantCardListViewHolder, position: Int) {
 
        holder.binding.apply{
+           //SET PLANT TITLE
            plantCardName.text = plants[position].name
+
+           //SET PLANT IMAGE
+
+           //SET CARD BACKGROUND COLOR AND NAVIGATION IF PLANT IS DEAD OR OTHERWISE
            if(plants[position].isDead){
 
                plantCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_grey))

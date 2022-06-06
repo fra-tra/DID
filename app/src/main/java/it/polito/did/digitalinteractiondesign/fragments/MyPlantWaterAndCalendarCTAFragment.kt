@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import it.polito.did.digitalinteractiondesign.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,6 +32,14 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
             container,
             false
         )
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var btnWaterPlant = view.findViewById<Button>(R.id.btnWaterPlant)
+        btnWaterPlant.setOnClickListener {
+            findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
+        }
     }
 
 }
