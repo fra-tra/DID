@@ -22,6 +22,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.datepicker.CalendarConstraints;
@@ -108,6 +109,7 @@ public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdap
                     holder.infoSelectedRange.setVisibility(View.GONE);
                     holder.selectDateRange.setVisibility(View.GONE);
 
+
                 }
                 calendarChild.switchStatus = isChecked;
                 Log.d("switchStatus: ", calendarChild.switchStatus.toString());
@@ -130,7 +132,7 @@ public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdap
             }
         });*/
 
-        holder.infoSelectedRange.setOnClickListener(new View.OnClickListener() {
+       /* holder.infoSelectedRange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 datePicker.show( ((AppCompatActivity)context).getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
@@ -152,6 +154,15 @@ public class CalendarChildAdapter extends RecyclerView.Adapter<CalendarChildAdap
                         holder.nestedRV_switch00.setChecked(calendarChild.switchStatus);
                     }
                 });
+
+            }
+        });*/
+
+        holder.infoSelectedRange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(holder.infoSelectedRange)
+                        .navigate(R.id.action_calendarizzazione_to_selectCalendarRangeFragment);
             }
         });
 

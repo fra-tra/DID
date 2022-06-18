@@ -27,7 +27,11 @@
         android:id="@+id/calendarizzazione"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Calendarizzazione"
         android:label="Calendarizzazione"
-        tools:layout="@layout/fragment_calendarizzazione" />
+        tools:layout="@layout/fragment_calendarizzazione" >
+        <action
+            android:id="@+id/action_calendarizzazione_to_selectCalendarRangeFragment"
+            app:destination="@id/selectCalendarRangeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profilo"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Profilo"
@@ -157,7 +161,11 @@
         android:name="it.polito.did.digitalinteractiondesign.fragments.ProfiloSettings"
         android:label="fragment_profilo_settings"
         tools:layout="@layout/fragment_profilo_settings" />
-
+    <fragment
+        android:id="@+id/selectCalendarRangeFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.SelectCalendarRangeFragment"
+        android:label="fragment_select_calendar_range"
+        tools:layout="@layout/fragment_select_calendar_range" />
 
 
 </navigation>
