@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnCalendarPlant"
         android:layout_width="48dp"
         android:layout_height="36dp"
         android:background="@drawable/green_outline"

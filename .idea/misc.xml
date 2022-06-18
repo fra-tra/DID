@@ -84,6 +84,7 @@
         <entry key="app/src/main/res/drawable/grey_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.2805" />
+        <entry key="app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3055" />
         <entry key="app/src/main/res/drawable/purple_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/red_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/red_outline.xml" value="0.291" />
@@ -97,6 +98,8 @@
         <entry key="app/src/main/res/layout/custom_action_bar.xml" value="0.375" />
         <entry key="app/src/main/res/layout/dialog_confirm_death.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/fragment_add_room.xml" value="0.34717948717948716" />
+        <entry key="app/src/main/res/layout/fragment_calendarizzazione.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_commitment.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_custom_death_dialog.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/fragment_graveyard.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_graveyard_card.xml" value="0.27506103515624997" />
@@ -118,8 +121,12 @@
         <entry key="app/src/main/res/layout/fragment_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_room_card.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_skill_level.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_water_plant.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_watering_can.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/item_calendar_calendar.xml" value="0.31392931392931395" />
+        <entry key="app/src/main/res/layout/item_calendar_room_card.xml" value="0.5856760660807292" />
+        <entry key="app/src/main/res/layout/item_calendar_switch_card.xml" value="0.55" />
         <entry key="app/src/main/res/layout/item_dropdown_vase_settings.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/item_plant_card.xml" value="0.4410919540229885" />
         <entry key="app/src/main/res/layout/item_plant_image.xml" value="0.75" />

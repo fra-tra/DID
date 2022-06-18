@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +43,14 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
         var btnWaterPlant = view.findViewById<Button>(R.id.btnWaterPlant)
         btnWaterPlant.setOnClickListener {
             findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
+        }
+
+        var btnCalendarPlant = view.findViewById<ImageButton>(R.id.btnCalendarPlant)
+        btnCalendarPlant.setOnClickListener {
+           // findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
+            val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
+            bottomNav.selectedItemId = R.id.calendarizzazione
+            findNavController().navigate(R.id.calendarizzazione)
         }
     }
 
