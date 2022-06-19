@@ -40,6 +40,12 @@
         <action
             android:id="@+id/action_profilo_to_profiloSettings"
             app:destination="@id/profiloSettings" />
+        <action
+            android:id="@+id/action_profilo_to_editSkillLevelFragment"
+            app:destination="@id/editSkillLevelFragment" />
+        <action
+            android:id="@+id/action_profilo_to_editCommitmentLevelFragment"
+            app:destination="@id/editCommitmentLevelFragment" />
 
     </fragment>
 
@@ -222,6 +228,16 @@
             app:destination="@id/loadingAddPlantFragment"
             app:popUpToInclusive="false" />
     </fragment>
+    <fragment
+        android:id="@+id/editSkillLevelFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.EditSkillLevelFragment"
+        android:label="fragment_edit_skill_level"
+        tools:layout="@layout/fragment_edit_skill_level" />
+    <fragment
+        android:id="@+id/editCommitmentLevelFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.EditCommitmentLevelFragment"
+        android:label="fragment_edit_commitment_level"
+        tools:layout="@layout/fragment_edit_commitment_level" />
 
 
 </navigation>

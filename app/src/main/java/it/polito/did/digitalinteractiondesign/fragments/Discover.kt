@@ -79,7 +79,7 @@ class Discover : Fragment() {
             Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
         )
 
-        val categoriesList = mutableListOf("Piante Grasse", "Piante Aromatiche", "Cactus", "Boh un'altra")
+        val categoriesList = mutableListOf("Succulentae e Cactus", "Piante Aromatiche", "Cactus", "Boh un'altra")
 
         val adapterLiked = LikedAndPopularPlantsAdapter(plantList)
         val likedPlantsRV = view.findViewById<RecyclerView>(R.id.likedPlantsRV)

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Calendarizzazione">
+    tools:context=".fragments.EditCommitmentLevelFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ImageButton
-        android:id="@+id/backButtonCommitmentLevel"
+        android:id="@+id/backButtonEditCommitmentLevel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,20 +17,20 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintBottom_toTopOf="@+id/guideline37"
+        app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/grey"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline37"
+        android:id="@+id/guideline39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
 
     <TextView
-        android:id="@+id/SL_textView"
+        android:id="@+id/SL_textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -38,37 +38,37 @@
         android:text="Commitment Level"
         android:textColor="@color/green"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/SL_subtitle"
+        app:layout_constraintBottom_toTopOf="@+id/SL_subtitle3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintTop_toTopOf="@+id/guideline39"
         app:layout_constraintVertical_chainStyle="packed" />
 
+    <TextView
+        android:id="@+id/SL_subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="How much time are you willing to invest in your plants?"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SL_textView3" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1Calend"
+        android:id="@+id/guideline1Calend3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
 
-
-    <TextView
-        android:id="@+id/SL_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="How much time are you willing to invest in your plants?"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1Calend"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SL_textView" />
-
-
     <ScrollView
+        android:id="@+id/scrollView5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline1Calend">
+        app:layout_constraintTop_toTopOf="@+id/guideline1Calend3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -242,5 +242,4 @@
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

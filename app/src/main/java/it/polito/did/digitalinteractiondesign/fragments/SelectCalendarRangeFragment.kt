@@ -142,10 +142,12 @@ class SelectCalendarRangeFragment : Fragment() {
             }*/
         }
 
-            var btnBack = view.findViewById<ImageButton>(R.id.backButtonSelectCalendarRange)
-            btnBack.setOnClickListener {
-                findNavController().navigateUp()
-            }
+
+        }
+
+        var btnBack = view.findViewById<ImageButton>(R.id.backButtonSelectCalendarRange)
+        btnBack.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 }

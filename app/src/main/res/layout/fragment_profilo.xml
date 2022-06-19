@@ -124,6 +124,7 @@
                 android:id="@+id/grid_textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:text="Principiante_TEXT" />
         </TableRow>
 
@@ -141,6 +142,7 @@
                 android:id="@+id/grid_textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:text="Base_TEXT" />
         </TableRow>
     </TableLayout>
