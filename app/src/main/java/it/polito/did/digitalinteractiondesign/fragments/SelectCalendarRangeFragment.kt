@@ -1,6 +1,7 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,15 +9,12 @@ import android.widget.ImageButton
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
 import it.polito.did.digitalinteractiondesign.R
-import kotlinx.coroutines.selects.select
-import org.w3c.dom.Text
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -73,9 +71,12 @@ class SelectCalendarRangeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val materialDateBuilder: MaterialDatePicker.Builder<*> =
-            MaterialDatePicker.Builder.dateRangePicker()
+        val defaultDates: Pair<Long, Long>? = null
+
+        val materialDateBuilder = MaterialDatePicker.Builder.dateRangePicker()
         materialDateBuilder.setTitleText("SELECT A DATE");
+
+
 
         //disable past days
         val now = MaterialDatePicker.todayInUtcMilliseconds()
@@ -83,8 +84,14 @@ class SelectCalendarRangeFragment : Fragment() {
             CalendarConstraints.Builder().setValidator(DateValidatorPointForward.from(now))
         materialDateBuilder.setCalendarConstraints(constraintsBuilder.build())
 
+        materialDateBuilder.setSelection(
+            androidx.core.util.Pair(MaterialDatePicker.todayInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())
+        )
+
 
         val datePicker = materialDateBuilder.build()
+
+
 
         var radioGroup = view.findViewById<RadioGroup>(R.id.calendarRangeRadioGroup);
         var btnForever = view.findViewById<RadioButton>(R.id.btnForever)
@@ -106,9 +113,16 @@ class SelectCalendarRangeFragment : Fragment() {
                     requireActivity().getSupportFragmentManager(),
                     "MATERIAL_DATE_PICKER"
                 );
+                selectedRangeTv.visibility = View.VISIBLE
+
+
+                datePicker.addOnNegativeButtonClickListener {
+                    selectedRangeTv.text = "${datePicker.headerText} >"
+                    Log.d("Selection at negative ", datePicker.selection.toString())
+                }
+
                 datePicker.addOnPositiveButtonClickListener {
-                    selectedRangeTv.visibility = View.VISIBLE
-                    selectedRangeTv.text = "${datePicker.headerText} + > "
+                    selectedRangeTv.text = "${datePicker.headerText} >"
                 }
 
                 }
@@ -123,9 +137,9 @@ class SelectCalendarRangeFragment : Fragment() {
                 requireActivity().getSupportFragmentManager(),
                 "MATERIAL_DATE_PICKER"
             );
-            datePicker.addOnPositiveButtonClickListener {
-                selectedRangeTv.text = "${datePicker.headerText} + > "
-            }
+           /* datePicker.addOnPositiveButtonClickListener {
+                selectedRangeTv.text = "${datePicker.headerText} >"
+            }*/
         }
 
             var btnBack = view.findViewById<ImageButton>(R.id.backButtonSelectCalendarRange)
