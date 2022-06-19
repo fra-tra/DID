@@ -65,6 +65,10 @@ class Home_Activity : AppCompatActivity() {
                 navController.popBackStack(R.id.profilo,false)
             }
 
+            if(item.itemId!=R.id.discover){
+                navController.popBackStack(R.id.discoverPlantDetailFragment,false)
+            }
+
 
             // In order to get the expected behavior, you have to call default Navigation method manually
             NavigationUI.onNavDestinationSelected(item, navController)

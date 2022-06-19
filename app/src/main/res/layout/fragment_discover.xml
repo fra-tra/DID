@@ -8,6 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DISCOVER"
@@ -15,6 +16,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/categoriesRV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/likedPlantsRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularPlantsRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likedPlantsRV"
+        android:scrollbars="none"
+        android:overScrollMode="never"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popularPlantsRV"
+        android:scrollbars="none"
+        android:overScrollMode="never"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

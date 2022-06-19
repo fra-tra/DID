@@ -47,7 +47,14 @@
         android:id="@+id/discover"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Discover"
         android:label="Discover"
-        tools:layout="@layout/fragment_discover" />
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_discover_to_discoverPlantDetailFragment"
+            app:destination="@id/discoverPlantDetailFragment" />
+        <action
+            android:id="@+id/action_discover_to_discoveryCategoryDetailFragment"
+            app:destination="@id/discoveryCategoryDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/home"
         android:name="it.polito.did.digitalinteractiondesign.fragments.Home"
@@ -166,6 +173,55 @@
         android:name="it.polito.did.digitalinteractiondesign.fragments.SelectCalendarRangeFragment"
         android:label="fragment_select_calendar_range"
         tools:layout="@layout/fragment_select_calendar_range" />
+    <fragment
+        android:id="@+id/discoverPlantDetailFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.DiscoverPlantDetailFragment"
+        android:label="fragment_discover_plant_detail"
+        tools:layout="@layout/fragment_discover_plant_detail" >
+        <action
+            android:id="@+id/action_discoverPlantDetailFragment_to_addPlantNameAndRoomFragment"
+            app:destination="@id/addPlantNameAndRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/discoveryCategoryDetailFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.DiscoveryCategoryDetailFragment"
+        android:label="fragment_discovery_category_detail"
+        tools:layout="@layout/fragment_discovery_category_detail" >
+        <action
+            android:id="@+id/action_discoveryCategoryDetailFragment_to_discoverPlantDetailFragment"
+            app:destination="@id/discoverPlantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlantNameAndRoomFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.AddPlantNameAndRoomFragment"
+        android:label="fragment_add_plant_name_and_room"
+        tools:layout="@layout/fragment_add_plant_name_and_room" >
+        <action
+            android:id="@+id/action_addPlantNameAndRoomFragment_to_addPlantVaseFragment"
+            app:destination="@id/addPlantVaseFragment" />
+        <action
+            android:id="@+id/action_addPlantNameAndRoomFragment_to_addRoomFragment"
+            app:destination="@id/addRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlantVaseFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.AddPlantVaseFragment"
+        android:label="fragment_add_plant_vase"
+        tools:layout="@layout/fragment_add_plant_vase" >
+        <action
+            android:id="@+id/action_addPlantVaseFragment_to_addPlantsSensorFragment"
+            app:destination="@id/addPlantsSensorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlantsSensorFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.AddPlantsSensorFragment"
+        android:label="fragment_add_plants_sensor"
+        tools:layout="@layout/fragment_add_plants_sensor" >
+        <action
+            android:id="@+id/action_addPlantsSensorFragment_to_loadingAddPlantFragment"
+            app:destination="@id/loadingAddPlantFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 
 
 </navigation>
