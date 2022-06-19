@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import it.polito.did.digitalinteractiondesign.R
 import java.util.*
@@ -69,6 +70,10 @@ class AddPlantsSensorFragment : Fragment() {
             findNavController().navigate(R.id.action_addPlantsSensorFragment_to_loadingAddPlantFragment)
         }
 
+        var backBtn = view.findViewById<ImageButton>(R.id.backButtonSensorConfiguration)
+        backBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
     }
 }

@@ -12,14 +12,25 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:fontFamily="@font/barlow_condensed_semibold"
         android:text="Calendarizzazione"
         android:textColor="@color/green"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1Calend"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/calendarDiscover"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/calendarDiscover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Manage you plants' watering"
+        app:layout_constraintBottom_toTopOf="@+id/RVparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1Calend"
