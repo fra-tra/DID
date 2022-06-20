@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
 import it.polito.did.digitalinteractiondesign.R
-import it.polito.did.digitalinteractiondesign.structures.CategoryPlantAdapter
-import it.polito.did.digitalinteractiondesign.structures.LikedAndPopularPlantsAdapter
-import it.polito.did.digitalinteractiondesign.structures.Plant
-import it.polito.did.digitalinteractiondesign.structures.PlantHomeSummaryAdapter
+import it.polito.did.digitalinteractiondesign.structures.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,7 +76,12 @@ class Discover : Fragment() {
             Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
         )
 
-        val categoriesList = mutableListOf("Succulentae e Cactus", "Piante Aromatiche", "Cactus", "Boh un'altra")
+        val categoriesList = mutableListOf(
+            PlantCategory("Succulentae e Cactus"),
+            PlantCategory("Erbe Aromatiche"),
+            PlantCategory("Buh fiori qualcosa")
+
+        )
 
         val adapterLiked = LikedAndPopularPlantsAdapter(plantList)
         val likedPlantsRV = view.findViewById<RecyclerView>(R.id.likedPlantsRV)

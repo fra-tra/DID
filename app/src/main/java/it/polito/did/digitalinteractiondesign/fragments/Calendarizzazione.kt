@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
@@ -40,7 +41,8 @@ class Calendarizzazione : Fragment() {
 
         RVparent = view.findViewById<RecyclerView>(R.id.RVparent)
 
-        val orderId = arrayOf(
+       // val orderId : Array<String> = arrayOf()
+       val orderId = arrayOf(
             "Cucina",
             "Salotto",
             "Bagno",
@@ -66,6 +68,15 @@ class Calendarizzazione : Fragment() {
         val linearLayoutManager = LinearLayoutManager(tmpActivity)
         RVparent!!.layoutManager = linearLayoutManager
         RVparent!!.adapter = calendarAdapter
+
+
+        val noPlantsInCalendarTV = view.findViewById<TextView>(R.id.noPlantsInCalendarTV)
+        if(orderId.size > 0) {
+            noPlantsInCalendarTV.visibility = View.GONE
+        }
+        else {
+            noPlantsInCalendarTV.visibility = View.VISIBLE
+        }
     }
 
 }

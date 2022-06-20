@@ -9,7 +9,7 @@ import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ItemCategoryPlantBinding
 
 
-class CategoryPlantAdapter (var categories: List<String>)
+class CategoryPlantAdapter (var categories: List<PlantCategory>)
     : RecyclerView.Adapter<CategoryPlantAdapter.CategoryPlantViewHolder>(){
     inner class CategoryPlantViewHolder(val binding: ItemCategoryPlantBinding) :RecyclerView.ViewHolder(binding.root)
     private lateinit var context : Context
@@ -26,7 +26,7 @@ class CategoryPlantAdapter (var categories: List<String>)
             //SET IMAGE
 
             //SET TEXT
-            itemCategoryPlantTitle.text = categories[position]
+            itemCategoryPlantTitle.text = categories[position].name
 
             //NAVIGATE TO CATEGORY DETAIL
             itemCategoryPlantImage.setOnClickListener {

@@ -27,9 +27,10 @@
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/plant_placeholder"
-            app:roundPercent="50">
+            app:roundPercent="50"
+            />
 
-        </androidx.constraintlayout.utils.widget.ImageFilterView>
+
 
         <TextView
             android:id="@+id/plantCardName"

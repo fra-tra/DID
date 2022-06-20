@@ -78,7 +78,7 @@ class WateringCanFragment : Fragment() {
 
         var amp = 30;
 
-        //either isgone or isinvisible depending on the desired effect
+        //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
         alertEmptyWateringCan.isGone = bar.progress >= 10
 
         if(bar.progress < amp){
@@ -106,6 +106,7 @@ class WateringCanFragment : Fragment() {
                     wave.setAmplitudeRatio(progress)
 
                 }
+                //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
                 alertEmptyWateringCan.isGone = progress >= 10
 
             }
