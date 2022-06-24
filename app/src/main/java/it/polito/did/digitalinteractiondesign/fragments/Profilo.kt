@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SimpleItemAnimator
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
@@ -71,12 +73,16 @@ class Profilo : Fragment() {
             Plant("Cactus", null, true),
             Plant("Rosmarino", null, true),
         )
+
         val adapterPlantsLiked= ProfileLikedPlantAdapter(plantList)
         recyclerViewPlants=view.findViewById(R.id.RV_plantsLiked)
 
         recyclerViewPlants.adapter=adapterPlantsLiked
 
-        recyclerViewPlants.layoutManager=LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
+
+        val layoutManagerCategories = GridLayoutManager(activity, 3)
+        recyclerViewPlants.layoutManager = layoutManagerCategories
+        (recyclerViewPlants.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
 
     }
 
