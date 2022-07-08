@@ -1,19 +1,22 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.view.*
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.contains
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
-import it.polito.did.digitalinteractiondesign.structures.CategoryPlantAdapter
-import it.polito.did.digitalinteractiondesign.structures.CategoryPlantDetailAdapter
-import it.polito.did.digitalinteractiondesign.structures.LikedAndPopularPlantsAdapter
-import it.polito.did.digitalinteractiondesign.structures.Plant
+import it.polito.did.digitalinteractiondesign.structures.*
+import kotlin.collections.contains as contains1
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +39,7 @@ class DiscoveryCategoryDetailFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -45,6 +49,7 @@ class DiscoveryCategoryDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_discovery_category_detail, container, false)
     }
+
 
     companion object {
         /**
@@ -69,6 +74,7 @@ class DiscoveryCategoryDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val plantList = mutableListOf(
             Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
             Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
@@ -81,7 +87,7 @@ class DiscoveryCategoryDetailFragment : Fragment() {
             Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
             Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
         )
-
+        plantList.sortBy { it.name }
 
         val adapter = CategoryPlantDetailAdapter(plantList)
         val plantsInCategoryRV = view.findViewById<RecyclerView>(R.id.plantsInCategoryRV)
@@ -92,5 +98,39 @@ class DiscoveryCategoryDetailFragment : Fragment() {
         backBtn.setOnClickListener {
             findNavController().navigateUp()
         }
+
+
+        val search = view.findViewById<SearchView>(R.id.searchviewcategory)
+        val cancel = view.findViewById<TextView>(R.id.cancelSearchView)
+        cancel.visibility = View.GONE
+
+        cancel.setOnClickListener {
+            cancel.visibility = View.GONE
+            search.onActionViewCollapsed()
+        }
+        search.setOnQueryTextFocusChangeListener{ _, hasFocus ->
+            if (hasFocus) {
+                cancel.visibility = View.VISIBLE
+            }
+
+            /* else {
+                    nested.visibility = View.VISIBLE
+                }*/
+        }
+
+        search?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+                return false
+            }
+        }
+        )
+
     }
 }
+
+

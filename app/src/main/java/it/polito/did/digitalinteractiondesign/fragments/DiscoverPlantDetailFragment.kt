@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toolbar
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +34,9 @@ class DiscoverPlantDetailFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +69,8 @@ class DiscoverPlantDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var isliked = false
+
         var backBtn = view.findViewById<ImageButton>(R.id.backButtonDiscoverPlantDetail)
         backBtn.setOnClickListener {
             findNavController().navigateUp()
@@ -73,5 +80,24 @@ class DiscoverPlantDetailFragment : Fragment() {
         btnAddPlant.setOnClickListener {
             findNavController().navigate(R.id.action_discoverPlantDetailFragment_to_addPlantNameAndRoomFragment)
         }
+
+        var btnLiked = view.findViewById<ImageButton>(R.id.btnLiked)
+        btnLiked.setOnClickListener{
+            if (isliked==false){
+                isliked=true
+                btnLiked.setImageResource(R.drawable.ic_heart_full)
+            }
+            else {
+                isliked=false
+                btnLiked.setImageResource(R.drawable.ic_heart_empty)
+            }
+
+        }
+
+        var plantprova=  Plant("Basilico", null, false)
+        var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar)
+        toolbar.title=plantprova.name
+
     }
+
 }

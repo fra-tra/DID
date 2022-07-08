@@ -3,6 +3,65 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/dialog_background.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_addedby.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_addedby_alt.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_settings_culo.xml" value="0.221875" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_calendar.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_commitment_full.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_cross.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_danger.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_difficulty_full.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_discover.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_heart_empty.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_plants.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_profile.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/room_selection_overlay.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/round_corner.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/rounded_rectangle_full.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/rounded_rectangle_watering_can.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/saerchview_background.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_add_plant_name_and_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_add_plant_vase.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover_add_plant_in_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover_search.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discovery_category_detail.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_edit_commitment_level.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_graveyard.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_graveyard_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings_vase.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_piante.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_profilo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_category_plant.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_discover_group_plants.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_discover_plants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_liked_plants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_summary_home.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_room_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_room_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_calendarizzazione.xml" value="0.264" />
         <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_commitment.xml" value="0.3134057971014493" />
         <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_discover.xml" value="0.3134057971014493" />
