@@ -8,5 +8,13 @@ data class Plant(
     var isDead : Boolean,
     // TEMPORARY HUMIDITY FORMAT
     var waterMeasure : Double = 0.0,
-    var waterMeasuresReferences : Array<Double> = arrayOf(0.0, 0.0, 0.0, 0.0)
+
+    var waterMeasuresReferences : Array<Double> = arrayOf(0.0, 0.0, 0.0, 0.0),
+
+    // SWITCH CALENDARIZZAZIONE
+    var switchStatus : Boolean=false
 )
+
+   
+
+
