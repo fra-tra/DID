@@ -30,6 +30,40 @@
         app:layout_constraintStart_toStartOf="@+id/titleDiscover"
         app:layout_constraintTop_toBottomOf="@+id/titleDiscover" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewDiscover"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/saerchview_background"
+        android:queryBackground="@android:color/transparent"
+        app:iconifiedByDefault="false"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@+id/cancelSearchView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitleDiscover"
+        app:queryHint="Search"
+        android:focusable="true">
+
+    </androidx.appcompat.widget.SearchView>
+
+    <TextView
+        android:id="@+id/cancelSearchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Annulla"
+        android:textSize="14dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchViewDiscover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/searchViewDiscover"
+        app:layout_constraintTop_toTopOf="@+id/searchViewDiscover" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline31"
         android:layout_width="wrap_content"
@@ -38,20 +72,22 @@
         app:layout_constraintGuide_percent="0.15" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedDiscover"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:fillViewport="true"
-        android:scrollbars="none"
         android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline31">
+        app:layout_constraintTop_toBottomOf="@+id/searchViewDiscover">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView7"
@@ -61,23 +97,25 @@
                 android:layout_marginTop="16dp"
                 android:text="Most Popular"
                 android:textColor="@color/green"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="visible" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/popularPlantsCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
                 app:cardBackgroundColor="@color/light_green"
-                app:contentPadding="4dp"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="20dp"
+                app:contentPadding="4dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/popularPlantsRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:overScrollMode="never"
                     android:scrollbars="none" />
             </androidx.cardview.widget.CardView>
@@ -97,16 +135,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="8dp"
-                app:contentPadding="8dp"
+                android:layout_marginEnd="24dp"
                 app:cardBackgroundColor="@color/light_green"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="20dp"
+                app:contentPadding="8dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/likedPlantsRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:overScrollMode="never"
                     android:scrollbars="none" />
             </androidx.cardview.widget.CardView>
@@ -132,5 +171,18 @@
                 android:scrollbars="none" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/plantsFilterDiscoverRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewDiscover" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

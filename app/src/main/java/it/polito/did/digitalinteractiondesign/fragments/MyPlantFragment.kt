@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,10 +65,18 @@ class MyPlantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var btnSettings = view.findViewById<Button>(R.id.settings)
+        var btnSettings = view.findViewById<ImageButton>(R.id.settings)
         btnSettings.setOnClickListener {
             findNavController().navigate(R.id.action_myPlantFragment_to_myPlantSettingsFragment)
         }
+        var backBtn = view.findViewById<ImageButton>(R.id.backButtonMyPlant)
+        backBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
+        var plantprova=  Plant("Basilico", null, false)
+        var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsingToolbarMyPlant)
+        toolbar.title=plantprova.name
+
 
 
     }

@@ -21,16 +21,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/imagePlant"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/plant_placeholder"
-            app:roundPercent="50"
-            />
-
-
+            app:roundPercent="50" />
 
         <TextView
             android:id="@+id/plantCardName"
