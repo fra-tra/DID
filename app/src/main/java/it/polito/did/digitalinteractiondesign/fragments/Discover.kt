@@ -1,11 +1,33 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.SearchView
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
+import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SimpleItemAnimator
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
+import it.polito.did.digitalinteractiondesign.structures.*
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.ContextCompat.getSystemService
+
+
+
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +50,7 @@ class Discover : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -56,5 +79,102 @@ class Discover : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        val plantList = mutableListOf(
+            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+        )
+
+        val categoriesList = mutableListOf(
+            PlantCategory("Succulentae e Cactus"),
+            PlantCategory("Erbe Aromatiche"),
+            PlantCategory("Buh fiori qualcosa")
+
+        )
+
+        val plantSearchList = mutableListOf(
+            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+        )
+        plantSearchList.sortBy { it.name }
+
+        val adapterLiked = LikedAndPopularPlantsAdapter(plantList)
+        val likedPlantsRV = view.findViewById<RecyclerView>(R.id.likedPlantsRV)
+        likedPlantsRV.adapter = adapterLiked
+        likedPlantsRV.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+        val adapterPopular = LikedAndPopularPlantsAdapter(plantList)
+        val popularPlantsRV = view.findViewById<RecyclerView>(R.id.popularPlantsRV)
+        popularPlantsRV.adapter = adapterPopular
+        popularPlantsRV.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+        val adapterCategories = CategoryPlantAdapter(categoriesList)
+        val categoriesRV = view.findViewById<RecyclerView>(R.id.categoriesRV)
+        categoriesRV.adapter = adapterCategories
+       // categoriesRV.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        val layoutManagerCategories = GridLayoutManager(activity, 2)
+        categoriesRV.layoutManager = layoutManagerCategories
+        (categoriesRV.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+
+
+
+        val adapterFilter = CategoryPlantDetailAdapter(plantSearchList)
+        val plantsFilterDiscoverRV = view.findViewById<RecyclerView>(R.id.plantsFilterDiscoverRV)
+        plantsFilterDiscoverRV.adapter = adapterFilter
+        plantsFilterDiscoverRV.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+
+
+
+        val search = view.findViewById<androidx.appcompat.widget.SearchView>(R.id.searchViewDiscover)
+        val nested = view.findViewById<NestedScrollView>(R.id.nestedDiscover)
+        val cancel = view.findViewById<TextView>(R.id.cancelSearchView)
+        cancel.visibility = View.GONE
+
+     /*  search.setOnClickListener {
+           cancel.visibility = View.VISIBLE
+           nested.visibility = View.INVISIBLE
+       plantsFilterDiscoverRV.visibility = View.VISIBLE} */
+
+        cancel.setOnClickListener { nested.visibility = View.VISIBLE
+        cancel.visibility = View.GONE
+            plantsFilterDiscoverRV.visibility = View.INVISIBLE
+            search.onActionViewCollapsed()
+        }
+        search.setOnQueryTextFocusChangeListener{ _, hasFocus ->
+            if (hasFocus) {
+                cancel.visibility = View.VISIBLE
+                nested.visibility = View.INVISIBLE
+                plantsFilterDiscoverRV.visibility = View.VISIBLE
+            }
+
+        /* else {
+                nested.visibility = View.VISIBLE
+            }*/
+        }
+        search?.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapterFilter.filter.filter(newText)
+                return false
+            }
+        }
+        )
+
     }
 }

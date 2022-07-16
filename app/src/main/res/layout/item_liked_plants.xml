@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:clipToPadding="false">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemLikedPlantsImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:src="@drawable/plant_placeholder" />
+
+    <TextView
+        android:id="@+id/itemLikedPlantsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Plant Name"
+        android:textAlignment="center"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

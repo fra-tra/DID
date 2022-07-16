@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -68,13 +69,14 @@ class MyPlantSettingsRoomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnBack = view.findViewById<Button>(R.id.backButtonRoomSettings)
+        val btnBack = view.findViewById<ImageButton>(R.id.backButtonRoomSettings)
         btnBack.setOnClickListener {
             findNavController().navigateUp()
         }
         //TEST ROOM LIST
         val rooms = arrayListOf(
-            Room("Kitchen"), Room ("Living Room"), Room("Balcony")
+            Room("Kitchen"), Room ("Living Room"), Room("Balcony"), Room("Kitchen"), Room ("Living Room"), Room("Balcony")
+
         )
 
         val adapter = RoomImageAdapter(rooms)

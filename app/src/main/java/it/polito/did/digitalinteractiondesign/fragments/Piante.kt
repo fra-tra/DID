@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import it.polito.did.digitalinteractiondesign.R
@@ -85,10 +86,21 @@ class Piante : Fragment() {
 
         )
 
+      //  val roomList : MutableList<Room> = mutableListOf()
+
         val adapter = RoomCardListAdapter(roomList)
         val rvRooms = view.findViewById<RecyclerView>(R.id.rvRooms)
         rvRooms.adapter = adapter
         rvRooms.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        val noPlantsInMyPlantsTV = view.findViewById<TextView>(R.id.noPlantsInMyPlantsTV)
+        if(roomList.size > 0) {
+            noPlantsInMyPlantsTV.visibility = View.GONE
+        }
+        else {
+            noPlantsInMyPlantsTV.visibility = View.VISIBLE
+        }
+
     }
 
 

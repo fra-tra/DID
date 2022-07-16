@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import it.polito.did.digitalinteractiondesign.R
 
@@ -62,7 +63,7 @@ class MyPlantSettingsNameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var btnBack = view.findViewById<Button>(R.id.backButtonNameSettings)
+        var btnBack = view.findViewById<ImageButton>(R.id.backButtonNameSettings)
         btnBack.setOnClickListener {
             findNavController().navigateUp()
         }

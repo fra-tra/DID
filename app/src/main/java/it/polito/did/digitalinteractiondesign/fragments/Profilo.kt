@@ -53,6 +53,16 @@ class Profilo : Fragment() {
             findNavController().navigate(R.id.action_profilo_to_profiloSettings)
         }
 
+        var editSkillLevel = view.findViewById<TextView>(R.id.grid_textView6)
+        editSkillLevel.setOnClickListener {
+            findNavController().navigate(R.id.action_profilo_to_editSkillLevelFragment)
+        }
+
+        var editCommitmentLevel = view.findViewById<TextView>(R.id.grid_textView8)
+        editCommitmentLevel.setOnClickListener {
+            findNavController().navigate(R.id.action_profilo_to_editCommitmentLevelFragment)
+        }
+
         //adapter View Plants liked
         var plantList = mutableListOf(
             Plant("Basilico", null, true),

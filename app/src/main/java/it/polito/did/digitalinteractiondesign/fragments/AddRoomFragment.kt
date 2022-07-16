@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -66,7 +67,7 @@ class AddRoomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnBack = view.findViewById<Button>(R.id.backButtonAddRoom)
+        val btnBack = view.findViewById<ImageButton>(R.id.backButtonAddRoom)
         btnBack.setOnClickListener {
             findNavController().navigateUp()
         }

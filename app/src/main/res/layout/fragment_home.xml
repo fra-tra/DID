@@ -176,6 +176,31 @@
                 android:layout_marginBottom="24dp"
                 android:background="?android:attr/listDivider" />
 
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/noPlantsInHomeGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:constraint_referenced_ids="noPlantsInHomeTV,btnAddPlantFromHome" />
+
+            <TextView
+                android:id="@+id/noPlantsInHomeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non hai ancora aggiunto nessuna pianta :("
+                android:textAlignment="center" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAddPlantFromHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_add_24"
+                android:visibility="visible" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPlantsHome"
                 android:layout_width="match_parent"

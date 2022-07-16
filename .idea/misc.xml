@@ -3,6 +3,89 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/dialog_background.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_addedby.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_addedby_alt.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_baseline_settings_culo.xml" value="0.221875" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_calendar.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_commitment_full.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_cross.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_danger.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_difficulty_full.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_discover.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_heart_empty.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_plants.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/ic_profile.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/room_selection_overlay.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/round_corner.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/rounded_rectangle_full.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/rounded_rectangle_watering_can.xml" value="0.20989583333333334" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/drawable/saerchview_background.xml" value="0.2703125" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_add_plant_name_and_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_add_plant_vase.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover_add_plant_in_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discover_search.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_discovery_category_detail.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_edit_commitment_level.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_graveyard.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_graveyard_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_settings_vase.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_piante.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_profilo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_category_plant.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_discover_group_plants.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_discover_plants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_liked_plants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_summary_home.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_room_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_room_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_calendarizzazione.xml" value="0.264" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_commitment.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_discover.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_graveyard.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_home.xml" value="0.19655521783181357" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_my_plant.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_piante.xml" value="0.3669724770642202" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_profilo.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_profilo_settings.xml" value="0.27717391304347827" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_sign_up.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_skill_level.xml" value="0.4" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/fragment_watering_can.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_calendar_calendar.xml" value="0.536" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_calendar_room_card.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_calendar_switch_card.xml" value="0.37735849056603776" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_calendarizz_card.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_dropdown_vase_settings.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_plant_card.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_plant_image.xml" value="0.264" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_plant_summary_home.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_room_CALENDAR.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_room_card.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/DanTheMan/Desktop/DID-git/app/src/main/res/layout/item_room_image.xml" value="0.4041666666666667" />
         <entry key="..\:/Users/girde/Desktop/GitProjects/ANDROID GITHUB/DID/app/src/main/res/drawable/empty_tall_divider.xml" value="0.21" />
         <entry key="..\:/Users/girde/Desktop/GitProjects/ANDROID GITHUB/DID/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/girde/Desktop/GitProjects/ANDROID GITHUB/DID/app/src/main/res/layout/activity_sign_up.xml" value="0.259375" />
@@ -56,18 +139,36 @@
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/edittext_focus.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/empty_tall_divider.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/green_outline.xml" value="0.2805" />
+        <entry key="app/src/main/res/drawable/grey_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.2805" />
+        <entry key="app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3055" />
+        <entry key="app/src/main/res/drawable/purple_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/red_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/red_outline.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/rounded_rectangle_full.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/rounded_rectangle_watering_can.xml" value="0.2475" />
+        <entry key="app/src/main/res/drawable/yellow_background.xml" value="0.2805" />
+        <entry key="app/src/main/res/drawable/yellow_outline.xml" value="0.2805" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.3402450561523437" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/custom_action_bar.xml" value="0.375" />
         <entry key="app/src/main/res/layout/dialog_confirm_death.xml" value="0.34717948717948716" />
+        <entry key="app/src/main/res/layout/fragment_add_plant_name_and_room.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_add_plant_vase.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_add_plants_sensor.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_add_room.xml" value="0.34717948717948716" />
+        <entry key="app/src/main/res/layout/fragment_calendarizzazione.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_commitment.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_custom_death_dialog.xml" value="0.34717948717948716" />
+        <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.3503362019856771" />
+        <entry key="app/src/main/res/layout/fragment_discover_add_plant_in_room.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_discovery_category_detail.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_edit_commitment_level.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment_edit_skill_level.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_graveyard.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_graveyard_card.xml" value="0.27506103515624997" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3884297520661157" />
@@ -75,19 +176,33 @@
         <entry key="app/src/main/res/layout/fragment_loading_plant_funeral.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.35260416666666666" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.34717948717948716" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_vase.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_piante.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_room.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment_profilo.xml" value="0.40970357259114587" />
+        <entry key="app/src/main/res/layout/fragment_profilo_settings.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_room_card.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_select_calendar_range.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_skill_level.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_water_plant.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_watering_can.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/item_calendar_calendar.xml" value="0.31392931392931395" />
+        <entry key="app/src/main/res/layout/item_calendar_room_card.xml" value="0.5856760660807292" />
+        <entry key="app/src/main/res/layout/item_calendar_switch_card.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/item_category_plant.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/item_discover_plants.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/item_dropdown_vase_settings.xml" value="0.34717948717948716" />
-        <entry key="app/src/main/res/layout/item_plant_card.xml" value="0.7298444130127298" />
+        <entry key="app/src/main/res/layout/item_liked_plants.xml" value="0.49545644124348964" />
+        <entry key="app/src/main/res/layout/item_plant_card.xml" value="0.4410919540229885" />
         <entry key="app/src/main/res/layout/item_plant_image.xml" value="0.75" />
         <entry key="app/src/main/res/layout/item_plant_summary_home.xml" value="0.45" />
         <entry key="app/src/main/res/layout/item_room_card.xml" value="0.625" />

@@ -1,16 +1,24 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingAddPlantBinding
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
 
@@ -28,6 +36,7 @@ class LoadingAddPlantFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var millsDuration : Long = 3000
 
     private var _binding : FragmentLoadingAddPlantBinding? = null
     private val binding get() = _binding!!
@@ -61,30 +70,30 @@ class LoadingAddPlantFragment : Fragment() {
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoadingAddPlantFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoadingAddPlantFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var a = view.findViewById<LottieAnimationView>(R.id.addPlantAnimation)
         a.playAnimation()
+
+        //show dead plant after the progress bar animation is complete
+        var progressBar = view.findViewById<ProgressBar>(R.id.progressBarAddPlant)
+        val animator = ValueAnimator.ofInt(0, progressBar.max)
+        animator.duration = millsDuration
+        animator.addUpdateListener { animation ->
+            progressBar.progress = (animation.animatedValue as Int)!!
+        }
+
+        animator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+                //findNavController().navigate(R.id.action_loadingPlantFuneralFragment_to_myDeadPlantFragment)
+                val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
+                bottomNav.selectedItemId = R.id.piante
+                findNavController().navigate(R.id.myPlantFragment)
+            }
+        })
+        animator.start()
 
         //disable back button when loading
         activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {

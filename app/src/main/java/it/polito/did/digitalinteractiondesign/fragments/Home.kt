@@ -7,12 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.constraintlayout.widget.Group
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.structures.Plant
 import it.polito.did.digitalinteractiondesign.structures.PlantHomeSummaryAdapter
 
@@ -83,10 +89,34 @@ class Home : Fragment() {
             Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
         )
 
+      //  val plantList : MutableList<Plant> = mutableListOf()
+
         val adapter = PlantHomeSummaryAdapter(plantList)
         val rvPlantsHome = view.findViewById<RecyclerView>(R.id.rvPlantsHome)
         rvPlantsHome.adapter = adapter
         rvPlantsHome.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        val noPlantsInHomeGroup = view.findViewById<Group>(R.id.noPlantsInHomeGroup)
+        val fabAddPlantFromHome = view.findViewById<FloatingActionButton>(R.id.btnAddPlantFromHome)
+        val noPlantsInHomeTV = view.findViewById<TextView>(R.id.noPlantsInHomeTV)
+
+        //mostra testo + fab se non ho registrato piante
+        //DA CAMBIARE ASCOLTANDO IL VIEW MODEL PERCHÈ ORA GESTITO CON LA LISTA LOCALE DI PIANTE SOLO ALL'INIZIO
+        if(plantList.size > 0) {
+            fabAddPlantFromHome.visibility = View.GONE
+            noPlantsInHomeTV.visibility = View.GONE
+        }
+
+        else {
+            fabAddPlantFromHome.visibility = View.VISIBLE
+            noPlantsInHomeTV.visibility = View.VISIBLE
+            fabAddPlantFromHome.setOnClickListener{
+                val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
+                bottomNav.selectedItemId = R.id.discover
+                // findNavController().navigate(R.id.discover)
+            }
+        }
+
 
     }
 

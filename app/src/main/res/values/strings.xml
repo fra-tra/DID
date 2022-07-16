@@ -9,6 +9,8 @@
     <string name="loading_add_plant_secondary">We\'re planting YOUR PLANT</string>
     <string name="loading_water_plant_secondary"> We\'re watering YOUR PLANT </string>
     <string name="loading_funeral_plant_secondary">We\'re celebrating YOUR  PLANT\'s funeral</string>
+    <string name="dashboard_title">Nome Pianta</string>
+    <string name="my_plant_title">Nome Pianta </string>
 
     <string-array name="vase_type">
         <item> Type 1 </item>
