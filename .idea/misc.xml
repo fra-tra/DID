@@ -136,6 +136,7 @@
         <entry key="app/src/main/res/drawable/button_background_grey.xml" value="0.3145" />
         <entry key="app/src/main/res/drawable/button_background_red.xml" value="0.3145" />
         <entry key="app/src/main/res/drawable/circular_bar.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/circular_white_bg.xml" value="0.2115" />
         <entry key="app/src/main/res/drawable/city_info_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/dialog_background.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.291" />
@@ -167,7 +168,7 @@
         <entry key="app/src/main/res/layout/fragment_custom_death_dialog.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.3503362019856771" />
         <entry key="app/src/main/res/layout/fragment_discover_add_plant_in_room.xml" value="0.26458333333333334" />
-        <entry key="app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_discovery_category_detail.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_edit_commitment_level.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_edit_skill_level.xml" value="0.26458333333333334" />

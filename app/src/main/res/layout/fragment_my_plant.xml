@@ -85,11 +85,10 @@
                     android:layout_width="44dp"
                     android:layout_height="44dp"
 
+                    android:backgroundTint="@android:color/transparent"
                     android:clickable="true"
                     android:focusable="true"
-                    android:backgroundTint="@android:color/transparent"
-                    android:src="@drawable/ic_baseline_settings_culo"
-                    />
+                    android:src="@drawable/ic_baseline_settings_culo" />
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -102,122 +101,133 @@
         android:fillViewport="true"
         android:overScrollMode="never"
         android:scrollbars="none"
-        android:layout_marginTop="16dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp">
-
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantStatsFragment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView2"
-            android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantAlertMeasuresFragment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView" />
-        <View
-            android:id="@+id/dividerMyPlant1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView2"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView5"
-            android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantWaterAndCalendarCTAFragment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dividerMyPlant1" />
-        <View
-            android:id="@+id/dividerMyPlant2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView5"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <TextView
-            android:id="@+id/Informazioni2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Informazioni"
-            android:textColor="@color/dark_grey"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerMyPlant2" />
-
-        <TextView
-            android:id="@+id/loremipsum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Informazioni2" />
-
-        <View
-            android:id="@+id/dividerDiscoverPlantDetails3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintTop_toBottomOf="@+id/loremipsum"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <TextView
-            android:id="@+id/Consigli2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Consigli"
-            android:textColor="@color/dark_grey"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerDiscoverPlantDetails3" />
-
-        <TextView
-            android:id="@+id/loremipsum2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Consigli2"
-            tools:layout_editor_absoluteX="0dp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp">
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView"
+                android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantStatsFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView2"
+                android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantAlertMeasuresFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView" />
+
+            <View
+                android:id="@+id/dividerMyPlant1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView2"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView5"
+                android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantWaterAndCalendarCTAFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerMyPlant1" />
+
+            <View
+                android:id="@+id/dividerMyPlant2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView5"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/Informazioni2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Informazioni"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerMyPlant2" />
+
+            <TextView
+                android:id="@+id/loremipsum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Informazioni2" />
+
+            <View
+                android:id="@+id/dividerDiscoverPlantDetails3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@+id/loremipsum"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/Consigli2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Consigli"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerDiscoverPlantDetails3" />
+
+            <TextView
+                android:id="@+id/loremipsum2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Consigli2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 

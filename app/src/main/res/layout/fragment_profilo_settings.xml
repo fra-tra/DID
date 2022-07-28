@@ -128,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Account"
+        android:text="Contattaci"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline_1" />
@@ -151,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Privacy Settings"
+        android:text="Termini e Condizioni"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_textView17" />
@@ -175,7 +175,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Notifiche"
+        android:text="Privacy Policy"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_textView19" />
@@ -200,7 +200,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
-        android:text="Theme"
+        android:text="About App"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_2"
         app:layout_constraintStart_toStartOf="parent"

@@ -55,7 +55,7 @@ class CategoryPlantDetailAdapter (var plants: List<Plant>)
             //SET NAVIGATION
             itemDiscoverPlantsLayout.setOnClickListener {
                 Navigation.findNavController(itemDiscoverPlantsImage)
-                    .navigate(R.id.action_discoveryCategoryDetailFragment_to_discoverPlantDetailFragment)
+                    .navigate(R.id.discoverPlantDetailFragment)
             }
 
         }
