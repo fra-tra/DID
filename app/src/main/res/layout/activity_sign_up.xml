@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/barlow_condensed_semibold"
         android:justificationMode="inter_word"
-        android:text="Begin your adventure on Piant-e!"
+        android:text="@string/signup_Title"
         android:textColor="@color/green"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/glSignUpR"
@@ -63,7 +63,7 @@
             android:id="@+id/emailEditT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/EditEmail"
             android:inputType="textEmailAddress"
             android:textSize="14sp" />
 
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:hint="Password"
+            android:hint="@string/EditPassword"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
@@ -107,7 +107,7 @@
         android:id="@+id/signUpBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SignUp"
+        android:text="@string/signup_BtnSignup"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
         app:layout_constraintHorizontal_bias="0.5"

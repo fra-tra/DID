@@ -110,7 +110,7 @@
         android:padding="4dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="The watering can needs to be filled!"
+        android:text="@string/WateringCan_Title"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"

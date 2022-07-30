@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Calendarizzazione"
+        android:text="@string/SelectCalendarRange_Title"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline41"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Calendar Range"
+                android:text="@string/SelectCalendarRange_SubTitle"
                 android:textColor="@color/dark_grey"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +91,7 @@
                     android:id="@+id/btnForever"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Forever"
+                    android:text="@string/SelectCalendarRange_Forever"
                     android:textColor="@color/dark_grey"
                     android:textSize="12sp" />
 
@@ -99,7 +99,7 @@
                     android:id="@+id/btnSpecificDateRange"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Specific Date Range"
+                    android:text="@string/SelectCalendarRange_SpecificData"
                     android:textColor="@color/dark_grey"
                     android:textSize="12sp" />
             </RadioGroup>
