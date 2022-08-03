@@ -46,7 +46,7 @@
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_edit_skill_level.xml" value="0.27205882352941174" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_graveyard.xml" value="0.25416666666666665" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_graveyard_card.xml" value="0.25416666666666665" />
-        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_loading_add_plant.xml" value="0.128" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_loading_plant_funeral.xml" value="0.20677083333333332" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.25416666666666665" />
@@ -69,12 +69,15 @@
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_skill_level.xml" value="0.1" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/fragment_watering_can.xml" value="0.264" />
-        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_calendar_calendar.xml" value="0.2" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_calendar_calendar.xml" value="0.264" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_calendar_room_card.xml" value="0.264" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_calendar_switch_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_category_plant.xml" value="0.25416666666666665" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_discover_group_plants.xml" value="0.264" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_discover_plants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_dropdown_vase_settings.xml" value="0.264" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_liked_plants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_liked_plants_profilo.xml" value="0.4" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_image.xml" value="0.25416666666666665" />
         <entry key="..\:/Polito Magistrale/Digital Interaction Design/Progetto/AppDef/Def/DID/DID/app/src/main/res/layout/item_plant_summary_home.xml" value="0.264" />

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!--general -->
+        <string name="app_name">Digital Interaction Design</string>
+
+        <string name="Placeholder_MyPlant">My plant</string>
+        <string name="Placeholder_PlantName">Plant Name</string>
+
+        <string name="AddPlant">Add Plant</string>
+
+        <string name="my_plant_title">Nome Pianta </string>
+
+
+        <string name="BtnAdd">Add</string>
+        <string name="BtnNext">Next</string>
+        <string name="BtnCancel">Cancel</string>
+        <string name="BtnWater">Water</string>
+        <string name="Btn_Signout">Sign out</string>
+        <string name="Btn_SignUp">Signup</string>
+        <string name="Btn_OK">OK</string>
+
+
+        <string name="SeeAll">See All ></string>
+
+        <string name="Search">Search</string>
+
+        <string name="EditEmail">Email</string>
+        <string name="EditPassword">Password</string>
+
+
+        <string name="Nome">Name</string>
+
+        <string name="Stanza">Room</string>
+
+        <string name="Vaso">Vase</string>
+
+
+
+        <string name="Temperature">Temperature</string>ù
+
+
+        <string name="Brightness">Brightness</string>
+
+
+        <string name="Humidity">Humidity</string>
+
+        <string name="LoremIpsum"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
+</string>
+
+        <!--bottom_menu -->
+
+        <string name="BottomMenu_Home">Home</string>
+
+
+        <string name="BottomMenu_Discover">Discover</string>
+
+
+        <string name="BottomMenu_MyPlant">My Plants</string>
+
+
+        <string name="BottomMenu_Calendar">Calendarization</string>
+
+
+        <string name="BottomMenu_Profile">Profile</string>
+
+        <!--Select Calendar Range Fragment-->
+
+        <string name="SelectCalendarRangeFragment_materialDateBuilder">SELECT A DATE</string>
+
+
+        <!--activity_login -->
+        <string name="login_app_name">Plant-e</string>
+
+        <string name="login_SloganLogin">Taking care of your plants has never been easier!</string>
+        <string name="login_BtnLogin">Login</string>
+
+        <string name="no_account">Not have account? <b>SignUp</b></string>
+
+        <!--activity_signup -->
+
+        <string name="signup_Title">Begin your adventure on Piant-e!</string>
+        <string name="signup_BtnSignup">SignUp</string>
+
+        <!--fragment_add_plant_name_and_room -->
+
+        <string name="AddPlantNameRoom_SubtitleName">Give your plant a unique name!</string>
+
+        <string name="AddPlantNameRoom_SubtitleRoom">In which room is your lovely plant living?</string>
+
+        <!--fragment_add_plant_vase -->
+
+        <string name="AddPlantVase_SubtilteVase">How is the vase your lovely plant is in?</string>
+
+
+        <string name="AddPlantVase_SelectTypeVase">Select your vase type</string>
+
+        <string name="AddPlantVase_TypeVase">Vase Type</string>
+
+
+        <string name="AddPlantVase_SelecetSizeVase">Select your vase size</string>
+
+        <string name="AddPlantVase_SizeVase">Vase Size</string>
+
+
+
+        <string name="AddPlantVase_SelectSoil">Select your soil type</string>
+
+        <string name="AddPlantVase_TypeSoil">Soil Type</string>
+
+        <!--fragment_add_plant_sensor -->
+
+        <string name="AddPlantSensor_Title">Sensor Configuration</string>
+
+        <!--fragment_add_room -->
+
+        <string name="AddRoomTitle">Add Room</string>
+
+        <!--fragment_calendarizzazione -->
+
+        <string name="Calendarizzazione_Title">Calendarization</string>
+
+
+        <string name="Calendarizzazione_SubTitle">Manage you plants\' watering</string>
+
+
+        <string name="Calendarizzazione_NoPiante">You dont have add any plants :(</string>
+
+        <!--fragment_commitment -->
+
+        <string name="Commitment_Title">Commitment Level</string>
+
+        <string name="Commitment_SubTitle">How much time are you willing to invest in your plants?</string>
+
+
+        <string name="Commitment_Title_CL01">Not that much...</string>
+
+        <string name="Commitment_Subtitle_CL01">"The bare minimum" is you motto!</string>
+
+
+        <string name="Commitment_Title_CL02">Enough</string>
+
+        <string name="Commitment_Subtitle_CL02_">You love your plants... but you just don\'t LIVE for them.</string>
+
+
+        <string name="Commitment_Title_CL03">Lots</string>
+
+        <string name="Commitment_Subtitle_CL03">If you only could you would move in the same vase as your plants!</string>
+
+        <!--fragment_custom_death_dialog -->
+
+        <string name="DeathDialog_Title">Are you sure you want to register YOUR PLANT\'s death?</string>
+
+        <string name="BtnRip">R.I.P.</string>
+
+        <!--fragment_Discover-->
+
+        <string name="Discover_Title">Discover</string>
+
+
+        <string name="Discover_SubTitle">Discover and add new amazing plants!</string>
+
+
+        <string name="Discover_Popular">Most Popular</string>
+
+
+        <string name="Discover_Like">Most Liked</string>
+
+        <!--fragment_Discover_plant_details-->
+        <string name="Discover_Dashboard_title">Nome Pianta</string>
+
+
+        <string name="Discover_Dashboard_Subtitle">CATEGORY</string>
+
+
+        <string name="Discover_Level">Level</string>
+
+
+        <string name="Discover_Commitment">Commitment</string>
+
+
+        <string name="Discover_AddedBy">Added By</string>
+
+
+        <string name="Discover_Information">Information</string>
+
+
+        <string name="Discover_Advice">Advice</string>
+
+        <!--fragment_Discover_Category_detail-->
+
+        <string name="Discovery_Category_Title">Category</string>
+
+        <!--fragment_edit_skill_level-->
+
+        <string name="SkilLevel_Title">Skill Level</string>
+
+        <string name="SkilLevel_Subtitle">Tap the "skill level" that best represents YOU!</string>
+
+
+        <string name="SkilLevel_SL01_Title">Plant Killer</string>
+
+
+        <string name="SkilLevel_SL01_Subtitle"> It seems like everything you touch just... you know.</string>
+
+
+        <string name="SkilLevel_SL02_Title">Grey Thumb</string>
+
+        <string name="SkilLevel_SL02_Subtitle">You managed to keep some of the plants alive... Sometimes.</string>
+
+        <string name="SkilLevel_SL03_Title">Budding Gardner</string>
+
+        <string name="SkilLevel_SL03_Subtitle">You and your plants are accustomed to one another.</string>
+
+
+
+        <string name="SkilLevel_SL04_Title">Expert Botanic</string>
+        <string name="SkilLevel_SL04_Subtitle">Your plants smile and wave every time they see you!</string>
+
+
+
+        <string name="SkilLevel_SL05_Title">Ruler of all Plants</string>
+        <string name="SkilLevel_SL05_Subtitle">All you need is a brief look: there is no plant in the world you can\'t take care of.</string>
+
+        <!--fragment_graveyard-->
+        <string name="Graveyard_Title">Plant Graveyard</string>
+
+
+        <!--home-->
+        <string name="Home_Placeholder_City">Turin</string>
+
+        <string name="Home_Placeholder_Degrees">12 °C</string>
+
+
+
+        <!--fragment_loading_add_plant-->
+        <string name="loading_add_plant"> You are contributing to increasing the global oxygen value! </string>
+        <string name="loading_add_plant_secondary">We\'re planting YOUR PLANT</string>
+
+        <!--fragment_loading_plant_funeral-->
+        <string name="loading_funeral_plant">We are very sorry YOUR PLANT has left us :(</string>
+        <string name="loading_funeral_plant_secondary">We\'re celebrating YOUR  PLANT\'s funeral</string>
+
+        <!--fragment_loading_water_plant-->
+        <string name="loading_water_plant">YOUR PLANT will be now lovingly tended to!</string>
+        <string name="loading_water_plant_secondary"> We\'re watering YOUR PLANT </string>
+
+        <!--fragment_my_dead_plant-->
+
+        <string name="MyDeadPlant_Dashboard_Subtitle">CATEGORY</string>
+
+        <string name="MyDeadPlant_Information">Information</string>
+
+        <string name="MyDeadPlant_Advice">Advice</string>
+
+        <!--fragment_my_dead_plant_stats-->
+        <string name="MyDeadPlantStats_Causes">Causes of death</string>
+
+        <string name="MyDeadPlantStats_Day">Days Lived</string>
+        <string name="MyDeadPlantStats_Water">Watered</string>
+
+        <!--fragment_my_plant-->
+
+        <string name="MyPlant_Dashboard_Subtitle">CATEGORY</string>
+
+        <string name="MyPlant_Information">Information</string>
+
+        <string name="MyPlant_Advice">Advice</string>
+
+        <!--fragment_my_plant_alert_measures-->
+        <string name="MyPlantAlert_Temperature">ALERT: TEMPERATURE</string>
+
+        <string name="MyPlantAlert_Water">ALERT: WATER</string>
+
+        <string name="MyPlantAlert_Brightness">ALERT: BRIGHTNESS</string>
+
+        <!--fragment_my_plant_settings-->
+        <string name="MyPlantSettings_Title">Plant Setting</string>
+
+        <string name="MyPlantSettings_Name_Subtitle">Set your own plant name</string>
+
+        <string name="MyPlantSettings_Room_Subtitle">Set your plant\'s location</string>
+
+        <string name="MyPlantSettings_Vase_Subtitle_Type">Set your vase type</string>
+
+        <string name="MyPlantSettings_Vase_Subtitle_Size">Set your vase size</string>
+
+        <string name="MyPlantSettings_Vase_Subtitle_Soil">Set your soil type</string>
+
+        <string name="MyPlantSetting_MissingInformation">Missing information! > </string>
+
+        <string name="MyPlantSetting_BtnDeathPlant">Register Plant\'s Death</string>
+
+        <!--fragment_my_plant_settings_name-->
+        <string name="MyPlantSettingsName_Title">Plant Setting</string>
+
+
+        <string name="MyplantSettingsName_SubtitleName">Give your plant a unique name!</string>
+
+        <!--fragment_my_plant_settings_room-->
+        <string name="MyPlantSettingsRoom_Title">Plant Setting</string>
+
+        <string name="MyPlantSettingsRoom_SubtitleRoom">In which room is your lovely plant living?</string>
+
+        <!--fragment_my_plant_settings_vase-->
+        <string name="MyPlantSettingsVase_Title">Plant Setting</string>
+
+
+        <string name="MyPlantSettingsVase_SubtilteVase">How is the vase your lovely plant is in?</string>
+
+        <string name="MyPlantSettingsVase_SelectTypeVase">Select your vase type</string>
+        <string name="MyPlantSettingsVase_TypeVase">Vase Type</string>
+
+        <string name="MyPlantSettingsVase_SelecetSizeVase">Select your vase size</string>
+        <string name="MyPlantSettingsVase_SizeVase">Vase Size</string>
+
+
+        <string name="MyPlantSettingsVase_SelectSoil">Select your soil type</string>
+        <string name="MyPlantSettingsVase_TypeSoil">Soil Type</string>
+
+        <!--fragment_my_plant_water_and_calendar_c_t_a-->
+
+        <string name="MyPlantWaterAndCalendar_LastWater">Last Watered:</string>
+
+        <string name="MyPlantWaterAndCalendar_AutomaticWater">Automatic Watering:</string>
+
+
+        <!--fragment_piante-->
+        <string name="Piante_Title">My plants</string>
+        <string name="Piante_Subtitle">Check how your plants are doing!</string>
+
+        <string name="Piante_NoPiante">You haven\'t added any plants yet :(</string>
+
+        <!--fragment_profilo-->
+        <string name="Profilo_Location">Location:</string>
+
+        <string name="Profilo_SkillLevel">Skill Level</string>
+
+        <string name="Profilo_Commitment">Commitment Level</string>
+
+        <string name="Profilo_Likes">Plants Liked</string>
+
+        <!--fragment_profilo_settings-->
+        <string name="ProfiloSettings_Account">Account</string>
+
+        <string name="ProfiloSettings_Privacy">Privacy Settings</string>
+
+        <string name="ProfiloSettings_Notification">Notifications</string>
+
+        <string name="ProfiloSettings_Theme">Theme</string>
+
+        <!--fragment_select_calendar_range-->
+        <string name="SelectCalendarRange_Title">Calendarization</string>
+
+        <string name="SelectCalendarRange_SubTitle">Select Calendar Range</string>
+
+        <string name="SelectCalendarRange_Forever">Forever</string>
+        <string name="SelectCalendarRange_SpecificData">Specific Data Range</string>
+
+        <!--fragment_signup-->
+        <string name="SignUp_Title">Begin your adventure on Plant-e!</string>
+
+        <!--fragment_watering_can-->
+        <string name="WateringCan_Title">The watering can needs to be filled!</string>
+
+        <!--item_calendar_calendar-->
+        <string name="ItemCalendarCalendar_From">From: DD/MM/YY</string>
+        <string name="ItemCalendarCalendar_To">A: DD/MM/YY</string>
+
+        <string name="ItemCalendarCalendar_Always">ALWAYS: </string>
+
+        <!--item_calendar_switch_card-->
+        <string name="ItemCalendarSwitchCard_SelectDataRange">Select Calendar Range</string>
+
+        <string name="ItemCalendarSwitchCard_Always">ALWAYS > </string>
+
+        <!--item_category_plant-->
+        <string name="ItemCategoryPlant_Title">Plant Category</string>
+
+        <!-- TODO: Remove or change this placeholder text -->
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+        <string-array name="vase_type">
+            <item> Type 1 </item>
+            <item> Type 2 </item>
+            <item> Type 3 </item>
+        </string-array>
+
+        <string-array name="vase_size">
+            <item> Size 1 </item>
+            <item> Size 2 </item>
+            <item> Size 3 </item>
+        </string-array>
+
+        <string-array name="soil_type">
+            <item> Type 1 </item>
+            <item> Type 2 </item>
+            <item> Type 3 </item>
+        </string-array>
+</resources>
