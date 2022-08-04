@@ -76,7 +76,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         android:fillViewport="true"
         android:overScrollMode="never"
         android:scrollbars="none"
@@ -86,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp">
 
             <androidx.fragment.app.FragmentContainerView
@@ -101,8 +101,8 @@
                 android:id="@+id/dividerMyDeadPlant1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:background="?android:attr/listDivider"
                 app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"

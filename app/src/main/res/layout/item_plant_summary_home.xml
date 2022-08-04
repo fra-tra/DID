@@ -79,22 +79,24 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:progress="60" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <ImageButton
                 android:id="@+id/seePlantDetailHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/circular_white_bg"
                 android:backgroundTint="@color/white"
                 android:clickable="true"
-                android:scaleType="centerCrop"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:elevation="2dp"
-                app:fabCustomSize="30dp"
-                app:fabSize="auto"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBarBrightnessHome"
                 app:layout_constraintTop_toTopOf="parent"
-                app:maxImageSize="12dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageView
@@ -158,11 +160,13 @@
                 android:id="@+id/plantImageHome"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:src="@drawable/plant_placeholder"
                 app:civ_border_color="#FF000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintEnd_toStartOf="@+id/progressBarTemperatureHome"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

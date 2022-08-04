@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.R
@@ -38,6 +39,11 @@ class ProfiloSettings : Fragment() {
             //call the method to signOut of the application
             (activity as Home_Activity).signOut()
 
+        }
+
+        var backBtn = view.findViewById<ImageButton>(R.id.backButtonProfiloSettings)
+        backBtn.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 }

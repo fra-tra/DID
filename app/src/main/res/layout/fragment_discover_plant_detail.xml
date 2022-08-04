@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:orientation="vertical">
 
@@ -254,8 +254,10 @@
                 android:id="@+id/btnAddPlant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_marginTop="16dp"
                 android:text="@string/BtnAdd"
+
                 app:layout_constraintEnd_toStartOf="@+id/btnLiked"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -266,14 +268,14 @@
                 android:id="@+id/btnLiked"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:background="@drawable/round_corner"
                 android:padding="10dp"
                 android:src="@drawable/ic_heart_empty"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddPlant"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnAddPlant"
-                app:layout_constraintTop_toBottomOf="@+id/addedplantCard"
+                app:layout_constraintTop_toTopOf="@+id/btnAddPlant"
                 tools:ignore="MissingConstraints" />
 
             <TextView
