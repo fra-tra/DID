@@ -43,7 +43,7 @@
         android:ellipsize="end"
         android:maxWidth="100dp"
         android:maxLines="1"
-        android:text="Nome Pianta"
+        android:text="@string/Placeholder_PlantName"
         android:textColor="@color/dark_grey"
         android:textSize="12sp" />
 

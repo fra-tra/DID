@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:fontFamily="@font/barlow_condensed_semibold"
-        android:text="Calendarizzazione"
+        android:text="@string/Calendarizzazione_Title"
         android:textColor="@color/green"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/calendarDiscover"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Manage you plants' watering"
+        android:text="@string/Calendarizzazione_SubTitle"
         app:layout_constraintBottom_toTopOf="@+id/RVparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Non hai ancora aggiunto nessuna pianta :("
+        android:text="@string/Calendarizzazione_NoPiante"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline1Calend" />

@@ -58,7 +58,7 @@
 
 
 
-        android:text="Piant-e"
+        android:text="@string/login_app_name"
 
         android:textSize="48sp"
         app:layout_constraintEnd_toStartOf="@+id/bgLogin"
@@ -71,7 +71,7 @@
         style="@style/TextAppearance.AppCompat.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Taking care of your plants has never been easier!"
+        android:text="@string/login_SloganLogin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleLabel" />
@@ -101,7 +101,7 @@
             android:id="@+id/emailEditT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/EditEmail"
             android:inputType="textEmailAddress"
             android:textSize="14sp"
             android:visibility="visible" />
@@ -136,7 +136,7 @@
             android:id="@+id/passwordEditT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/EditPassword"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
@@ -148,7 +148,7 @@
         android:id="@+id/loginBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login_BtnLogin"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.5"
