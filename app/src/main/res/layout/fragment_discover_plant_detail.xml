@@ -296,9 +296,10 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
                 android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnAddPlant"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="0dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/Informazioni2"
@@ -327,9 +328,10 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
                 android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loremipsum"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="0dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/Consigli2"
