@@ -24,8 +24,11 @@
         android:id="@+id/settings_textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Account"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ProfiloSettings_Account"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView3"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,8 +48,11 @@
         android:id="@+id/settings_textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Privacy Settings"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ProfiloSettings_Privacy"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView5"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,8 +73,11 @@
         android:id="@+id/settings_textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Notifiche"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ProfiloSettings_Notification"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView7"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,8 +98,12 @@
         android:id="@+id/settings_textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Theme"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/ProfiloSettings_Theme"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_1"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,8 +135,11 @@
         android:id="@+id/settings_textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Contattaci"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ProfiloSettings_Account"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView19"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,8 +159,11 @@
         android:id="@+id/settings_textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Termini e Condizioni"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ProfiloSettings_Privacy"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView21"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,8 +184,11 @@
         android:id="@+id/settings_textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Privacy Policy"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ProfiloSettings_Notification"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView23"
         app:layout_constraintStart_toStartOf="parent"
@@ -187,8 +209,12 @@
         android:id="@+id/settings_textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="About App"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/ProfiloSettings_Theme"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_2"
         app:layout_constraintStart_toStartOf="parent"
@@ -222,7 +248,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/red_danger"
-        android:text="Sign Out"
+        android:text="@string/Btn_Signout"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxWidth="120dp"
-        android:text="Plant Category"
+        android:text="@string/ItemCategoryPlant_Title"
         android:textAlignment="viewStart"
         android:textColor="@color/dark_grey"
         android:textStyle="bold"
