@@ -258,13 +258,13 @@
 
 
     <!--fragment_loading_plant_funeral-->
-    <string name="loading_funeral_plant">Ci dispiace la TUA PIANTA ci abbia lasciato :(</string>
+    <string name="loading_funeral_plant">Ci dispiace che la TUA PIANTA ci abbia lasciato :(</string>
 
     <string name="loading_funeral_plant_secondary">Stiamo celebrando il funerale della TUA PIANTA</string>
 
 
     <!--fragment_loading_water_plant-->
-    <string name="loading_water_plant">la TUA PIANTA sarà ora amorevolmente curata!</string>
+    <string name="loading_water_plant">La TUA PIANTA sarà ora amorevolmente curata!</string>
 
     <string name="loading_water_plant_secondary"> Stiamo annaffinado la TUA PIANTA</string>
 
@@ -317,7 +317,7 @@
 
     <string name="MyPlantSettings_Room_Subtitle">Imposta il luogo della tua pianta</string>
 
-    <string name="MyPlantSettings_Vase_Subtitle_Type">Seleziona il tipo di vas</string>
+    <string name="MyPlantSettings_Vase_Subtitle_Type">Seleziona il tipo di vaso</string>
 
     <string name="MyPlantSettings_Vase_Subtitle_Size">Seleziona la dimensione del vaso</string>
 

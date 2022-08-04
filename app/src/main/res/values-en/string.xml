@@ -354,7 +354,7 @@
         <string name="SelectCalendarRange_SubTitle">Select Calendar Range</string>
 
         <string name="SelectCalendarRange_Forever">Forever</string>
-        <string name="SelectCalendarRange_SpecificData">Specific Data Range</string>
+        <string name="SelectCalendarRange_SpecificData">Specific Date Range</string>
 
         <!--fragment_signup-->
         <string name="SignUp_Title">Begin your adventure on Plant-e!</string>
