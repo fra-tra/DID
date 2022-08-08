@@ -234,15 +234,15 @@
 
         <!--fragment_loading_add_plant-->
         <string name="loading_add_plant"> You are contributing to increasing the global oxygen value! </string>
-        <string name="loading_add_plant_secondary">We\'re planting YOUR PLANT</string>
+        <string name="loading_add_plant_secondary">We\'re planting \u0020</string>
 
         <!--fragment_loading_plant_funeral-->
-        <string name="loading_funeral_plant">We are very sorry YOUR PLANT has left us :(</string>
-        <string name="loading_funeral_plant_secondary">We\'re celebrating YOUR  PLANT\'s funeral</string>
+        <string name="loading_funeral_plant">We are very sorry your plant has left us :(</string>
+        <string name="loading_funeral_plant_secondary">We\'re celebrating the funeral of \u0020</string>
 
         <!--fragment_loading_water_plant-->
-        <string name="loading_water_plant">YOUR PLANT will be now lovingly tended to!</string>
-        <string name="loading_water_plant_secondary"> We\'re watering YOUR PLANT </string>
+        <string name="loading_water_plant">Your plant will be now lovingly tended to!</string>
+        <string name="loading_water_plant_secondary"> We\'re watering \u0020</string>
 
         <!--fragment_my_dead_plant-->
 

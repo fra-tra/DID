@@ -252,21 +252,21 @@
 
 
     <!--fragment_loading_add_plant-->
-    <string name="loading_add_plant">Stai contribuendo ad aumentare il valore globale dell\'ossigeno! </string>
+    <string name="loading_add_plant">Stai contribuendo ad aumentare il valore globale dell\'ossigeno!</string>
 
-    <string name="loading_add_plant_secondary">Stiamo piantando LA TUA PIANTA</string>
+    <string name="loading_add_plant_secondary">Stiamo piantando \u0020</string>
 
 
     <!--fragment_loading_plant_funeral-->
-    <string name="loading_funeral_plant">Ci dispiace che la TUA PIANTA ci abbia lasciato :(</string>
+    <string name="loading_funeral_plant">Ci dispiace che la tua pianta ci abbia lasciato :(</string>
 
-    <string name="loading_funeral_plant_secondary">Stiamo celebrando il funerale della TUA PIANTA</string>
+    <string name="loading_funeral_plant_secondary">Stiamo celebrando il funerale di \u0020</string>
 
 
     <!--fragment_loading_water_plant-->
-    <string name="loading_water_plant">La TUA PIANTA sarà ora amorevolmente curata!</string>
+    <string name="loading_water_plant">La tua pianta sarà ora amorevolmente curata!</string>
 
-    <string name="loading_water_plant_secondary"> Stiamo annaffinado la TUA PIANTA</string>
+    <string name="loading_water_plant_secondary"> Stiamo annaffinado \u0020</string>
 
 
     <!--fragment_my_dead_plant-->

@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayoutLoadingWaterPlant"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.LoadingWaterPlantFragment" >
+    tools:context=".fragments.LoadingWaterPlantFragment">
 
     <ImageView
         android:id="@+id/bg_watering"
@@ -26,13 +26,13 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="@+id/bg_watering"
         app:layout_constraintDimensionRatio="w,1.43:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8"
+        app:lottie_loop="true"
         app:lottie_rawRes="@raw/watering_cropped">
 
     </com.airbnb.lottie.LottieAnimationView>
@@ -84,7 +84,9 @@
         android:textColor="@color/grey"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/progressBarWaterPlant"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/plantName_loading_water"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
@@ -97,4 +99,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plantName_loading_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:singleLine="true"
+        android:text="LA MIA PIANTA"
+        android:textColor="@color/grey"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarWaterPlant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textLoadingWaterPlantSecondary" />
 </androidx.constraintlayout.widget.ConstraintLayout>
