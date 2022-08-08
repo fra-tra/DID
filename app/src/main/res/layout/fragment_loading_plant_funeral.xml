@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayoutLoadingPlantFuneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.LoadingPlantFuneralFragment" >
+    tools:context=".fragments.LoadingPlantFuneralFragment">
 
     <ImageView
         android:id="@+id/bg_funeral"
@@ -25,13 +25,13 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:lottie_loop="true"
-        app:layout_constraintDimensionRatio="w,1.58:1"
         app:layout_constraintBottom_toBottomOf="@+id/bg_funeral"
+        app:layout_constraintDimensionRatio="w,1.58:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8"
+        app:lottie_loop="true"
         app:lottie_rawRes="@raw/funeral_cropped">
 
     </com.airbnb.lottie.LottieAnimationView>
@@ -83,8 +83,9 @@
         android:textColor="@color/grey"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/progressBarFuneralPlant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/plantName_loading_funeral"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/progressBarFuneralPlant" />
 
     <ProgressBar
         android:id="@+id/pbWaitingFuneral"
@@ -96,4 +97,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plantName_loading_funeral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="160dp"
+        android:singleLine="true"
+        android:text="LA MIA PIANTA"
+        android:textColor="@color/grey"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarFuneralPlant"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarFuneralPlant"
+        app:layout_constraintStart_toEndOf="@+id/textLoadingFuneralPlantSecondary" />
 </androidx.constraintlayout.widget.ConstraintLayout>

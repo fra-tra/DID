@@ -74,7 +74,7 @@ class SelectCalendarRangeFragment : Fragment() {
         val defaultDates: Pair<Long, Long>? = null
 
         val materialDateBuilder = MaterialDatePicker.Builder.dateRangePicker()
-        materialDateBuilder.setTitleText("SELEZIONA UNA DATA");
+        materialDateBuilder.setTitleText(R.string.SelectCalendarRangeFragment_materialDateBuilder);
 
 
 

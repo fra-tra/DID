@@ -197,9 +197,9 @@
         <entry key="app/src/main/res/layout/fragment_graveyard.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_graveyard_card.xml" value="0.27506103515624997" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3884297520661157" />
-        <entry key="app/src/main/res/layout/fragment_loading_add_plant.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_loading_add_plant.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_loading_plant_funeral.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.35260416666666666" />
@@ -227,6 +227,7 @@
         <entry key="app/src/main/res/layout/item_discover_plants.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/item_dropdown_vase_settings.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/item_liked_plants.xml" value="0.49545644124348964" />
+        <entry key="app/src/main/res/layout/item_liked_plants_profilo.xml" value="0.20277777777777778" />
         <entry key="app/src/main/res/layout/item_plant_card.xml" value="0.4410919540229885" />
         <entry key="app/src/main/res/layout/item_plant_image.xml" value="0.75" />
         <entry key="app/src/main/res/layout/item_plant_summary_home.xml" value="0.45" />
