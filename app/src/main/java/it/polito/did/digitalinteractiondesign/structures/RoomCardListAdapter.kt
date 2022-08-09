@@ -34,15 +34,15 @@ class RoomCardListAdapter(var rooms: List<Room>): RecyclerView.Adapter<RoomCardL
 
 
             //VERIFY IF ROOM IS PLANT GRAVEYARD: POSITION OR TITLE?
-            if(rooms[position].name == "Plant Graveyard") {
-                roomCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_grey))
+            if(rooms[position].isGraveyard == true) {
+                roomCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_purple))
             }
 
             //SHOW DETAIL ROOM PLANTS
             seeAllRoomPlantsBtn.setOnClickListener {
                 Log.d("Mostra", "tutte le piante in ${roomCardTitle.text.toString()}")
 
-                if(rooms[position].name == "Plant Graveyard") {
+                if(rooms[position].isGraveyard == true) {
                     Navigation.findNavController(seeAllRoomPlantsBtn)
                         .navigate(R.id.action_piante_to_graveyardFragment)
                 }

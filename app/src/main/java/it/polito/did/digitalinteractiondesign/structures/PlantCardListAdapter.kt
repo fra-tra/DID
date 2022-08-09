@@ -34,8 +34,8 @@ class PlantCardListAdapter (var plants: List<Plant>)
            //SET CARD BACKGROUND COLOR AND NAVIGATION IF PLANT IS DEAD OR OTHERWISE
            if(plants[position].isDead){
 
-               plantCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_grey))
-               imagePlant.saturation = 0.2F
+               plantCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_purple))
+               imagePlant.saturation = 0.15F
                plantDetailBtn.setOnClickListener {
                    //SHOW DETAIL DEAD PLANT
                    Navigation.findNavController(plantDetailBtn).navigate(R.id.action_graveyardFragment_to_myDeadPlantFragment)

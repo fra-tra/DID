@@ -73,16 +73,15 @@ class WateringCanFragment : Fragment() {
         wave.setAnimDuration(10000);
 
         var bar = view.findViewById<SeekBar>(R.id.seekBar)
-        wave.progressValue = bar.progress
         wave.progressValue = bar.progress;
 
         var amp = 30;
 
         //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-        alertEmptyWateringCan.isGone = bar.progress >= 10
+        alertEmptyWateringCan.isGone = wave.progressValue >= 10
 
-        if(bar.progress < amp){
-            wave.setAmplitudeRatio(bar.progress)
+        if(wave.progressValue < amp){
+            wave.setAmplitudeRatio(wave.progressValue)
         }
         else {
             amp = 30

@@ -63,7 +63,7 @@ class AddPlantVaseFragment : Fragment() {
 
         var btnAddPlantFinal = view.findViewById<Button>(R.id.btnAddPlantFinal)
         btnAddPlantFinal.setOnClickListener {
-            findNavController().navigate(R.id.action_addPlantVaseFragment_to_addPlantsSensorFragment)
+            findNavController().navigate(R.id.action_addPlantVaseFragment_to_loadingAddPlantFragment)
         }
     }
 }

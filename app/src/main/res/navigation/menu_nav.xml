@@ -217,6 +217,9 @@
         <action
             android:id="@+id/action_addPlantVaseFragment_to_addPlantsSensorFragment"
             app:destination="@id/addPlantsSensorFragment" />
+        <action
+            android:id="@+id/action_addPlantVaseFragment_to_loadingAddPlantFragment"
+            app:destination="@id/loadingAddPlantFragment" />
     </fragment>
     <fragment
         android:id="@+id/addPlantsSensorFragment"

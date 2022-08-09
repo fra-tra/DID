@@ -204,7 +204,7 @@
         <entry key="app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.35260416666666666" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_vase.xml" value="0.375" />

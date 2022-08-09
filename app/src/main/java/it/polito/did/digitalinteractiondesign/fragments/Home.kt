@@ -113,11 +113,17 @@ class Home : Fragment() {
             fabAddPlantFromHome.setOnClickListener{
                 val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
                 bottomNav.selectedItemId = R.id.discover
-                // findNavController().navigate(R.id.discover)
+
             }
         }
 
+        //button per pssare da home a discover sempre presente
+            val fabAddPlantFromHome2 = view.findViewById<FloatingActionButton>(R.id.btnAddPlantFromHome2)
+            fabAddPlantFromHome2.setOnClickListener{
+            val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
+            bottomNav.selectedItemId = R.id.discover
 
+        }
     }
 
     //general function to check if either temperature, humidity or brightness measures need to be alerted with a danger or warning icon

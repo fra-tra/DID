@@ -34,47 +34,104 @@ class MyPlantAlertMeasuresFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //VALORI CHE INDICANO SE LA MISURA È IN STATO DI ALLERTA
+        //0 = NO ALERT, 1 = Danger valore troppo basso (N), 2 = Warning valore troppo basso (N), 3 = Warning valore troppo alto (P), 4 = Danger, valore troppo alto(P)
+        //il valore viene stablito dalla funzione showMeasureAlert
+        var isToAlertT : Int
+        var isToAlertW : Int
+        var isToAlertB : Int
+
+
         var messageWater = view.findViewById<TextView>(R.id.alertMessageWater)
         var messageTemperature = view.findViewById<TextView>(R.id.alertMessageTemperature)
         var messageBrightness = view.findViewById<TextView>(R.id.alertMessageBrightness)
 
-        showMeasureAlert(messageWater, 12, 5, 10, 80, 90)
-        showMeasureAlert(messageTemperature, 10, 60, 10, 80, 90)
-        showMeasureAlert(messageBrightness, 85, 5, 10, 80, 90)
+       isToAlertW = showMeasureAlert(messageWater, 12, 5, 10, 80, 90)
+       isToAlertT = showMeasureAlert(messageTemperature, 32, 10, 20, 30, 40)
+       isToAlertB=  showMeasureAlert(messageBrightness, 5, 10, 20, 80, 90)
+
+        //per ogni misura (water, temperature, brightness) si setta il testo in base allo stato di allerta (danger negativo/positivo o warning negativo/positivo)
+        if (isToAlertW == 1) {
+            messageWater.setText(R.string.MyPlantAlert_Water_Danger_N);
+        }
+        else if (isToAlertW == 2) {
+            messageWater.setText(R.string.MyPlantAlert_Water_Warning_N);
+        }
+        else if (isToAlertW == 3) {
+            messageWater.setText(R.string.MyPlantAlert_Water_Warning_P);
+        }
+        else if (isToAlertW == 4) {
+            messageWater.setText(R.string.MyPlantAlert_Water_Danger_P);
+        }
+
+
+
+        if (isToAlertT == 1) {
+            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Danger_N);
+        }
+        else if (isToAlertT == 2) {
+            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Warning_N);
+        }
+        else if (isToAlertT == 3) {
+            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Warning_P);
+        }
+        else if (isToAlertT == 4) {
+            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Danger_P);
+        }
+
+
+
+        if (isToAlertB == 1) {
+            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Danger_N);
+        }
+        else if (isToAlertB == 2) {
+            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Warning_N);
+        }
+        else if (isToAlertB == 3) {
+            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Warning_P);
+        }
+        else if (isToAlertB == 4) {
+            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Danger_P);
+        }
     }
 
     //FUNCTION TO BE IMPROVED AND IMPLEMENTED: CHECK IF WATER/BRIGHTNESS/TEMPERATURE MEASURE IS IN DANGER OR WARNING STATE
     //IN VIEW MODEL AND SET THE TEXT ACCORDINGLY
-    private fun showMeasureAlert(message: TextView, measure: Long,
-                                 minMeasureDanger: Int, minMeasureWarning: Int, maxMeasureWarning: Int, maxMeasureDanger: Int) {
+    private fun showMeasureAlert(message: TextView,  measure: Long,
+                                 minMeasureDanger: Int, minMeasureWarning: Int, maxMeasureWarning: Int, maxMeasureDanger: Int): Int {
 
         if(measure <= minMeasureDanger) {
             message.visibility = View.VISIBLE
             message.setBackgroundResource(R.drawable.red_background)
             message.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-            message.text = "DANGER"
+          //  message.text = "DANGER"
+            return 1;
         }
         else if (measure <= minMeasureWarning) {
             message.visibility = View.VISIBLE
             message.setBackgroundResource(R.drawable.yellow_background)
             message.setTextColor(ContextCompat.getColor(requireActivity(), R.color.dark_grey))
-            message.text = "WARNING"
+          //  message.text = "WARNING"
+            return 2;
         }
         else if (measure >= maxMeasureDanger) {
             message.visibility = View.VISIBLE
             message.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
             message.setBackgroundResource(R.drawable.red_background)
-            message.text = "DANGER"
+         //   message.text = "DANGER"
+            return 4;
 
         }
         else if (measure >= maxMeasureWarning) {
             message.visibility = View.VISIBLE
             message.setBackgroundResource(R.drawable.yellow_background)
             message.setTextColor(ContextCompat.getColor(requireActivity(), R.color.dark_grey))
-            message.text = "WARNING"
+            return 3;
+          //  message.text = "WARNING"
         }
         else {
             message.visibility = View.GONE
+            return 0;
         }
 
 

@@ -38,7 +38,7 @@ class MyPlantStatsFragment : Fragment() {
         //TEST PLANT
         val plant = Plant("Basilico", null, false, 60.0)
 
-        // set tv measure
+        // recupero viste
         var tvWaterMeasure = view.findViewById<TextView>(R.id.tvWaterMeasure)
         var pbWater = view.findViewById<ProgressBar>(R.id.pbWater)
         var icAlertWater = view.findViewById<ImageView>(R.id.icAlertWater)
@@ -66,15 +66,21 @@ class MyPlantStatsFragment : Fragment() {
 
         //TEST
         pbWater.progress = plant.waterMeasure.roundToInt()
-        pbTemperature.progress = 95
-        pbBrightness.progress = 12
+        pbTemperature.progress = 32
+        pbBrightness.progress = 5
+
+        //show alert for water -> rendere dinamico in base ai dati
         showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 10, 20, 80, 90)
-        showMeasureAlert(pbTemperature, icAlertTemperature, icAlertOutlineTemperature, 10, 20, 80, 90)
+
+        //show alert for temperature -> DEFAULT RESTA COSI
+        showMeasureAlert(pbTemperature, icAlertTemperature, icAlertOutlineTemperature, 10, 20, 30, 40)
+
+        //show alert for brightness -> DEFAULT RESTA COSI
         showMeasureAlert(pbBrightness, icAlertBrightness, icAlertOutlineBrightness, 10, 20, 80, 90)
 
         tvWaterMeasure.text = pbWater.progress.toString()
-        tvTemperatureMeasure.text = pbTemperature.progress.toString()
-        tvBrightnessMeasure.text = pbBrightness.progress.toString()
+        tvTemperatureMeasure.text = pbTemperature.progress.toString() + "°C"
+        tvBrightnessMeasure.text = pbBrightness.progress.toString() + "%"
     }
 
     //FUNCTION TO BE IMPROVED WHEN VIEW MODEL IS IMPLEMENTED: CHECK IN VIEW MODEL IF THE MEASURE IS TO BE ALERTED (WARNING OR DANGER)

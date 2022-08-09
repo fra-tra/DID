@@ -27,13 +27,14 @@
             app:title="@string/my_plant_title"
             app:expandedTitleTextAppearance="@style/expandedBarTextStyleMyplant">
 
-            <ImageView
+            <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:src="@drawable/plant_placeholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center|end"
+                app:saturation="0.15"
                 app:layout_collapseMode="parallax"/>
 
             <TextView

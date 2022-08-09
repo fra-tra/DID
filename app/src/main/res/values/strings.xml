@@ -300,13 +300,20 @@
 
 
     <!--fragment_my_plant_alert_measures-->
-    <string name="MyPlantAlert_Temperature">ATTENZIONE: TEMPERATURA</string>
+    <string name="MyPlantAlert_Temperature_Danger_N">La tua pianta è in un ambiente TROPPO freddo!</string>
+    <string name="MyPlantAlert_Temperature_Warning_N">La tua pianta è in un ambiente un po\' freddo…</string>
+    <string name="MyPlantAlert_Temperature_Danger_P">La tua pianta è in un ambiente TROPPO caldo!</string>
+    <string name="MyPlantAlert_Temperature_Warning_P">La tua pianta è in un ambiente un po\' caldo…</string>
 
+    <string name="MyPlantAlert_Water_Danger_N">La tua pianta ha bisogno di essere annaffiata AL PIÙ PRESTO!</string>
+    <string name="MyPlantAlert_Water_Warning_N">La tua pianta dovrebbe essere annaffiata…</string>
+    <string name="MyPlantAlert_Water_Danger_P">La tua pianta è stata annaffiata TROPPO!</string>
+    <string name="MyPlantAlert_Water_Warning_P">La terra della tua pianta è un po\' troppo umida… </string>
 
-    <string name="MyPlantAlert_Water">ATTENZIONE: ACQUA</string>
-
-
-    <string name="MyPlantAlert_Brightness">ATTENZIONE: LUMINOSITA</string>
+    <string name="MyPlantAlert_Brightness_Danger_N">La tua pianta è in un ambiente TROPPO buio!</string>
+    <string name="MyPlantAlert_Brightness_Warning_N">La tua pianta è in un ambiente un po\' buio…</string>
+    <string name="MyPlantAlert_Brightness_Danger_P">La tua pianta è in un ambiente TROPPO luminoso!</string>
+    <string name="MyPlantAlert_Brightness_Warning_P">La tua pianta è in un ambiente un po\' luminoso…</string>
 
 
     <!--fragment_my_plant_settings-->
@@ -323,7 +330,9 @@
 
     <string name="MyPlantSettings_Vase_Subtitle_Soil">Seleziona il tipo di terra</string>
 
-    <string name="MyPlantSetting_MissingInformation">Informazione mancante! > </string>
+    <string name="MyPlantSetting_MissingInformation">Informazione mancante! ></string>
+
+    <string name="MyPlantSetting_BtnSensors">Configura sensori</string>
 
     <string name="MyPlantSetting_BtnDeathPlant">Registra la morte della tua pianta</string>
 
@@ -370,7 +379,7 @@
 
     <string name="MyPlantWaterAndCalendar_AutomaticWater">Innaffiatura Automatica:</string>
 
-
+    <string name="MyPlantWaterAndCalendar_BrightnessTitle">Luminosità</string>
 
     <!--fragment_piante-->
     <string name="Piante_Title">Le mie piante</string>
@@ -415,6 +424,8 @@
     <string name="SelectCalendarRange_Forever">Per Sempre</string>
 
     <string name="SelectCalendarRange_SpecificData">Specifica Range Date</string>
+
+    <string name="SelectCalendarRange_Never">Mai</string>
 
 
     <!--fragment_signup-->

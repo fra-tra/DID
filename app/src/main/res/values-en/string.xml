@@ -267,11 +267,20 @@
         <string name="MyPlant_Advice">Advice</string>
 
         <!--fragment_my_plant_alert_measures-->
-        <string name="MyPlantAlert_Temperature">ALERT: TEMPERATURE</string>
+        <string name="MyPlantAlert_Temperature_Danger_N">The room your plant is in it\'s TOO cold!</string>
+        <string name="MyPlantAlert_Temperature_Warning_N">The room your plant is in it\'s a little too cold…</string>
+        <string name="MyPlantAlert_Temperature_Danger_P">The room your plant is in it\'s TOO hot!</string>
+        <string name="MyPlantAlert_Temperature_Warning_P">The room your plant is in it\'s a little too hot…</string>
 
-        <string name="MyPlantAlert_Water">ALERT: WATER</string>
+        <string name="MyPlantAlert_Water_Danger_N">Your plant needs to be watered ASAP!</string>
+        <string name="MyPlantAlert_Water_Warning_N">Your plant should be watered…</string>
+        <string name="MyPlantAlert_Water_Danger_P">Your plant has been watered TOO MUCH!</string>
+        <string name="MyPlantAlert_Water_Warning_P">The soil of your plant is a little too wet…</string>
 
-        <string name="MyPlantAlert_Brightness">ALERT: BRIGHTNESS</string>
+        <string name="MyPlantAlert_Brightness_Danger_N">The room your plant is in it\'s TOO dark!</string>
+        <string name="MyPlantAlert_Brightness_Warning_N">The room your plant is in it\'s a little too dark…</string>
+        <string name="MyPlantAlert_Brightness_Danger_P">The room your plant is in it\'s TOO bright!</string>
+        <string name="MyPlantAlert_Brightness_Warning_P">The room your plant is in it\'s a little too bright…</string>
 
         <!--fragment_my_plant_settings-->
         <string name="MyPlantSettings_Title">Plant Setting</string>
@@ -287,6 +296,8 @@
         <string name="MyPlantSettings_Vase_Subtitle_Soil">Set your soil type</string>
 
         <string name="MyPlantSetting_MissingInformation">Missing information! > </string>
+
+        <string name="MyPlantSetting_BtnSensors">Set up sensors</string>
 
         <string name="MyPlantSetting_BtnDeathPlant">Register Plant\'s Death</string>
 
@@ -323,6 +334,8 @@
 
         <string name="MyPlantWaterAndCalendar_AutomaticWater">Automatic Watering:</string>
 
+        <string name="MyPlantWaterAndCalendar_BrightnessTitle">Brightness</string>
+
 
         <!--fragment_piante-->
         <string name="Piante_Title">My plants</string>
@@ -355,6 +368,7 @@
 
         <string name="SelectCalendarRange_Forever">Forever</string>
         <string name="SelectCalendarRange_SpecificData">Specific Date Range</string>
+        <string name="SelectCalendarRange_Never">Never</string>
 
         <!--fragment_signup-->
         <string name="SignUp_Title">Begin your adventure on Plant-e!</string>

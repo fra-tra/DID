@@ -289,17 +289,17 @@
         app:layout_constraintGuide_percent="0.83" />
 
     <Button
-        android:id="@+id/btnDeletePlant"
+        android:id="@+id/btnSensori"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@drawable/button_background_grey"
-        android:text="Delete Plant"
+        android:enabled="false"
+        android:text="@string/MyPlantSetting_BtnSensors"
         android:textSize="12sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/btnDeathPlant"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btnDeathPlant"
-        app:layout_constraintTop_toBottomOf="@+id/btnDeathPlant" />
+        app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
     <Button
         android:id="@+id/btnDeathPlant"
@@ -310,10 +310,10 @@
         android:backgroundTint="@drawable/button_background_red"
         android:text="@string/MyPlantSetting_BtnDeathPlant"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnDeletePlant"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/vaseCardSettings"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/vaseCardSettings"
-        app:layout_constraintTop_toBottomOf="@+id/vaseCardSettings"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSensori" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
