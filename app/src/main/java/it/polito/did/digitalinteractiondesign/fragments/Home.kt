@@ -89,7 +89,7 @@ class Home : Fragment() {
             Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
         )
 
-      //  val plantList : MutableList<Plant> = mutableListOf()
+       //val plantList : MutableList<Plant> = mutableListOf()
 
         val adapter = PlantHomeSummaryAdapter(plantList)
         val rvPlantsHome = view.findViewById<RecyclerView>(R.id.rvPlantsHome)

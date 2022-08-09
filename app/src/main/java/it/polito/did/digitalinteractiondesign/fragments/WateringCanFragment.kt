@@ -73,15 +73,16 @@ class WateringCanFragment : Fragment() {
         wave.setAnimDuration(10000);
 
         var bar = view.findViewById<SeekBar>(R.id.seekBar)
-        wave.progressValue = bar.progress
-        wave.progressValue = bar.progress;
+
+        wave.progressValue = bar.progress  // dato level H2o dal database
+
 
         var amp = 30;
 
         //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-        alertEmptyWateringCan.isGone = bar.progress >= 10
+        alertEmptyWateringCan.isGone = wave.progressValue >= 10
 
-        if(bar.progress < amp){
+        if(wave.progressValue < amp){
             wave.setAmplitudeRatio(bar.progress)
         }
         else {
@@ -101,11 +102,13 @@ class WateringCanFragment : Fragment() {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 // TODO Auto-generated method stub
 
+                // Implementa qui il valore del livello D'acqua
                 wave.progressValue = progress;
                 if(progress < amp){
                     wave.setAmplitudeRatio(progress)
 
                 }
+
                 //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
                 alertEmptyWateringCan.isGone = progress >= 10
 
