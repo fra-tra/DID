@@ -150,7 +150,7 @@ class SignUp_Activity : AppCompatActivity() {
                 //elimina selezione di city qualora sia presenta quando seleziono un paese
                binding.cityEditT.setText("");
 
-                //abilita selezione di city quando seleziono un paese 
+                //abilita selezione di city quando seleziono un paese
                selectedCountry = countryArrayAdapter.getItem(position).toString()
                if(selectedCountry != "") {
                    binding.cityTextIL.isEnabled = true
