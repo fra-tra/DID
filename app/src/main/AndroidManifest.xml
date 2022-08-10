@@ -14,6 +14,7 @@
         <activity
             android:name="it.polito.did.digitalinteractiondesign.activity.SignUp_Activity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name="it.polito.did.digitalinteractiondesign.activity.Home_Activity"

@@ -38,13 +38,13 @@
         <item name="android:textColor"> @color/green </item>
     </style>
 
-    <style name="expandedBarTextStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="expandedBarTextStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="fontFamily">@font/barlow_condensed_semibold</item>
         <item name="android:textSize">32dp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="expandedBarTextStyleMyplant" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="expandedBarTextStyleMyplant" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="fontFamily">@font/barlow_condensed_semibold</item>
         <item name="android:textSize">32dp</item>
         <item name="android:textColor">@android:color/black</item>

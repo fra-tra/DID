@@ -29,12 +29,12 @@
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:scaleType="centerInside"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
         app:layout_constraintBottom_toTopOf="@+id/glSignUpH"
         app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
         app:layout_constraintStart_toStartOf="@+id/glSignUpL"
         app:layout_constraintTop_toBottomOf="@+id/titleLabel"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:lottie_rawRes="@raw/signup_cropped">
 
     </com.airbnb.lottie.LottieAnimationView>
@@ -84,7 +84,7 @@
         app:errorEnabled="true"
         app:helperTextEnabled="true"
 
-        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
+        app:layout_constraintBottom_toTopOf="@+id/countryDropdownMenu"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="@id/glSignUpL"
         app:layout_constraintRight_toRightOf="@id/glSignUpR"
@@ -100,9 +100,73 @@
             android:inputType="textPassword"
             android:textSize="14sp" />
 
+
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Country -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/countryDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/EditCountry"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
+        app:layout_constraintEnd_toStartOf="@+id/cityTextIL"
+        app:layout_constraintStart_toStartOf="@+id/glSignUpL"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextIL">
+
+        <AutoCompleteTextView
+            android:id="@+id/tvCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColor="@color/dark_grey"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- City -->
+
+
     <!-- SignUp Button -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cityTextIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/EditCity"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/countryDropdownMenu"
+        app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
+        app:layout_constraintStart_toEndOf="@+id/countryDropdownMenu"
+        app:layout_constraintTop_toTopOf="@+id/countryDropdownMenu">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/cityEditT"
+            style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/signUpBtn"
         android:layout_width="0dp"
@@ -112,7 +176,7 @@
         app:layout_constraintEnd_toStartOf="@+id/glSignUpR"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/glSignUpL"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextIL" />
+        app:layout_constraintTop_toBottomOf="@+id/countryDropdownMenu" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glSignUpL"
@@ -133,7 +197,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -141,4 +205,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

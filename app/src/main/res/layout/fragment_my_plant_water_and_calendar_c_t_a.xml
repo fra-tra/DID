@@ -40,12 +40,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="@string/MyPlantWaterAndCalendar_LastWater"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/tvLastWatered"
@@ -89,9 +90,11 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="-10dp"
         android:layout_marginTop="8dp"
+        android:paddingStart="16dip"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
@@ -100,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/MyPlantWaterAndCalendar_BrightnessTitle"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/btnWaterPlant" />
@@ -114,9 +117,10 @@
         android:paddingStart="2dp"
         android:paddingEnd="2dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_sun"
+        android:src="@drawable/ic_baseline_lightbulb_circle_24"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:tint="@color/yellow_warning" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

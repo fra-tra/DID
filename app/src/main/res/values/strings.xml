@@ -34,7 +34,8 @@
 
     <string name="EditEmail">Email</string>
     <string name="EditPassword">Password</string>
-
+    <string name="EditCountry">Paese</string>
+    <string name="EditCity">Città</string>
 
     <string name="Nome">Nome</string>
 
@@ -379,7 +380,7 @@
 
     <string name="MyPlantWaterAndCalendar_AutomaticWater">Innaffiatura Automatica:</string>
 
-    <string name="MyPlantWaterAndCalendar_BrightnessTitle">Luminosità</string>
+    <string name="MyPlantWaterAndCalendar_BrightnessTitle">Luce</string>
 
     <!--fragment_piante-->
     <string name="Piante_Title">Le mie piante</string>

@@ -26,7 +26,8 @@
 
         <string name="EditEmail">Email</string>
         <string name="EditPassword">Password</string>
-
+        <string name="EditCountry">Country</string>
+        <string name="EditCity">City</string>
 
         <string name="Nome">Name</string>
 
@@ -334,7 +335,7 @@
 
         <string name="MyPlantWaterAndCalendar_AutomaticWater">Automatic Watering:</string>
 
-        <string name="MyPlantWaterAndCalendar_BrightnessTitle">Brightness</string>
+        <string name="MyPlantWaterAndCalendar_BrightnessTitle">Light</string>
 
 
         <!--fragment_piante-->
