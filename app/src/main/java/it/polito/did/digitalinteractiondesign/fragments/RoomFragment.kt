@@ -45,11 +45,11 @@ class RoomFragment : Fragment() {
 
         //TEST LIST
         var plantList = mutableListOf(
-            Plant("Basilico", null, false),
-            Plant("Origano", null, false),
-            Plant("Pothos", null, false),
-            Plant("Cactus", null, false),
-            Plant("Rosmarino", null, false),
+            Plant("Basilico", null),
+            Plant("Origano", null),
+            Plant("Pothos", null),
+            Plant("Cactus", null),
+            Plant("Rosmarino", null),
         )
 
         val adapter = PlantCardListAdapter(plantList)

@@ -73,7 +73,7 @@ class MyPlantFragment : Fragment() {
         backBtn.setOnClickListener {
             findNavController().navigateUp()
         }
-        var plantprova=  Plant("Basilico", null, false)
+        var plantprova=  Plant("Basilico", null)
         var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsingToolbarMyPlant)
         toolbar.title=plantprova.name
 

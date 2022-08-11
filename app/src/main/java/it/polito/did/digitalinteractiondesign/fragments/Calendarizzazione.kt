@@ -31,17 +31,18 @@ class Calendarizzazione : Fragment() {
         val RVparent = view.findViewById<RecyclerView>(R.id.RVparent)
 
         var roomList = mutableListOf(
+
             Room("Kitchen",
-                mutableListOf( Plant("Sanseveria", null, false),
-                    Plant("Basilico", null, false, switchStatus =  true),
-                    Plant("Rosmarino", null, false),
-                    Plant("Cactus", null, false, switchStatus =  true),
-                    Plant("Origano", null, false, switchStatus =  true)
+                mutableListOf( Plant("Sanseveria", null),
+                    Plant("Basilico", null),
+                    Plant("Rosmarino", null),
+                    Plant("Cactus", null),
+                    Plant("Origano", null)
                 )),
             Room("Bathroom",
-                mutableListOf( Plant("Basilico", null, true, switchStatus =  true),
-                    Plant("Rosmarino", null, true, switchStatus =  true),
-                    Plant("Origano", null, true)
+                mutableListOf( Plant("Basilico", null),
+                    Plant("Rosmarino", null),
+                    Plant("Origano", null)
                 ))
 
         )

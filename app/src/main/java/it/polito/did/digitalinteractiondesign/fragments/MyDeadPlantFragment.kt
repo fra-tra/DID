@@ -72,7 +72,7 @@ class MyDeadPlantFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-        var plantprova=  Plant("Basilico", null, false)
+        var plantprova=  Plant("Basilico", null)
         var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsingToolbarMyDeadPlant)
         toolbar.title=plantprova.name
 

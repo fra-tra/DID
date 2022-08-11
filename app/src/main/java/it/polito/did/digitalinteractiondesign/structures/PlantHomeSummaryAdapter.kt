@@ -35,7 +35,7 @@ class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<Pl
 
 
             // SET MEASURES
-            progressBarWaterHome.progress = plants[position].waterMeasure.roundToInt()
+            progressBarWaterHome.progress = plants[position].waterLevelMeasure.roundToInt()
 
             //SET MEASURES ALERT
             //TESTING HUMIDITY - TEMPERATURE AND BRIGHTNESS STILL TO BE IMPLEMENTED

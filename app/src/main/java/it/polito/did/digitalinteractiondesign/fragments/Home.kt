@@ -2,6 +2,8 @@ package it.polito.did.digitalinteractiondesign.fragments
 
 import android.media.Image
 import android.os.Bundle
+import android.os.Debug
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.structures.Plant
@@ -80,7 +83,7 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+/*
         var plantList = mutableListOf(
             Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
             Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
@@ -88,8 +91,8 @@ class Home : Fragment() {
             Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
             Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
         )
-
-       //val plantList : MutableList<Plant> = mutableListOf()
+*/
+       val plantList : MutableList<Plant> = mutableListOf()
 
         val adapter = PlantHomeSummaryAdapter(plantList)
         val rvPlantsHome = view.findViewById<RecyclerView>(R.id.rvPlantsHome)
@@ -105,6 +108,7 @@ class Home : Fragment() {
         if(plantList.size > 0) {
             fabAddPlantFromHome.visibility = View.GONE
             noPlantsInHomeTV.visibility = View.GONE
+
         }
 
         else {
@@ -114,6 +118,13 @@ class Home : Fragment() {
                 val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
                 bottomNav.selectedItemId = R.id.discover
                 // findNavController().navigate(R.id.discover)
+                //add Plants
+
+                ManagerPlants.addPlantDB("Alive",Plant("Rosmarino",null,"Cucina", "1" , "small", "Type 1" ))
+
+                //Update UI
+
+
             }
         }
 

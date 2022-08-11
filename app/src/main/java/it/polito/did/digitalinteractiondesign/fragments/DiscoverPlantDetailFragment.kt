@@ -94,7 +94,7 @@ class DiscoverPlantDetailFragment : Fragment() {
 
         }
 
-        var plantprova=  Plant("Basilico", null, false)
+        var plantprova=  Plant("Basilico", null)
         var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar)
         toolbar.title=plantprova.name
 

@@ -86,11 +86,11 @@ class Discover : Fragment() {
 
 
         val plantList = mutableListOf(
-            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Basilico", null),
+            Plant("Origano", null),
+            Plant("Pothos", null),
+            Plant("Cactus", null),
+            Plant("Rosmarino", null),
         )
 
         val categoriesList = mutableListOf(
@@ -101,12 +101,12 @@ class Discover : Fragment() {
         )
 
         val plantSearchList = mutableListOf(
-            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
+            Plant("Basilico", null),
+            Plant("Origano", null),
+            Plant("Pothos", null),
+            Plant("Cactus", null),
+            Plant("Rosmarino", null),
+            Plant("Rosmarino", null),
         )
         plantSearchList.sortBy { it.name }
 

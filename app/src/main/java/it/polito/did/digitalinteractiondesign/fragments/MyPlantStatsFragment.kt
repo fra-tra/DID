@@ -36,7 +36,7 @@ class MyPlantStatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //TEST PLANT
-        val plant = Plant("Basilico", null, false, 60.0)
+        val plant = Plant("Basilico", null)
 
         // set tv measure
         var tvWaterMeasure = view.findViewById<TextView>(R.id.tvWaterMeasure)
@@ -65,7 +65,7 @@ class MyPlantStatsFragment : Fragment() {
 
 
         //TEST
-        pbWater.progress = plant.waterMeasure.roundToInt()
+        pbWater.progress = plant.waterLevelMeasure.roundToInt()
         pbTemperature.progress = 95
         pbBrightness.progress = 12
         showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 10, 20, 80, 90)

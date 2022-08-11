@@ -68,11 +68,11 @@ class GraveyardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var plantList = mutableListOf(
-            Plant("Basilico", null, true),
-            Plant("Origano", null, true),
-            Plant("Pothos", null, true),
-            Plant("Cactus", null, true),
-            Plant("Rosmarino", null, true),
+            Plant("Basilico", null),
+            Plant("Origano", null),
+            Plant("Pothos", null),
+            Plant("Cactus", null),
+            Plant("Rosmarino", null),
         )
 
         val adapter = PlantCardListAdapter(plantList)

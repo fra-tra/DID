@@ -72,16 +72,16 @@ class Piante : Fragment() {
         //TEST DATA
         var roomList = mutableListOf(
             Room("Kitchen",
-                mutableListOf( Plant("Sanseveria", null, false),
-                    Plant("Basilico", null, false),
-                    Plant("Rosmarino", null, false),
-                    Plant("Cactus", null, false),
-                    Plant("Origano", null, false)
+                mutableListOf( Plant("Sanseveria", null),
+                    Plant("Basilico", null),
+                    Plant("Rosmarino", null),
+                    Plant("Cactus", null),
+                    Plant("Origano", null)
                 )),
             Room("Plant Graveyard",
-                mutableListOf( Plant("Basilico", null, true),
-                    Plant("Rosmarino", null, true),
-                    Plant("Origano", null, true)
+                mutableListOf( Plant("Basilico", null),
+                    Plant("Rosmarino", null),
+                    Plant("Origano", null)
                 ))
 
         )
