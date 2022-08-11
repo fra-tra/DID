@@ -1,20 +1,26 @@
 package it.polito.did.digitalinteractiondesign.activity
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.AdapterView.OnItemClickListener
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivitySignUpBinding
+
 
 class SignUp_Activity : AppCompatActivity() {
     //ViewBinding
@@ -99,8 +105,59 @@ class SignUp_Activity : AppCompatActivity() {
             }
         });
 
+        //definisco array di stringhe inizialmente vuoto che dovrà essere popolato con i paesi
+        val countries = ArrayList<String>()
 
+        //inserisco tre paesi come prova nell'array
+        countries.add("Italy")
+        countries.add("Argentina")
+        countries.add("Netherlands")
+
+        //lego i paesi dell'array alle opzioni del dropdown menu (riutilizzo il layout gia usato per il dropdown menu del vase type)
+        val countryArrayAdapter = ArrayAdapter(this, R.layout.item_dropdown_vase_settings, countries)
+        binding.tvCountry.setAdapter(countryArrayAdapter)
+
+        // nascondo la soft keyboard quando il focus è sul dropdown menu del paese
+        binding.tvCountry.onFocusChangeListener  = View.OnFocusChangeListener { view, b ->
+            if (b){
+                Log.d("prova", "hide keyboard")
+                  val manager: InputMethodManager = getSystemService(
+                   Context.INPUT_METHOD_SERVICE
+               ) as InputMethodManager
+               manager
+                   .hideSoftInputFromWindow(
+                       view.windowToken, 0
+                   )
+
+            }
+        }
+
+
+        //processo analogo a countries
+        val cities = ArrayList<String>()
+        cities.add("Torino")
+        cities.add("Milano")
+        cities.add("Firenze")
+        val cityArrayAdapter = ArrayAdapter(this, R.layout.item_dropdown_vase_settings, cities)
+        binding.cityEditT.threshold=1;
+        binding.cityEditT.setAdapter(cityArrayAdapter)
+
+        //dipendenza tra country e city: city è disabled a meno che non venga inserito un valore in country
+        var selectedCountry : String
+        binding.tvCountry.onItemClickListener =
+            OnItemClickListener { adapterView, view, position, id ->
+
+                //elimina selezione di city qualora sia presenta quando seleziono un paese
+               binding.cityEditT.setText("");
+
+                //abilita selezione di city quando seleziono un paese
+               selectedCountry = countryArrayAdapter.getItem(position).toString()
+               if(selectedCountry != "") {
+                   binding.cityTextIL.isEnabled = true
+               }
+            }
     }
+
     private fun validateData(){
         // get data
         email=binding.emailEditT.text.toString().trim()

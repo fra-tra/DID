@@ -102,6 +102,14 @@
                     android:text="@string/SelectCalendarRange_SpecificData"
                     android:textColor="@color/dark_grey"
                     android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btnNever"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SelectCalendarRange_Never"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="12sp" />
             </RadioGroup>
 
             <TextView
@@ -115,7 +123,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/calendarRangeRadioGroup"
-                app:layout_constraintVertical_bias="0.81" />
+                app:layout_constraintVertical_bias="0.5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.SeekBar
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -52,6 +53,10 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
             bottomNav.selectedItemId = R.id.calendarizzazione
             findNavController().navigate(R.id.calendarizzazione)
         }
+
+        //seek bar luminosità
+        var seekBarBrightness = view.findViewById<SeekBar>(R.id.seekBarBrightness)
+        //il valore selezionato si accede tramite seekBarBrightness.progress
     }
 
 }

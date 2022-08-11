@@ -34,17 +34,32 @@ class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<Pl
             // SET IMAGE
 
 
-            // SET MEASURES
+            // SET (water) MEASURES
             progressBarWaterHome.progress = plants[position].waterMeasure.roundToInt()
 
+            //set temperature and brightness default measure (equal for every plant)
+            progressBarTemperatureHome.progress = 32
+            progressBarBrightnessHome.progress = 5
+
             //SET MEASURES ALERT
-            //TESTING HUMIDITY - TEMPERATURE AND BRIGHTNESS STILL TO BE IMPLEMENTED
+            //SHOW ALERT FOR HUMIDITY - TEST
             showMeasureAlert(
                 progressBarWaterHome, alertWater,
                 plants[position].waterMeasuresReferences[0].roundToInt(),
                 plants[position].waterMeasuresReferences[1].roundToInt(),
                 plants[position].waterMeasuresReferences[2].roundToInt(),
                 plants[position].waterMeasuresReferences[3].roundToInt()
+            )
+
+            //SHOW ALERT FOR BRIGHTNESS AND TEMPERATURE - DEFAULT
+            showMeasureAlert(
+                progressBarTemperatureHome, alertTemperature,
+                10, 20, 30, 40
+            )
+
+            showMeasureAlert(
+                progressBarBrightnessHome, alertBrightness,
+                10, 20, 80, 90
             )
 
             //SET TITLE

@@ -106,6 +106,8 @@
         android:layout_height="60dp"
         android:layout_weight="1"
         android:indeterminateOnly="false"
+        android:max="50"
+        android:min="-20"
         android:progressDrawable="@drawable/circular_bar"
         app:layout_constraintBottom_toBottomOf="@+id/icAlertOutlineTemperature"
         app:layout_constraintEnd_toEndOf="@+id/icAlertOutlineTemperature"

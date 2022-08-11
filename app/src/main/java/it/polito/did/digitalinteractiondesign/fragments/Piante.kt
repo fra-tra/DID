@@ -82,7 +82,7 @@ class Piante : Fragment() {
                 mutableListOf( Plant("Basilico", null, true),
                     Plant("Rosmarino", null, true),
                     Plant("Origano", null, true)
-                ))
+                ), isGraveyard = true)
 
         )
 

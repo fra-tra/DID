@@ -62,8 +62,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/seePlantDetailHome"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/progressBarWaterHome"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:progress="60" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ProgressBar
                 android:id="@+id/progressBarTemperatureHome"
@@ -71,13 +70,14 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:indeterminateOnly="false"
+                android:max="50"
+                android:min="-20"
                 android:progressDrawable="@drawable/circular_bar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/progressBarWaterHome"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/plantImageHome"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:progress="60" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/seePlantDetailHome"
