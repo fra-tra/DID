@@ -331,9 +331,9 @@
 
         <!--fragment_my_plant_water_and_calendar_c_t_a-->
 
-        <string name="MyPlantWaterAndCalendar_LastWater">Last Watered:</string>
+        <string name="MyPlantWaterAndCalendar_LastWater">Last Watered:  \u0020</string>
 
-        <string name="MyPlantWaterAndCalendar_AutomaticWater">Automatic Watering:</string>
+        <string name="MyPlantWaterAndCalendar_AutomaticWater">Automatic Watering:  \u0020</string>
 
         <string name="MyPlantWaterAndCalendar_BrightnessTitle">Light</string>
 

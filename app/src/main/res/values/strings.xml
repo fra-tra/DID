@@ -376,9 +376,9 @@
 
     <!--fragment_my_plant_water_and_calendar_c_t_a-->
 
-    <string name="MyPlantWaterAndCalendar_LastWater">Ultima annafiatura:</string>
+    <string name="MyPlantWaterAndCalendar_LastWater">Ultima annafiatura:  \u0020</string>
 
-    <string name="MyPlantWaterAndCalendar_AutomaticWater">Innaffiatura Automatica:</string>
+    <string name="MyPlantWaterAndCalendar_AutomaticWater">Innaffiatura Automatica:  \u0020</string>
 
     <string name="MyPlantWaterAndCalendar_BrightnessTitle">Luce</string>
 

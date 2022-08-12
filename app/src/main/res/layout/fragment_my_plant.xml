@@ -106,16 +106,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            >
+            android:layout_marginTop="16dp">
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView"
                 android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantStatsFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -125,8 +124,8 @@
                 android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantAlertMeasuresFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView" />
@@ -135,7 +134,9 @@
                 android:id="@+id/dividerMyPlant1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +147,9 @@
                 android:name="it.polito.did.digitalinteractiondesign.fragments.MyPlantWaterAndCalendarCTAFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dividerMyPlant1" />
@@ -155,66 +158,76 @@
                 android:id="@+id/dividerMyPlant2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView5" />
 
-        <TextView
-            android:id="@+id/Informazioni2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/MyPlant_Information"
-            android:textColor="@color/dark_grey"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerMyPlant2" />
+            <TextView
+                android:id="@+id/Informazioni2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/MyPlant_Information"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerMyPlant2" />
 
-        <TextView
-            android:id="@+id/loremipsum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/LoremIpsum"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Informazioni2" />
+            <TextView
+                android:id="@+id/loremipsum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/LoremIpsum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Informazioni2" />
 
             <View
                 android:id="@+id/dividerDiscoverPlantDetails3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loremipsum" />
 
-        <TextView
-            android:id="@+id/Consigli2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/MyPlant_Advice"
-            android:textColor="@color/dark_grey"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerDiscoverPlantDetails3" />
+            <TextView
+                android:id="@+id/Consigli2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/MyPlant_Advice"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerDiscoverPlantDetails3" />
 
-        <TextView
-            android:id="@+id/loremipsum2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/LoremIpsum"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Consigli2"
-            tools:layout_editor_absoluteX="0dp" />
+            <TextView
+                android:id="@+id/loremipsum2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/LoremIpsum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Consigli2" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
