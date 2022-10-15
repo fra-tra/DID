@@ -17,6 +17,7 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
 import com.google.firebase.auth.FirebaseAuth
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivityLoginBinding
 
@@ -82,11 +83,14 @@ class Login_Activity : AppCompatActivity() {
                 //binding.passwordEditT.error="Please enter password"
                 binding.passwordTextIL.error = "Please enter password"
                 binding.emailTextIL.error = null
+                Log.d("TESTLogin", "probEmail")
             }else{
                 //data is validated, begin login
                 binding.passwordTextIL.error = null
                 binding.emailTextIL.error = null
+                Log.d("TESTLogin", "probEmail+ pass")
                 firebaseLogin()
+
             }
 
         }

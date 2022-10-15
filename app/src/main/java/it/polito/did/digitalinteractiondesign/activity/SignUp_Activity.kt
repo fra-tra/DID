@@ -11,7 +11,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -20,6 +19,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivitySignUpBinding
+import it.polito.did.digitalinteractiondesign.structures.User
 
 
 class SignUp_Activity : AppCompatActivity() {
@@ -34,6 +34,12 @@ class SignUp_Activity : AppCompatActivity() {
     private var email=""
     private var password=""
 
+    private var country =""
+    private var city=""
+
+    private var isSignup: Boolean=false
+
+    var userTemp : User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +76,7 @@ class SignUp_Activity : AppCompatActivity() {
         var emailEditT = findViewById<EditText>(R.id.emailEditT)
         var passwordEditT = findViewById<EditText>(R.id.passwordEditT)
 
+
         emailEditT.setOnFocusChangeListener(object: View.OnFocusChangeListener {
 
             override fun onFocusChange(v: View, hasFocus: Boolean) {
@@ -104,6 +111,8 @@ class SignUp_Activity : AppCompatActivity() {
                 }
             }
         });
+
+
 
         //definisco array di stringhe inizialmente vuoto che dovrà essere popolato con i paesi
         val countries = ArrayList<String>()
@@ -162,6 +171,8 @@ class SignUp_Activity : AppCompatActivity() {
         // get data
         email=binding.emailEditT.text.toString().trim()
         password=binding.passwordEditT.text.toString().trim()
+        country=binding.tvCountry.text.toString()
+        city=binding.cityEditT.text.toString()
         // validate data
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             //invalid email format
@@ -183,6 +194,10 @@ class SignUp_Activity : AppCompatActivity() {
         }else {
             // data is valid, continue signup
             firebaseSignUp()
+            //register uid in db realtime
+            userTemp= User(null,email,country,city)
+           // ManagerFirebase.addUserToDBRealTime(userTemp!!)
+            Log.d("Utente registrato " ,"IN USERS - SignUp")
         }
     }
 
@@ -199,8 +214,19 @@ class SignUp_Activity : AppCompatActivity() {
                 val email = firebaseUser!!.email
                 Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
                 //open profile
-                startActivity(Intent(this, Home_Activity::class.java))
-                finish()
+
+                val  intent = Intent(this, Home_Activity::class.java).also{
+                    isSignup=true
+
+                    it.putExtra("SignUp",isSignup)
+                    it.putExtra("NameUser", userTemp?.name)
+                    it.putExtra("EmailUser", userTemp?.email)
+                    it.putExtra("CountryUser", userTemp?.country)
+                    it.putExtra("CityUser", userTemp?.city)
+                    startActivity(it)
+                    finish()
+                }
+
             }
             .addOnFailureListener { e->
                 // signup failed

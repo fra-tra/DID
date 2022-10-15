@@ -1,20 +1,28 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
+import android.service.controls.ControlsProviderService.TAG
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
 import it.polito.did.digitalinteractiondesign.structures.Room
 import it.polito.did.digitalinteractiondesign.structures.RoomImageAdapter
+import kotlin.properties.Delegates
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,33 +73,76 @@ class MyPlantSettingsRoomFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnBack = view.findViewById<ImageButton>(R.id.backButtonRoomSettings)
-        btnBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
+
+
+
+        var activePlantID = arguments?.get("activePlant")
+
         //TEST ROOM LIST
         val rooms = arrayListOf(
-            Room("Kitchen"), Room ("Living Room"), Room("Balcony"), Room("Kitchen"), Room ("Living Room"), Room("Balcony")
+            Room("Kitchen"), Room ("Living Room"), Room("Balcony"),Room ("Bedroom"), Room("Bathroom"),Room("Garden"),Room("Dining Room")
 
         )
 
-        val adapter = RoomImageAdapter(rooms)
-        val rv = view.findViewById<RecyclerView>(R.id.rvRoomImages)
-        rv.adapter = adapter
-       // rv.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-       // val layoutManager = GridLayoutManager(activity, 2)
-        val layoutManager = GridLayoutManager(activity, 2)
-        rv.layoutManager = layoutManager
-        (rv.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            //salto le verifiche delle variabili
+
+            //Log.d("IdActivePlant", activePlantID.toString())
+            var tempPlant = it.get(activePlantID)
+            var activePlant: Plant? =null
+            if(tempPlant!=null)  activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+            if(activePlant!=null){
+
+                val adapter = RoomImageAdapter(rooms)
+                var iteratorRoom=0
+                for (room in adapter.rooms){
+
+                    if (room.name==activePlant.room){
+                        adapter.selectedItemPos=iteratorRoom
+                        adapter.lastItemSelectedPos=iteratorRoom
+                        adapter.activePlantID=activePlant.idIdentification
+                    }
+                    iteratorRoom+=1;
+                }
+                val rv = view.findViewById<RecyclerView>(R.id.rvRoomImages)
+
+                rv.adapter = adapter
+
+                // rv.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                // val layoutManager = GridLayoutManager(activity, 2)
+                val layoutManager = GridLayoutManager(activity, 2)
+                rv.layoutManager = layoutManager
+                (rv.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+
+
+            }
+
+
+        })
+
+
+        val btnBack = view.findViewById<ImageButton>(R.id.backButtonRoomSettings)
+        btnBack.setOnClickListener {
+           // ManagerFirebase.updateValuePlantAlive(activePlantID.toString(),"Room",tempRoomForChange.toString())
+
+            findNavController().navigateUp()
+        }
 
         var btnAddRoom = view.findViewById<ImageView>(R.id.btnAddRoom)
         btnAddRoom.setOnClickListener {
+
             findNavController().navigate(R.id.action_myPlantSettingsRoomFragment_to_addRoomFragment)
         }
 
     }
+
 }

@@ -1,22 +1,28 @@
 package it.polito.did.digitalinteractiondesign.structures
 
 import android.content.Context
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.databinding.ItemPlantSummaryHomeBinding
 import it.polito.did.digitalinteractiondesign.databinding.ItemRoomCardBinding
 import kotlin.math.roundToInt
 
-class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<PlantHomeSummaryAdapter.PlantHomeSummaryViewHolder>() {
+class PlantHomeSummaryAdapter(val plants: MutableList<Plant>): RecyclerView.Adapter<PlantHomeSummaryAdapter.PlantHomeSummaryViewHolder>() {
     inner class PlantHomeSummaryViewHolder(val binding: ItemPlantSummaryHomeBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -26,20 +32,22 @@ class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<Pl
         context = parent.context
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemPlantSummaryHomeBinding.inflate(layoutInflater, parent, false)
+
         return PlantHomeSummaryViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PlantHomeSummaryViewHolder, position: Int) {
         holder.binding.apply {
             // SET IMAGE
-
+            Glide.with(holder.itemView).load(plants[position].image).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(plantImageHome)
 
             // SET (water) MEASURES
-            progressBarWaterHome.progress = plants[position].waterMeasure.roundToInt()
+            progressBarWaterHome.progress = plants[position].waterLevelMeasure.roundToInt()
+
 
             //set temperature and brightness default measure (equal for every plant)
-            progressBarTemperatureHome.progress = 32
-            progressBarBrightnessHome.progress = 5
+            progressBarTemperatureHome.progress = 32 // temperatura pianta
+            progressBarBrightnessHome.progress = 5  // illuminazione della pianta
 
             //SET MEASURES ALERT
             //SHOW ALERT FOR HUMIDITY - TEST
@@ -68,10 +76,11 @@ class PlantHomeSummaryAdapter(val plants: List <Plant>): RecyclerView.Adapter<Pl
             //SET NAVIGATION TO PLANT DETAIL
             seePlantDetailHome.setOnClickListener {
                 Log.d("Show", "")
-
+                ManagerPlants.assignActivePlant(plants[position].idIdentification)
                 val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
                 bottomNav.selectedItemId = R.id.piante
-                Navigation.findNavController(seePlantDetailHome).navigate(R.id.myPlantFragment)
+                var bundleActivePlant= bundleOf(Pair("activePlant",plants[position].idIdentification))
+                Navigation.findNavController(seePlantDetailHome).navigate(R.id.myPlantFragment,bundleActivePlant)
             }
         }
     }

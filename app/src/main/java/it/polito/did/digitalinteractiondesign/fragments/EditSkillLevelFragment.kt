@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
 import it.polito.did.digitalinteractiondesign.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -39,26 +41,41 @@ class EditSkillLevelFragment : Fragment() {
 
         var skill01 = view.findViewById<CardView>(R.id.SL_Level01)
         skill01.setOnClickListener {
+            var textView=view.findViewById<TextView>(R.id.SL_01)
+            ManagerFirebase.updateValueUser("Ability Level",textView.text.toString()+" >")
+
             findNavController().navigateUp()
         }
 
         var skill02 = view.findViewById<CardView>(R.id.SL_Level02)
         skill02.setOnClickListener {
+            var textView=view.findViewById<TextView>(R.id.SL_03)
+            ManagerFirebase.updateValueUser("Ability Level",textView.text.toString()+" >")
+
             findNavController().navigateUp()
         }
 
         var skill03 = view.findViewById<CardView>(R.id.SL_Level03)
         skill03.setOnClickListener {
+            var textView=view.findViewById<TextView>(R.id.SL_07)
+            ManagerFirebase.updateValueUser("Ability Level",textView.text.toString()+" >")
+
             findNavController().navigateUp()
         }
 
         var skill04 = view.findViewById<CardView>(R.id.SL_Level04)
         skill04.setOnClickListener {
+            var textView=view.findViewById<TextView>(R.id.SL_09)
+            ManagerFirebase.updateValueUser("Ability Level",textView.text.toString()+" >")
+
             findNavController().navigateUp()
         }
 
         var skill05 = view.findViewById<CardView>(R.id.SL_Level05)
         skill05.setOnClickListener {
+            var textView=view.findViewById<TextView>(R.id.SL_05)
+            ManagerFirebase.updateValueUser("Ability Level",textView.text.toString()+" >")
+
             findNavController().navigateUp()
         }
     }

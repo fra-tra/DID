@@ -1,21 +1,19 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
-import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.*
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.contains
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.ListPlantsInfo
+import it.polito.did.digitalinteractiondesign.ManagerPlantsInfoFirestore
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.*
-import kotlin.collections.contains as contains1
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -73,21 +71,27 @@ class DiscoveryCategoryDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activeCategoryPlantID = arguments?.get("activeCategory")
+
+        Log.d("categoria di piante", activeCategoryPlantID.toString())
 
 
-        val plantList = mutableListOf(
-            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Basilico", null, false, 16.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Origano", null, false, 25.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Pothos", null, false, 42.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Cactus", null, false, 8.0,  arrayOf(12.0, 18.0, 60.0, 66.0)),
-            Plant("Rosmarino", null, false, 62.0, arrayOf(12.0, 18.0, 60.0, 66.0)),
-        )
+
+        var listPlantByCategory=ListPlantsInfo()
+           listPlantByCategory= ManagerPlantsInfoFirestore.hasMapPlantByCategory.get(activeCategoryPlantID.toString())!!
+        Log.d("pianta", listPlantByCategory.toString() )
+
+        var plantList = mutableListOf<PlantsInfo>()
+
+
+        for(plant in listPlantByCategory.listPlants){
+            Log.d("pianta", plant.toString())
+            if(!plant.isEmpty())
+            plantList.add(ManagerPlantsInfoFirestore.fromHashMapToPlantInfo(plant))
+        }
         plantList.sortBy { it.name }
+
+
 
         val adapter = CategoryPlantDetailAdapter(plantList)
         val plantsInCategoryRV = view.findViewById<RecyclerView>(R.id.plantsInCategoryRV)

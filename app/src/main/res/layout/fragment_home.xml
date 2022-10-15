@@ -163,7 +163,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Non hai ancora aggiunto nessuna pianta :("
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:visibility="gone" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnAddPlantFromHome"
@@ -174,7 +175,7 @@
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
                 android:src="@drawable/ic_baseline_add_24"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPlantsHome"

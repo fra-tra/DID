@@ -5,19 +5,27 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
+import it.polito.did.digitalinteractiondesign.structures.Plant
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -74,8 +82,33 @@ class LoadingPlantFuneralFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activePlantID = arguments?.get("activePlant")
         var a = view.findViewById<LottieAnimationView>(R.id.funeralPlantAnimation)
+        var textPlant=view.findViewById<TextView>(R.id.plantName_loading_funeral)
         a.playAnimation()
+
+
+
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Dead")
+
+        viewModelDB.returnListPlantsDied().observe(viewLifecycleOwner, Observer {
+            var tempPlant = it.get(activePlantID)
+            var activePlant: Plant? =null
+
+            if(tempPlant!=null){
+
+                activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+                textPlant.text=activePlant.name
+            }
+
+
+        })
+
+
+        //var plantTemp=viewModelDB.getPlantByID(activePlantID.toString())
+        //Log.d("TestNabo", plantTemp.toString())
+        // aggiorno schermata fragment con la pianta
 
         //show dead plant after the progress bar animation is complete
         var progressBar = view.findViewById<ProgressBar>(R.id.progressBarFuneralPlant)
@@ -88,7 +121,8 @@ class LoadingPlantFuneralFragment : Fragment() {
         animator.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 super.onAnimationEnd(animation)
-                findNavController().navigate(R.id.action_loadingPlantFuneralFragment_to_myDeadPlantFragment)
+                var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                findNavController().navigate(R.id.action_loadingPlantFuneralFragment_to_myDeadPlantFragment,bundleActivePlant)
             }
         })
         animator.start()

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,13 +44,12 @@ class RoomCardListAdapter(var rooms: List<Room>): RecyclerView.Adapter<RoomCardL
                 Log.d("Mostra", "tutte le piante in ${roomCardTitle.text.toString()}")
 
                 if(rooms[position].isGraveyard == true) {
-                    Navigation.findNavController(seeAllRoomPlantsBtn)
-                        .navigate(R.id.action_piante_to_graveyardFragment)
+                    Navigation.findNavController(seeAllRoomPlantsBtn).navigate(R.id.action_piante_to_graveyardFragment)
                 }
 
                 else {
-                    Navigation.findNavController(seeAllRoomPlantsBtn)
-                        .navigate(R.id.action_piante_to_roomFragment)
+                    var bundleActivePlant= bundleOf(Pair("activeRoom",rooms[position].name))
+                    Navigation.findNavController(seeAllRoomPlantsBtn).navigate(R.id.action_piante_to_roomFragment,bundleActivePlant)
                 }
             }
         }

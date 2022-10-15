@@ -1,13 +1,19 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.ListPlants
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.*
 
@@ -46,62 +52,115 @@ class Piante : Fragment() {
         return inflater.inflate(R.layout.fragment_piante, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Piante.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Piante().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // hash per immagazinare tutto, ma anche per parsare
 
-        //TEST DATA
-        var roomList = mutableListOf(
-            Room("Kitchen",
-                mutableListOf( Plant("Sanseveria", null, false),
-                    Plant("Basilico", null, false),
-                    Plant("Rosmarino", null, false),
-                    Plant("Cactus", null, false),
-                    Plant("Origano", null, false)
-                )),
-            Room("Plant Graveyard",
-                mutableListOf( Plant("Basilico", null, true),
-                    Plant("Rosmarino", null, true),
-                    Plant("Origano", null, true)
-                ), isGraveyard = true)
+        // lista che contiene tutte le room
+        var roomListTemp: MutableList<Any?>
 
-        )
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
 
-      //  val roomList : MutableList<Room> = mutableListOf()
 
-        val adapter = RoomCardListAdapter(roomList)
-        val rvRooms = view.findViewById<RecyclerView>(R.id.rvRooms)
-        rvRooms.adapter = adapter
-        rvRooms.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        var cardRoomList= mutableListOf<Room>()
+        var adapter = RoomCardListAdapter(cardRoomList)
+        var rvRooms = view.findViewById<RecyclerView>(R.id.rvRooms)
+
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+        viewModelDB.getPlantsFromDBRealtime("Dead")
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+           cardRoomList.clear()
+            var hashTempPlantCardAlive : HashMap<String, ListPlants> =  initHashWithRoom()
+            var mapTemp : HashMap<String,Any?> = HashMap()
+            for((key,value) in it){
+                 mapTemp  = value as HashMap<String, Any?>
+                var tempPlantAlive = ManagerFirebase.fromHashMapToPlant(mapTemp)
+                //posiziona le piante nella hash ognuna in una lista raggiungibile dalla chiave
+                hashTempPlantCardAlive.get(tempPlantAlive.room)?.addPlantInList(tempPlantAlive)
+            }
+
+            for (room in hashTempPlantCardAlive.keys){
+                if(!hashTempPlantCardAlive.getValue(room).isEmpty()){
+                    cardRoomList.add(Room(room, hashTempPlantCardAlive[room]?.listPlants!!))
+                }
+
+            }
+
+            if (viewModelDB.myPlantsAlive.value?.values?.size==null){
+                cardRoomList.clear()
+            }else{
+                Log.d("ListaVive", viewModelDB.myPlantsAlive.value?.values?.size.toString())
+                adapter = RoomCardListAdapter(cardRoomList)
+                rvRooms.adapter = adapter
+                rvRooms.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+            }
+
+
+
+        })
+        viewModelDB.returnListPlantsDied().observe(viewLifecycleOwner, Observer {
+
+            var lisPlantsDiedTemp = mutableListOf<Plant>()
+            var mapTemp : HashMap<String,Any?> = HashMap()
+            for ((key,value)in it){
+                mapTemp = value as HashMap<String, Any?>
+                var tempPlantDied = ManagerFirebase.fromHashMapToPlant(mapTemp)
+                lisPlantsDiedTemp.add(tempPlantDied)
+
+            }
+            if (!lisPlantsDiedTemp.isEmpty()){
+                cardRoomList.add(Room("Plant Graveyard", lisPlantsDiedTemp,isGraveyard = true))
+            }
+
+            Log.d("ListaMorte", toString())
+
+            if (viewModelDB.myPlantsDied.value?.values==null){
+
+            }else{
+                adapter = RoomCardListAdapter(cardRoomList)
+                rvRooms.adapter = adapter
+                rvRooms.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+            }
+
+
+
+        })
+
+
+
+
+
+
+
 
         val noPlantsInMyPlantsTV = view.findViewById<TextView>(R.id.noPlantsInMyPlantsTV)
-        if(roomList.size > 0) {
+        if(cardRoomList.size > 0) {
             noPlantsInMyPlantsTV.visibility = View.GONE
         }
         else {
             noPlantsInMyPlantsTV.visibility = View.VISIBLE
         }
 
+
+
+    }
+    fun initHashWithRoom(): HashMap<String, ListPlants> {
+        var tempHashMap : HashMap<String, ListPlants> = HashMap()
+        tempHashMap["Kitchen"]=ListPlants()
+        tempHashMap["Living Room"]=ListPlants()
+        tempHashMap["Balcony"]=ListPlants()
+        tempHashMap["Bathroom"]=ListPlants()
+        tempHashMap["Dining Room"]=ListPlants()
+        tempHashMap["Bedroom"]=ListPlants()
+
+
+        Log.d("Stampo", tempHashMap.toString())
+        return tempHashMap
     }
 
 
 }
+
+

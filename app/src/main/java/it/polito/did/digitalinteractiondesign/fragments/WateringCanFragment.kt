@@ -1,15 +1,33 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.SeekBar
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.Group
+import androidx.core.os.bundleOf
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.appbar.CollapsingToolbarLayout
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
 import me.itangqi.waveloadingview.WaveLoadingView
 
 // TODO: Rename parameter arguments, choose names that match
@@ -63,52 +81,79 @@ class WateringCanFragment : Fragment() {
             }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //gestione alert annaffiatoio vuoto
-        var alertEmptyWateringCan = view.findViewById<Group>(R.id.groupAlertWateringCan)
 
-        //GESTIONE (TEMPORANEA) PROGRESSO ANNAFFIATOIO TRAMITE SEEK BAR
-        var wave = view.findViewById<WaveLoadingView>(R.id.waveLoadingView)
-        wave.setAnimDuration(10000);
 
-        var bar = view.findViewById<SeekBar>(R.id.seekBar)
-        wave.progressValue = bar.progress;
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+        // aggiorno schermata fragment con la pianta
 
-        var amp = 30;
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            // ci serve sapere la pianta schiacciata
 
-        //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-        alertEmptyWateringCan.isGone = wave.progressValue >= 10
-
-        if(wave.progressValue < amp){
-            wave.setAmplitudeRatio(wave.progressValue)
-        }
-        else {
-            amp = 30
-            wave.setAmplitudeRatio(amp)
-        }
-
-        bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onStopTrackingTouch(seekBar: SeekBar) {
-                // TODO Auto-generated method stub
+            var tempPlant = it.get("Herbs_2022-10-15T16:47:36")
+            var activePlant: Plant? =null
+            if(tempPlant!=null){
+                activePlant=ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
             }
 
-            override fun onStartTrackingTouch(seekBar: SeekBar) {
-                // TODO Auto-generated method stub
-            }
+            if(activePlant!=null){
+                //gestione alert annaffiatoio vuoto
+                var alertEmptyWateringCan = view.findViewById<Group>(R.id.groupAlertWateringCan)
 
-            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                // TODO Auto-generated method stub
+                //GESTIONE (TEMPORANEA) PROGRESSO ANNAFFIATOIO TRAMITE SEEK BAR
+                var wave = view.findViewById<WaveLoadingView>(R.id.waveLoadingView)
+                wave.setAnimDuration(10000);
 
-                wave.progressValue = progress;
-                if(progress < amp){
-                    wave.setAmplitudeRatio(progress)
+                var bar = view.findViewById<SeekBar>(R.id.seekBar)
 
-                }
+               // wave.progressValue = bar.progress;
+                bar.progress= activePlant.waterLevelMeasure.toInt()
+
+
+                var amp = 30;
+
                 //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-                alertEmptyWateringCan.isGone = progress >= 10
+                alertEmptyWateringCan.isGone = wave.progressValue >= 10
+
+                if(wave.progressValue < amp){
+                    wave.setAmplitudeRatio(wave.progressValue)
+                }
+                else {
+                    amp = 30
+                    wave.setAmplitudeRatio(amp)
+                }
+
+                bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                    override fun onStopTrackingTouch(seekBar: SeekBar) {
+                        // TODO Auto-generated method stub
+                    }
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar) {
+                        // TODO Auto-generated method stub
+                    }
+
+                    override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                        // TODO Auto-generated method stub
+
+                        wave.progressValue = progress;
+                        if(progress < amp){
+                            wave.setAmplitudeRatio(progress)
+
+                        }
+                        //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
+                        alertEmptyWateringCan.isGone = progress >= 12
+
+                    }
+                })
+
 
             }
+
+
+
         })
     }
 }

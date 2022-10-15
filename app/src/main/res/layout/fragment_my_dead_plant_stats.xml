@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/deadPlantName"
+                android:id="@+id/deadPlantNameTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center_horizontal"
@@ -35,7 +35,7 @@
                 android:layout_marginTop="24dp"/>
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/datesDeadPlantTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -65,7 +65,7 @@
                     android:src="@drawable/ic_cross" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/causeDeathTextTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -98,7 +98,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/daysLived"
+            android:id="@+id/daysLivedTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
@@ -134,7 +134,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/wateredTimes"
+            android:id="@+id/wateredTimesTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"

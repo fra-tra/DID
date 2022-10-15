@@ -4,23 +4,37 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingAddPlantBinding
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
+import it.polito.did.digitalinteractiondesign.structures.Plant
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,8 +87,30 @@ class LoadingAddPlantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activePlantID = arguments?.get("activePlant")
         var a = view.findViewById<LottieAnimationView>(R.id.addPlantAnimation)
+        var textPlant=view.findViewById<TextView>(R.id.plantName_loading_add)
         a.playAnimation()
+
+
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+        // aggiorno schermata fragment con la pianta
+
+
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            var tempPlant = it.get(activePlantID)
+            var activePlant: Plant? =null
+            if(tempPlant!=null){
+                activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+                textPlant.text=activePlant.name
+            }
+
+
+        })
+
+
 
         //show dead plant after the progress bar animation is complete
         var progressBar = view.findViewById<ProgressBar>(R.id.progressBarAddPlant)
@@ -84,13 +120,18 @@ class LoadingAddPlantFragment : Fragment() {
             progressBar.progress = (animation.animatedValue as Int)!!
         }
 
+        //
+
+
+
         animator.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 super.onAnimationEnd(animation)
                 //findNavController().navigate(R.id.action_loadingPlantFuneralFragment_to_myDeadPlantFragment)
                 val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
                 bottomNav.selectedItemId = R.id.piante
-                findNavController().navigate(R.id.myPlantFragment)
+                var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                findNavController().navigate(R.id.myPlantFragment,bundleActivePlant)
             }
         })
         animator.start()

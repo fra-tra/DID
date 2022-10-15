@@ -4,20 +4,27 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingPlantFuneralBinding
 import it.polito.did.digitalinteractiondesign.databinding.FragmentLoadingWaterPlantBinding
+import it.polito.did.digitalinteractiondesign.structures.Plant
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -90,7 +97,9 @@ class LoadingWaterPlantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activePlantID = arguments?.get("activePlant")
         var a = view.findViewById<LottieAnimationView>(R.id.waterPlantAnimation)
+        var textPlant=view.findViewById<TextView>(R.id.plantName_loading_water)
         a.playAnimation()
 
         //show my plant after the progress bar animation is complete
@@ -110,6 +119,24 @@ class LoadingWaterPlantFragment : Fragment() {
             }
         })
         animator.start()
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+        // aggiorno schermata fragment con la pianta
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            var tempPlant = it.get(activePlantID)
+            var activePlant: Plant? =null
+            if(tempPlant!=null){
+                activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+            }
+
+            if(activePlant!=null){
+                Log.d("BOBBE",activePlant.name )
+                textPlant.text=activePlant.name
+
+            }
+
+        })
 
         //disable back button when loading
         activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {

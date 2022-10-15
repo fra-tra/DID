@@ -26,6 +26,7 @@ class MyDeadPlantStatsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_dead_plant_stats, container, false)
+
     }
 
 }

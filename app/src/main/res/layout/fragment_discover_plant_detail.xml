@@ -29,6 +29,7 @@
             app:expandedTitleTextAppearance="@style/expandedBarTextStyle">
 
             <ImageView
+                android:id="@+id/imagePlant"
                 android:src="@drawable/plant_placeholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -314,6 +315,7 @@
 
             <TextView
                 android:id="@+id/loremipsum"
+                android:linksClickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -346,6 +348,7 @@
 
             <TextView
                 android:id="@+id/loremipsum2"
+                android:linksClickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

@@ -6,13 +6,21 @@ import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.Plant
 import org.w3c.dom.Text
+import java.time.LocalDateTime
 import kotlin.math.roundToInt
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +32,9 @@ import kotlin.math.roundToInt
  * create an instance of this fragment.
  */
 class MyPlantStatsFragment : Fragment() {
+    companion object{
+        var activePlantID=""
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +45,6 @@ class MyPlantStatsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //TEST PLANT
-        val plant = Plant("Basilico", null, false, 60.0)
-
         // recupero viste
         var tvWaterMeasure = view.findViewById<TextView>(R.id.tvWaterMeasure)
         var pbWater = view.findViewById<ProgressBar>(R.id.pbWater)
@@ -61,13 +68,47 @@ class MyPlantStatsFragment : Fragment() {
         var icAlertOutlineBrightness = view.findViewById<ImageView>(R.id.icAlertOutlineBrightness)
         var alertMessageBrightness = view.findViewById<TextView>(R.id.alertMessageBrightness)
 
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            var tempPlant = it.get(activePlantID)
+            var activePlant: Plant? =null
+            if(tempPlant!=null){
+                activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+                if(activePlant!=null){
+                    pbWater.progress = activePlant.humidity.roundToInt()
+                    tvWaterMeasure.text = pbWater.progress.toString()
+                    pbTemperature.progress = activePlant.temperature
+                    tvTemperatureMeasure.text = pbTemperature.progress.toString() + "°C"
+                    pbBrightness.progress = activePlant.brightness
+                    tvBrightnessMeasure.text = pbBrightness.progress.toString() + "%"
+
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+        })
+
+        //TEST PLANT
+        val plant = Plant("Basilico", "imageMissing")
+
+
+
 
 
 
         //TEST
-        pbWater.progress = plant.waterMeasure.roundToInt()
-        pbTemperature.progress = 32
-        pbBrightness.progress = 5
+
 
         //show alert for water -> rendere dinamico in base ai dati
         showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 10, 20, 80, 90)
@@ -78,9 +119,7 @@ class MyPlantStatsFragment : Fragment() {
         //show alert for brightness -> DEFAULT RESTA COSI
         showMeasureAlert(pbBrightness, icAlertBrightness, icAlertOutlineBrightness, 10, 20, 80, 90)
 
-        tvWaterMeasure.text = pbWater.progress.toString()
-        tvTemperatureMeasure.text = pbTemperature.progress.toString() + "°C"
-        tvBrightnessMeasure.text = pbBrightness.progress.toString() + "%"
+
     }
 
     //FUNCTION TO BE IMPROVED WHEN VIEW MODEL IS IMPLEMENTED: CHECK IN VIEW MODEL IF THE MEASURE IS TO BE ALERTED (WARNING OR DANGER)

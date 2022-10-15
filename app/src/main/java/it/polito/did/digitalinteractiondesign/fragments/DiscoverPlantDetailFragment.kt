@@ -1,17 +1,25 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toolbar
+import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import it.polito.did.digitalinteractiondesign.ManagerPlantsInfoFirestore
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.Plant
+import it.polito.did.digitalinteractiondesign.structures.PlantsInfo
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,8 +74,11 @@ class DiscoverPlantDetailFragment : Fragment() {
             }
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activePlantInfoID = arguments?.get("activePlantInfo").toString()
+        var listCategoryName=activePlantInfoID.split("_")
 
         var isliked = false
 
@@ -78,7 +89,8 @@ class DiscoverPlantDetailFragment : Fragment() {
 
         var btnAddPlant = view.findViewById<Button>(R.id.btnAddPlant)
         btnAddPlant.setOnClickListener {
-            findNavController().navigate(R.id.action_discoverPlantDetailFragment_to_addPlantNameAndRoomFragment)
+            var bundleActivePlant= bundleOf(Pair("activePlantInfo",activePlantInfoID))
+            findNavController().navigate(R.id.action_discoverPlantDetailFragment_to_addPlantNameAndRoomFragment,bundleActivePlant)
         }
 
         var btnLiked = view.findViewById<ImageButton>(R.id.btnLiked)
@@ -94,10 +106,48 @@ class DiscoverPlantDetailFragment : Fragment() {
 
         }
 
-        var plantprova=  Plant("Basilico", null, false)
-        var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar)
-        toolbar.title=plantprova.name
 
+
+        var plantprova=  ManagerPlantsInfoFirestore.returnPlantByCategoryByName(listCategoryName[0],listCategoryName[1])
+        Log.d("Pianta creat", plantprova.toString())
+        var toolbar = view.findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar)
+
+        var infoTV=view.findViewById<TextView>(R.id.loremipsum)
+        var consigliTV=view.findViewById<TextView>(R.id.loremipsum2)
+        var difficultTV=view.findViewById<TextView>(R.id.DifficultText)
+        var categoryTV=view.findViewById<TextView>(R.id.SubTitleCategory)
+        var levelCommitTV=view.findViewById<TextView>(R.id.LevelCommitText)
+        var imagePlant=view.findViewById<ImageView>(R.id.imagePlant)
+
+        // da quante persone é stato aggiunto
+        var nPersonTV=view.findViewById<TextView>(R.id.NPeson)
+
+
+
+
+        toolbar.title=plantprova.name
+        infoTV.text= Html.fromHtml(plantprova.description, Html.FROM_HTML_MODE_LEGACY)
+        infoTV.setMovementMethod(LinkMovementMethod.getInstance())
+        consigliTV.text=Html.fromHtml(plantprova.tips, Html.FROM_HTML_MODE_LEGACY)
+        consigliTV.setMovementMethod(LinkMovementMethod.getInstance())
+        difficultTV.text=plantprova.difficulty
+        categoryTV.text=plantprova.category
+        levelCommitTV.text=calcolaImpegno(plantprova.wateringInterval)
+        Glide.with(view).load(plantprova.imageUrl).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(imagePlant)
+
+    }
+
+    fun calcolaImpegno(valTemp:Int):String{
+        var resultTemp:String =""
+       if(valTemp<=2){
+           resultTemp="Base"
+       }else if(2<valTemp || valTemp<=4){
+           resultTemp="Medium"
+       }else{
+
+        resultTemp="High"
+       }
+       return resultTemp
     }
 
 }

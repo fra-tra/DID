@@ -74,9 +74,8 @@ class AddRoomFragment : Fragment() {
 
         //TEST ROOM LIST
         val rooms = arrayListOf(
-            Room("Kitchen"), Room ("Living Room"), Room("Balcony"),
-            Room("Bedroom"), Room ("Bathroom"), Room("Garden"),
-            Room("Dining Room")
+            Room("Kitchen"), Room ("Living Room"), Room("Balcony"),Room ("Bedroom"), Room("Bathroom"),Room("Garden"),Room("Dining Room")
+
         )
         val adapter = AddRoomAdapter(rooms)
         val rv = view.findViewById<RecyclerView>(R.id.rvAddRoom)

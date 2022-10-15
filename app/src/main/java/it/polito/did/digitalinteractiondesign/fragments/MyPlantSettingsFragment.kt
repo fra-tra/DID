@@ -9,8 +9,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,13 +86,70 @@ class MyPlantSettingsFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-        var btnDeathPlant = view.findViewById<Button>(R.id.btnDeathPlant)
-        btnDeathPlant.setOnClickListener {
-            // confirmPlantDeath.show()
-            val fragmentManager = childFragmentManager
-            val newFragment = CustomDeathDialog()
-            newFragment.show(fragmentManager, "dialog")
-        }
+
+
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            // ci serve sapere la pianta schiacciata
+            var activePlantID = arguments?.get("activePlant")
+
+            Log.d("IdActivePlant", activePlantID.toString())
+            var tempPlant = it.get(activePlantID)
+            var activePlant: Plant? =null
+            if(tempPlant!=null)  activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+
+           if(activePlant!=null){
+                var btnName = view.findViewById<TextView>(R.id.plantNameSettings)
+                btnName.text=activePlant.name + ">"
+                btnName.setOnClickListener {
+                    var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsNameFragment,bundleActivePlant)
+                }
+
+                var btnRoom = view.findViewById<TextView>(R.id.roomNameSettings)
+                btnRoom.text=activePlant.room + ">"
+                btnRoom.setOnClickListener {
+                    var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsRoomFragment,bundleActivePlant)
+                }
+
+                var btnVaseTypeSettings = view.findViewById<TextView>(R.id.vaseTypeSettings)
+                btnVaseTypeSettings.text=activePlant.vaseType + ">"
+                btnVaseTypeSettings.setOnClickListener {
+                    var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment,bundleActivePlant)
+                }
+                var btnVaseSizeSettings = view.findViewById<TextView>(R.id.vaseSizeSettings)
+                btnVaseSizeSettings.text=activePlant.vaseSize + ">"
+                btnVaseSizeSettings.setOnClickListener {
+                    var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment,bundleActivePlant)
+                }
+                var btnSoilTypeSettings = view.findViewById<TextView>(R.id.soilTypeSettings)
+                btnSoilTypeSettings.text=activePlant.soilType + ">"
+                btnSoilTypeSettings.setOnClickListener {
+                    var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment,bundleActivePlant)
+                }
+               var btnDeathPlant = view.findViewById<Button>(R.id.btnDeathPlant)
+               btnDeathPlant.setOnClickListener {
+                   // confirmPlantDeath.show()
+                   var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
+                   val fragmentManager = childFragmentManager
+                   val newFragment = CustomDeathDialog()
+                   newFragment.setArguments(bundleActivePlant)
+                   newFragment.show(fragmentManager, "dialog")
+               }
+
+
+            }
+
+
+
+
+        })
 
         /* var btnDeletePlant = view.findViewById<Button>(R.id.btnDeletePlant)
         btnDeletePlant.setOnClickListener {
@@ -95,27 +158,6 @@ class MyPlantSettingsFragment : Fragment() {
             btnDeletePlant.isSelected != btnDeletePlant.isSelected
         }*/
 
-        var btnName = view.findViewById<TextView>(R.id.plantNameSettings)
-        btnName.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsNameFragment)
-        }
 
-        var btnRoom = view.findViewById<TextView>(R.id.roomNameSettings)
-        btnRoom.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsRoomFragment)
-        }
-
-        var btnVaseTypeSettings = view.findViewById<TextView>(R.id.vaseTypeSettings)
-        btnVaseTypeSettings.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment)
-        }
-        var btnVaseSizeSettings = view.findViewById<TextView>(R.id.vaseSizeSettings)
-        btnVaseSizeSettings.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment)
-        }
-        var btnSoilTypeSettings = view.findViewById<TextView>(R.id.soilTypeSettings)
-        btnSoilTypeSettings.setOnClickListener {
-            findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsVaseFragment)
-        }
     }
 }

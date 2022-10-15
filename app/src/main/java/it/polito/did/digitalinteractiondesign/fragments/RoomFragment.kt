@@ -6,14 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
-import androidx.cardview.widget.CardView
-import androidx.core.view.isGone
+import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import it.polito.did.digitalinteractiondesign.ListPlants
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.*
 
@@ -42,20 +44,32 @@ class RoomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activeRoomName = arguments?.get("activeRoom")
 
-        //TEST LIST
-        var plantList = mutableListOf(
-            Plant("Basilico", null, false),
-            Plant("Origano", null, false),
-            Plant("Pothos", null, false),
-            Plant("Cactus", null, false),
-            Plant("Rosmarino", null, false),
-        )
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
 
-        val adapter = PlantCardListAdapter(plantList)
-        val rvPlants = view.findViewById<RecyclerView>(R.id.rvRoomPlants)
-        rvPlants.adapter = adapter
-        rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+       // Log.d("ActiveRoom",activeRoomName.toString())
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            var roomTitle = view.findViewById<TextView>(R.id.roomTitle)
+            roomTitle.text=activeRoomName.toString()
+            val plantInThatRoomTempList= ListPlants()
+            for((key,value)in it){
+                    val mapTemp : HashMap<String,Any?> = value as HashMap<String, Any?>
+                    var tempPlant = ManagerFirebase.fromHashMapToPlant(mapTemp)
+                     if(mapTemp!=null && tempPlant.room==activeRoomName) {
+                         //android.util.Log.i("ListPlants","="+tempPlant.toString())
+                         plantInThatRoomTempList.addPlantInList(tempPlant)
+                     }
+
+            }
+            val adapter = PlantCardListAdapter(plantInThatRoomTempList.listPlants)
+            val rvPlants = view.findViewById<RecyclerView>(R.id.rvRoomPlants)
+            rvPlants.adapter = adapter
+            rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        })
+
 
         var backBtn = view.findViewById<ImageButton>(R.id.backButtonRoom)
         backBtn.setOnClickListener {

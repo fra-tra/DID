@@ -1,19 +1,25 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import it.polito.did.digitalinteractiondesign.ListPlantsInfo
+import it.polito.did.digitalinteractiondesign.ManagerPlantsInfoFirestore
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.DiscoverAddPlantInRoomAdapter
+import it.polito.did.digitalinteractiondesign.structures.PlantsInfo
 import it.polito.did.digitalinteractiondesign.structures.Room
 import it.polito.did.digitalinteractiondesign.structures.RoomImageAdapter
 
@@ -70,13 +76,33 @@ class AddPlantNameAndRoomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activePlantInfoID = arguments?.get("activePlantInfo").toString()
+        var listCategoryName=activePlantInfoID.split("_")
+
+        // aggiungo info della pianta in base alla categoria ed il nome selezionato
+        var plantInfoTemporanea = ManagerPlantsInfoFirestore.returnPlantByCategoryByName(listCategoryName[0],listCategoryName[1])
+        AddPlantVaseFragment.informationPlant=plantInfoTemporanea.description
+        AddPlantVaseFragment.tipsPlant=plantInfoTemporanea.tips
+        AddPlantVaseFragment.category=plantInfoTemporanea.category
+        AddPlantVaseFragment.imagePlant=plantInfoTemporanea.imageUrl
+
+
         var backBtn = view.findViewById<ImageButton>(R.id.backButtonAddPlantNameAndRoom)
+        var namePlant=view.findViewById<EditText>(R.id.editTextTPlantName)
+
+        //Cambio il nome nella classe DiscoverAddPlantInRoomAdapter
+        //è inizializzato a Name sempre
+        namePlant.addTextChangedListener { text ->
+            //Log.d("namePlant","${text.toString()}")
+            AddPlantVaseFragment.namePlant=text.toString()
+        }
+
         backBtn.setOnClickListener {
             findNavController().navigateUp()
         }
 
         val rooms = arrayListOf(
-            Room("Kitchen"), Room ("Living Room"), Room("Balcony"), Room("Kitchen"), Room ("Living Room"), Room("Balcony")
+            Room("Kitchen"), Room ("Living Room"), Room("Balcony"),Room ("Bedroom"), Room("Bathroom"),Room("Garden"),Room("Dining Room")
 
         )
 
@@ -87,9 +113,13 @@ class AddPlantNameAndRoomFragment : Fragment() {
         rv.layoutManager = layoutManager
         (rv.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
 
+
+
         var btnAddRoom = view.findViewById<ImageView>(R.id.btnAddRoom)
         btnAddRoom.setOnClickListener {
             findNavController().navigate(R.id.action_addPlantNameAndRoomFragment_to_addRoomFragment)
         }
+
     }
+
 }

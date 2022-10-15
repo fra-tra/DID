@@ -71,13 +71,13 @@ class GraveyardCardFragment : Fragment() {
 
         //TEMPORARY DEAD PLANT LIST TO REPLACE WITH LIST FROM VIEW MODEL
         var deadPlantList = mutableListOf(
-            Plant("Basilico", null, true),
-            Plant("Origano", null, true),
-            Plant("Pothos", null, true),
-            Plant("Cactus", null, true),
-            Plant("Rosmarino", null, true),
+            Plant("Basilico", "imageMissing"),
+            Plant("Origano", "imageMissing"),
+            Plant("Pothos", "imageMissing"),
+            Plant("Cactus", "imageMissing"),
+            Plant("Rosmarino", "imageMissing"),
         )
-
+       // Log.i("DOVESONO","Ho schiacciato oraCARD")
         val adapter = RoomPlantsAdapter(deadPlantList)
         val rvGraveyard = view.findViewById<RecyclerView>(R.id.rvGraveyard)
         rvGraveyard.adapter = adapter

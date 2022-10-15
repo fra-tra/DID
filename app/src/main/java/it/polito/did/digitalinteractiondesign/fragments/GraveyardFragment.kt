@@ -1,15 +1,20 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import it.polito.did.digitalinteractiondesign.ListPlants
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.structures.*
 
@@ -67,15 +72,25 @@ class GraveyardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var plantList = mutableListOf(
-            Plant("Basilico", null, true),
-            Plant("Origano", null, true),
-            Plant("Pothos", null, true),
-            Plant("Cactus", null, true),
-            Plant("Rosmarino", null, true),
-        )
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
 
-        val adapter = PlantCardListAdapter(plantList)
+        viewModelDB.getPlantsFromDBRealtime("Dead")
+
+        viewModelDB.returnListPlantsDied().observe(viewLifecycleOwner, Observer {
+            val deadTempList= ListPlants()
+            for((key,value) in it){
+                // android.util.Log.i("HasMapPlants","$key=$value + ${it.values}")
+                // android.util.Log.i("Plants","=$value ")
+                val mapTemp : HashMap<String,Any?> = value as HashMap<String, Any?>
+                if(mapTemp!=null){
+
+                }
+                var tempPlant = ManagerFirebase.fromHashMapToPlant(mapTemp)
+                //android.util.Log.i("ListPlants","="+tempPlant.toString())
+                deadTempList.addPlantInList(tempPlant)
+            }
+        Log.d("DOVESONO","Ho schiacciato ora")
+        val adapter = PlantCardListAdapter(deadTempList.listPlants)
         val rvPlants = view.findViewById<RecyclerView>(R.id.rvGraveyardPlants)
         rvPlants.adapter = adapter
         rvPlants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
@@ -84,5 +99,8 @@ class GraveyardFragment : Fragment() {
         backBtn.setOnClickListener {
             findNavController().navigateUp()
         }
-    }
+
+        })
+}
+
 }
