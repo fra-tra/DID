@@ -113,8 +113,7 @@
         app:layout_constraintEnd_toEndOf="@+id/icAlertOutlineTemperature"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/icAlertOutlineTemperature"
-        app:layout_constraintTop_toBottomOf="@+id/tvTemperature"
-        tools:progress="60" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTemperature" />
 
     <ProgressBar
         android:id="@+id/pbWater"
@@ -176,7 +175,7 @@
 
     <ImageView
         android:id="@+id/icWater"
-        android:layout_width="wrap_content"
+        android:layout_width="16dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:adjustViewBounds="true"
@@ -192,7 +191,7 @@
 
     <ImageView
         android:id="@+id/icTemperature"
-        android:layout_width="wrap_content"
+        android:layout_width="12dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:adjustViewBounds="true"
@@ -206,7 +205,7 @@
 
     <ImageView
         android:id="@+id/icBrightness"
-        android:layout_width="wrap_content"
+        android:layout_width="16dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:adjustViewBounds="true"
@@ -222,8 +221,9 @@
 
     <ImageView
         android:id="@+id/icAlertTemperature"
-        android:layout_width="wrap_content"
+        android:layout_width="18dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:src="@drawable/ic_warning"
         app:layout_constraintBottom_toTopOf="@+id/icAlertOutlineTemperature"
         app:layout_constraintEnd_toStartOf="@+id/icAlertOutlineTemperature"
@@ -232,8 +232,8 @@
 
     <ImageView
         android:id="@+id/icAlertWater"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:src="@drawable/ic_warning"
         app:layout_constraintBottom_toTopOf="@+id/icAlertOutlineWater"
         app:layout_constraintEnd_toStartOf="@+id/icAlertOutlineWater"
@@ -242,8 +242,8 @@
 
     <ImageView
         android:id="@+id/icAlertBrightness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:src="@drawable/ic_warning"
         app:layout_constraintBottom_toTopOf="@+id/icAlertOutlineBrightness"
         app:layout_constraintEnd_toStartOf="@+id/icAlertOutlineBrightness"

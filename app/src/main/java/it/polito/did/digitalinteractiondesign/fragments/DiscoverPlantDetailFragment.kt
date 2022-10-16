@@ -94,14 +94,17 @@ class DiscoverPlantDetailFragment : Fragment() {
         }
 
         var btnLiked = view.findViewById<ImageButton>(R.id.btnLiked)
+        var nLiked = view.findViewById<TextView>(R.id.NLiked)
         btnLiked.setOnClickListener{
             if (isliked==false){
                 isliked=true
                 btnLiked.setImageResource(R.drawable.ic_heart_full)
+                nLiked.text = ((Integer.parseInt(nLiked.text as String)) + 1).toString()
             }
             else {
                 isliked=false
                 btnLiked.setImageResource(R.drawable.ic_heart_empty)
+                nLiked.text = ((Integer.parseInt(nLiked.text as String))- 1).toString()
             }
 
         }

@@ -9,7 +9,13 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
+import it.polito.did.digitalinteractiondesign.structures.Plant
+import kotlin.math.roundToInt
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,53 +52,86 @@ class MyPlantAlertMeasuresFragment : Fragment() {
         var messageTemperature = view.findViewById<TextView>(R.id.alertMessageTemperature)
         var messageBrightness = view.findViewById<TextView>(R.id.alertMessageBrightness)
 
-       isToAlertW = showMeasureAlert(messageWater, 12, 5, 10, 80, 90)
-       isToAlertT = showMeasureAlert(messageTemperature, 32, 10, 20, 30, 40)
-       isToAlertB=  showMeasureAlert(messageBrightness, 5, 10, 20, 80, 90)
+      // isToAlertW = showMeasureAlert(messageWater, 12, 5, 10, 80, 90)
+      // isToAlertT = showMeasureAlert(messageTemperature, 32, 10, 20, 30, 40)
+      // isToAlertB=  showMeasureAlert(messageBrightness, 20, 10, 20, 80, 90)
 
-        //per ogni misura (water, temperature, brightness) si setta il testo in base allo stato di allerta (danger negativo/positivo o warning negativo/positivo)
-        if (isToAlertW == 1) {
-            messageWater.setText(R.string.MyPlantAlert_Water_Danger_N);
-        }
-        else if (isToAlertW == 2) {
-            messageWater.setText(R.string.MyPlantAlert_Water_Warning_N);
-        }
-        else if (isToAlertW == 3) {
-            messageWater.setText(R.string.MyPlantAlert_Water_Warning_P);
-        }
-        else if (isToAlertW == 4) {
-            messageWater.setText(R.string.MyPlantAlert_Water_Danger_P);
-        }
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        viewModelDB.getPlantsFromDBRealtime("Alive")
+
+        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
+            var tempPlant = it.get(MyPlantStatsFragment.activePlantID)
+            var activePlant: Plant? =null
+            if(tempPlant!=null){
+                activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
+                if(activePlant!=null){
+                    var humidityMeasure = activePlant.humidity.toLong()
+                    isToAlertW = showMeasureAlert(messageWater, humidityMeasure, 15, 20, 90, 95)
+                    //per ogni misura (water, temperature, brightness) si setta il testo in base allo stato di allerta (danger negativo/positivo o warning negativo/positivo)
+                    if (isToAlertW == 1) {
+                        messageWater.setText(R.string.MyPlantAlert_Water_Danger_N);
+                    }
+                    else if (isToAlertW == 2) {
+                        messageWater.setText(R.string.MyPlantAlert_Water_Warning_N);
+                    }
+                    else if (isToAlertW == 3) {
+                        messageWater.setText(R.string.MyPlantAlert_Water_Warning_P);
+                    }
+                    else if (isToAlertW == 4) {
+                        messageWater.setText(R.string.MyPlantAlert_Water_Danger_P);
+                    }
+
+                    var temperatureMeasure = activePlant.temperature.toLong()
+                    isToAlertT = showMeasureAlert(messageTemperature, temperatureMeasure, 0, 5, 40, 45)
+
+                    if (isToAlertT == 1) {
+                        messageTemperature.setText(R.string.MyPlantAlert_Temperature_Danger_N);
+                    }
+                    else if (isToAlertT == 2) {
+                        messageTemperature.setText(R.string.MyPlantAlert_Temperature_Warning_N);
+                    }
+                    else if (isToAlertT == 3) {
+                        messageTemperature.setText(R.string.MyPlantAlert_Temperature_Warning_P);
+                    }
+                    else if (isToAlertT == 4) {
+                        messageTemperature.setText(R.string.MyPlantAlert_Temperature_Danger_P);
+                    }
+
+                    var brightnessMeasure = activePlant.brightness.toLong()
+                    isToAlertB=  showMeasureAlert(messageBrightness, brightnessMeasure, 5, 10, 90, 95)
+
+                    if (isToAlertB == 1) {
+                        messageBrightness.setText(R.string.MyPlantAlert_Brightness_Danger_N);
+                    }
+                    else if (isToAlertB == 2) {
+                        messageBrightness.setText(R.string.MyPlantAlert_Brightness_Warning_N);
+                    }
+                    else if (isToAlertB == 3) {
+                        messageBrightness.setText(R.string.MyPlantAlert_Brightness_Warning_P);
+                    }
+                    else if (isToAlertB == 4) {
+                        messageBrightness.setText(R.string.MyPlantAlert_Brightness_Danger_P);
+                    }
+
+                }
+            }
 
 
 
-        if (isToAlertT == 1) {
-            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Danger_N);
-        }
-        else if (isToAlertT == 2) {
-            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Warning_N);
-        }
-        else if (isToAlertT == 3) {
-            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Warning_P);
-        }
-        else if (isToAlertT == 4) {
-            messageTemperature.setText(R.string.MyPlantAlert_Temperature_Danger_P);
-        }
 
 
 
-        if (isToAlertB == 1) {
-            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Danger_N);
-        }
-        else if (isToAlertB == 2) {
-            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Warning_N);
-        }
-        else if (isToAlertB == 3) {
-            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Warning_P);
-        }
-        else if (isToAlertB == 4) {
-            messageBrightness.setText(R.string.MyPlantAlert_Brightness_Danger_P);
-        }
+
+
+
+        })
+
+
+
+
+
+
+
     }
 
     //FUNCTION TO BE IMPROVED AND IMPLEMENTED: CHECK IF WATER/BRIGHTNESS/TEMPERATURE MEASURE IS IN DANGER OR WARNING STATE

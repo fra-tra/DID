@@ -80,10 +80,19 @@ class MyPlantStatsFragment : Fragment() {
                 if(activePlant!=null){
                     pbWater.progress = activePlant.humidity.roundToInt()
                     tvWaterMeasure.text = pbWater.progress.toString()
-                    pbTemperature.progress = activePlant.temperature
+                     pbTemperature.progress = activePlant.temperature
+                   // pbTemperature.progress = -20
                     tvTemperatureMeasure.text = pbTemperature.progress.toString() + "°C"
                     pbBrightness.progress = activePlant.brightness
                     tvBrightnessMeasure.text = pbBrightness.progress.toString() + "%"
+
+                    showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 15, 20, 90, 95)
+
+                    //show alert for temperature -> DEFAULT RESTA COSI
+                    showMeasureAlert(pbTemperature, icAlertTemperature, icAlertOutlineTemperature, 0, 5, 40, 45)
+
+                    //show alert for brightness -> DEFAULT RESTA COSI
+                    showMeasureAlert(pbBrightness, icAlertBrightness, icAlertOutlineBrightness, 5, 10, 90, 95)
 
 
                 }
@@ -111,13 +120,7 @@ class MyPlantStatsFragment : Fragment() {
 
 
         //show alert for water -> rendere dinamico in base ai dati
-        showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 10, 20, 80, 90)
 
-        //show alert for temperature -> DEFAULT RESTA COSI
-        showMeasureAlert(pbTemperature, icAlertTemperature, icAlertOutlineTemperature, 10, 20, 30, 40)
-
-        //show alert for brightness -> DEFAULT RESTA COSI
-        showMeasureAlert(pbBrightness, icAlertBrightness, icAlertOutlineBrightness, 10, 20, 80, 90)
 
 
     }
