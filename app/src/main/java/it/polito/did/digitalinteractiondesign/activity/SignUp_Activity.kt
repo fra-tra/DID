@@ -48,7 +48,7 @@ class SignUp_Activity : AppCompatActivity() {
 
 
         var passwordTextIL = findViewById<TextInputLayout>(R.id.passwordTextIL)
-        passwordTextIL.helperText="Password must be at least 6 characters long"
+        passwordTextIL.helperText=getString(R.string.InvalidPassword)
 
         //Configure Actionbar
         actionBar=supportActionBar!!
@@ -85,7 +85,7 @@ class SignUp_Activity : AppCompatActivity() {
                 } else {
 
                     if(!Patterns.EMAIL_ADDRESS.matcher(emailEditT.text.toString()).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
-                        binding.emailTextIL.error = "Invalid email format"
+                        binding.emailTextIL.error = getString(R.string.InvalidEmail)
                     }
                     else {
                         binding.emailTextIL.error = null
@@ -102,7 +102,7 @@ class SignUp_Activity : AppCompatActivity() {
                 } else {
 
                     if(TextUtils.isEmpty(passwordEditT.text.toString()) && emailEditT.text.toString() != ""){
-                        binding.passwordTextIL.error = "Please enter password"
+                        binding.passwordTextIL.error = getString(R.string.EnterPassword)
                         Log.d("email",  email)
                     }
                     else {
@@ -177,20 +177,20 @@ class SignUp_Activity : AppCompatActivity() {
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             //invalid email format
          //  binding.emailEditT.error="Invalid email format"
-            binding.emailTextIL.error="Invalid email format"
+            binding.emailTextIL.error=getString(R.string.InvalidEmail)
 
         }else if(TextUtils.isEmpty(password)){
             //password isn't entered
          //  binding.passwordEditT.error="Please enter password"
             binding.emailTextIL.error=null
-            binding.passwordTextIL.error="Please enter password"
+            binding.passwordTextIL.error=getString(R.string.EnterPassword)
 
 
         }else if(password.length<6){
             // password lenght is less than 6 char
          //   binding.passwordEditT.error="Password must at least 6 characters long"
             binding.emailTextIL.error=null
-            binding.passwordTextIL.error="Password must at least 6 characters long"
+            binding.passwordTextIL.error=getString(R.string.InvalidPassword)
         }else {
             // data is valid, continue signup
             firebaseSignUp()

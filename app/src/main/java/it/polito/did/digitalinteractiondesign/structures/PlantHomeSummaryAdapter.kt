@@ -42,32 +42,29 @@ class PlantHomeSummaryAdapter(val plants: MutableList<Plant>): RecyclerView.Adap
             Glide.with(holder.itemView).load(plants[position].image).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(plantImageHome)
 
             // SET (water) MEASURES
-            progressBarWaterHome.progress = plants[position].waterLevelMeasure.roundToInt()
+            progressBarWaterHome.progress = plants[position].humidity.roundToInt()
+            Log.d("Humidity Level Home", plants[position].humidity.toString())
 
 
             //set temperature and brightness default measure (equal for every plant)
-            progressBarTemperatureHome.progress = 32 // temperatura pianta
-            progressBarBrightnessHome.progress = 5  // illuminazione della pianta
+            progressBarTemperatureHome.progress = plants[position].temperature // temperatura pianta
+            progressBarBrightnessHome.progress = plants[position].brightness// illuminazione della pianta
 
             //SET MEASURES ALERT
             //SHOW ALERT FOR HUMIDITY - TEST
             showMeasureAlert(
-                progressBarWaterHome, alertWater,
-                plants[position].waterMeasuresReferences[0].roundToInt(),
-                plants[position].waterMeasuresReferences[1].roundToInt(),
-                plants[position].waterMeasuresReferences[2].roundToInt(),
-                plants[position].waterMeasuresReferences[3].roundToInt()
+                progressBarWaterHome, alertWater, 15, 20, 90, 95
             )
 
             //SHOW ALERT FOR BRIGHTNESS AND TEMPERATURE - DEFAULT
             showMeasureAlert(
                 progressBarTemperatureHome, alertTemperature,
-                10, 20, 30, 40
+                0, 5, 40, 45
             )
 
             showMeasureAlert(
                 progressBarBrightnessHome, alertBrightness,
-                10, 20, 80, 90
+                5, 10, 90, 95
             )
 
             //SET TITLE

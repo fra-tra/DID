@@ -2,6 +2,7 @@
 <resources>
         <!--general -->
         <string name="app_name">Digital Interaction Design</string>
+        <string name = "yes"> Yes </string>
 
         <string name="Placeholder_MyPlant">My plant</string>
         <string name="Placeholder_PlantName">Plant Name</string>
@@ -48,6 +49,11 @@
         <string name="LoremIpsum"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
 </string>
 
+        <!-- error messages sign up login-->
+        <string name="InvalidEmail"> Invalid Email </string>
+        <string name="InvalidPassword"> Password must be at least 6 characters long </string>
+        <string name="EnterPassword"> Please enter password </string>
+
         <!--bottom_menu -->
 
         <string name="BottomMenu_Home">Home</string>
@@ -75,7 +81,7 @@
         <string name="login_SloganLogin">Taking care of your plants has never been easier!</string>
         <string name="login_BtnLogin">Login</string>
 
-        <string name="no_account">Not have account? <b>SignUp</b></string>
+        <string name="no_account">Don\'t have an account? <b>Sign Up</b></string>
 
         <!--activity_signup -->
 
@@ -124,7 +130,7 @@
         <string name="Calendarizzazione_SubTitle">Manage you plants\' watering</string>
 
 
-        <string name="Calendarizzazione_NoPiante">You dont have add any plants :(</string>
+        <string name="Calendarizzazione_NoPiante">You haven\'t added any plants yet :(</string>
 
         <!--fragment_commitment -->
 
@@ -331,9 +337,9 @@
 
         <!--fragment_my_plant_water_and_calendar_c_t_a-->
 
-        <string name="MyPlantWaterAndCalendar_LastWater">Last Watered:</string>
+        <string name="MyPlantWaterAndCalendar_LastWater"><b>Last Watered:</b></string>
 
-        <string name="MyPlantWaterAndCalendar_AutomaticWater">Automatic Watering:</string>
+        <string name="MyPlantWaterAndCalendar_AutomaticWater"><b>Automatic Watering:</b></string>
 
         <string name="MyPlantWaterAndCalendar_BrightnessTitle">Light</string>
 

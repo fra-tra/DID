@@ -26,8 +26,9 @@
             android:id="@+id/imagePlant"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="start|center_vertical"
             android:src="@drawable/plant_placeholder"
+            android:scaleType="centerCrop"
             app:roundPercent="50" />
 
         <TextView

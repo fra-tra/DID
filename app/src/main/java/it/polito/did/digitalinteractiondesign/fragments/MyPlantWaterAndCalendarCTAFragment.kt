@@ -2,15 +2,12 @@ package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.SeekBar
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -23,6 +20,7 @@ import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.activity.Home_Activity
 import it.polito.did.digitalinteractiondesign.structures.Plant
 import java.time.LocalDateTime
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,16 +68,39 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
            // findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment)
             val bottomNav: BottomNavigationView = (context as Home_Activity).findViewById(R.id.bottomNavigationView)
             bottomNav.selectedItemId = R.id.calendarizzazione
-            findNavController().navigate(R.id.calendarizzazione)
+           // findNavController().navigate(R.id.calendarizzazione)
         }
 
         //seek bar luminosità
-        var seekBarBrightness = view.findViewById<SeekBar>(R.id.seekBarBrightness)
+        var switchBrightness = view.findViewById<Switch>(R.id.switchBrightness)
+        var lightIcon = view.findViewById<ImageView>(R.id.icBrightness)
         //il valore selezionato si accede tramite seekBarBrightness.progress
+        if(switchBrightness.isChecked()) {
+            context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
+                ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+        }
+        else {
+            context?.let { ContextCompat.getColor(it, R.color.grey) }
+                ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+        }
+        switchBrightness.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+            // do something, the isChecked will be
+            // true if the switch is in the On position
+            if(isChecked) {
+                context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
+                    ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+            }
+            else {
+                context?.let { ContextCompat.getColor(it, R.color.grey) }
+                    ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+            }
+        })
 
         // prendo i dati da questo percorso
         var tvLastWatered = view.findViewById<TextView>(R.id.tvLastWatered)
         viewModelDB.getPlantsFromDBRealtime("Alive")
+        var tvAutomaticWatering = view.findViewById<TextView>(R.id.tvAutomaticWatering)
+        tvAutomaticWatering.text = getString(R.string.MyPlantWaterAndCalendar_AutomaticWater) + " " + getString(R.string.yes)
 
 
         viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
@@ -92,7 +113,8 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
 
             if(activePlant!=null){
 
-                tvLastWatered.text=activePlant.lastWateredDate.split("T")[0]
+                var lastWateredTitle = getString(R.string.MyPlantWaterAndCalendar_LastWater)
+                tvLastWatered.text= lastWateredTitle + " " + activePlant.lastWateredDate.split("T")[0]
 
                 var btnWaterPlant = view.findViewById<Button>(R.id.btnWaterPlant)
                 btnWaterPlant.setOnClickListener {

@@ -21,8 +21,7 @@ import androidx.core.view.isInvisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
+
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import it.polito.did.digitalinteractiondesign.ManagerFirebase
 import it.polito.did.digitalinteractiondesign.ManagerPlants
@@ -109,14 +108,17 @@ class WateringCanFragment : Fragment() {
 
                 var bar = view.findViewById<SeekBar>(R.id.seekBar)
 
+
                // wave.progressValue = bar.progress;
-                bar.progress= activePlant.waterLevelMeasure.toInt()
+              // bar.progress= activePlant.waterLevelMeasure.toInt()
+                wave.progressValue = mapWaterValue(activePlant.waterLevelMeasure.toInt(), 4, 12)
+
 
 
                 var amp = 30;
 
                 //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-                alertEmptyWateringCan.isGone = wave.progressValue >= 10
+                alertEmptyWateringCan.isGone = wave.progressValue <= 12
 
                 if(wave.progressValue < amp){
                     wave.setAmplitudeRatio(wave.progressValue)
@@ -126,7 +128,7 @@ class WateringCanFragment : Fragment() {
                     wave.setAmplitudeRatio(amp)
                 }
 
-                bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            /*    bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                     override fun onStopTrackingTouch(seekBar: SeekBar) {
                         // TODO Auto-generated method stub
                     }
@@ -144,10 +146,10 @@ class WateringCanFragment : Fragment() {
 
                         }
                         //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-                        alertEmptyWateringCan.isGone = progress >= 12
+                        alertEmptyWateringCan.isGone = progress <= 12
 
                     }
-                })
+                })*/
 
 
             }
@@ -155,5 +157,13 @@ class WateringCanFragment : Fragment() {
 
 
         })
+    }
+
+    private fun mapWaterValue (value: Int, startInterval: Int, endInterval: Int): Int {
+        var valueToReturn = value
+        if (value < startInterval) valueToReturn = startInterval
+        if (value > endInterval) valueToReturn = endInterval
+
+        return 100 - (((valueToReturn - startInterval)*100)/(endInterval-startInterval))
     }
 }

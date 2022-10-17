@@ -2,7 +2,7 @@
     <!--general -->
     <string name="app_name">Digital Interaction Design</string>
     <string name="Placeholder_MyPlant">Mia pianta</string>
-
+    <string name = "yes"> Si </string>
     <string name="Placeholder_PlantName">Nome Pianta</string>
 
 
@@ -56,6 +56,11 @@
 
     <string name="LoremIpsum"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel dignissim risus. Nulla suscipit ultrices ante nec maximus. In hac habitasse platea dictumst. Suspendisse potenti. Donec imperdiet mi in dolor commodo feugiat. Sed felis eros, pellentesque id finibus at, hendrerit id ante. Donec efficitur massa vitae massa molestie aliquet eget pulvinar nulla. Donec in metus eget est interdum malesuada a euismod sem. Donec sit amet dapibus nulla. Mauris maximus erat quis magna fermentum, a cursus elit elementum. Integer lacinia lectus sed convallis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sed turpis quis erat dignissim tempor non et nisl. Sed viverra, ipsum vel rutrum vulputate, mi ligula posuere sapien, et dictum magna velit nec lorem."
 </string>
+
+    <!-- error messages sign up login -->
+    <string name="InvalidEmail"> Email non valida </string>
+    <string name="InvalidPassword"> La password deve essere lunga almeno 6 caratteri </string>
+    <string name="EnterPassword"> Inserire password </string>
 
     <!--bottom_menu -->
 
@@ -267,7 +272,7 @@
     <!--fragment_loading_water_plant-->
     <string name="loading_water_plant">La tua pianta sarà ora amorevolmente curata!</string>
 
-    <string name="loading_water_plant_secondary"> Stiamo annaffinado \u0020</string>
+    <string name="loading_water_plant_secondary"> Stiamo annaffiando \u0020</string>
 
 
     <!--fragment_my_dead_plant-->
@@ -286,7 +291,7 @@
 
     <string name="MyDeadPlantStats_Day">Giorni di Vita</string>
 
-    <string name="MyDeadPlantStats_Water">Innaffiata</string>
+    <string name="MyDeadPlantStats_Water">Annaffiata</string>
 
 
     <!--fragment_my_plant-->
@@ -376,9 +381,9 @@
 
     <!--fragment_my_plant_water_and_calendar_c_t_a-->
 
-    <string name="MyPlantWaterAndCalendar_LastWater">Ultima annafiatura:</string>
+    <string name="MyPlantWaterAndCalendar_LastWater"><b>Ultima annaffiatura:</b></string>
 
-    <string name="MyPlantWaterAndCalendar_AutomaticWater">Innaffiatura Automatica:</string>
+    <string name="MyPlantWaterAndCalendar_AutomaticWater"><b>Annaffiatura Automatica:</b></string>
 
     <string name="MyPlantWaterAndCalendar_BrightnessTitle">Luce</string>
 

@@ -76,12 +76,12 @@ class Login_Activity : AppCompatActivity() {
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 //invalid email format
               // binding.emailEditT.setError("Invalid email format")
-                 binding.emailTextIL.error = "Invalid email format"
+                 binding.emailTextIL.error = getString(R.string.InvalidEmail)
 
             }else if(TextUtils.isEmpty(password)){
                 //no password entered
                 //binding.passwordEditT.error="Please enter password"
-                binding.passwordTextIL.error = "Please enter password"
+                binding.passwordTextIL.error = getString(R.string.EnterPassword)
                 binding.emailTextIL.error = null
                 Log.d("TESTLogin", "probEmail")
             }else{
@@ -127,7 +127,7 @@ class Login_Activity : AppCompatActivity() {
                 } else {
 
                     if(!Patterns.EMAIL_ADDRESS.matcher(emailEditT.text.toString()).matches() && !TextUtils.isEmpty(emailEditT.text.toString())){
-                        binding.emailTextIL.error = "Invalid email format"
+                        binding.emailTextIL.error = getString(R.string.InvalidEmail)
                     }
                     else {
                         binding.emailTextIL.error = null
@@ -144,7 +144,7 @@ class Login_Activity : AppCompatActivity() {
                 } else {
 
                     if(TextUtils.isEmpty(passwordEditT.text.toString()) && !TextUtils.isEmpty(emailEditT.text.toString())){
-                        binding.passwordTextIL.error = "Please enter password"
+                        binding.passwordTextIL.error = getString(R.string.EnterPassword)
                         Log.d("password",  passwordEditT.text.toString())
                         Log.d("email",  passwordEditT.text.toString())
                     }

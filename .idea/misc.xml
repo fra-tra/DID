@@ -169,10 +169,12 @@
         <entry key="..\:/Users/girde/Desktop/GitProjects/DID/app/src/main/res/layout/fragment_profilo.xml" value="0.259375" />
         <entry key="..\:/Users/girde/Desktop/GitProjects/DID/app/src/main/res/menu/bottom_menu.xml" value="0.259375" />
         <entry key="..\:/Users/girde/Desktop/GitProjects/DID/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2335" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/arrow_button_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/bg_transparent_button.xml" value="0.3145" />
         <entry key="app/src/main/res/drawable/button_background_grey.xml" value="0.3145" />
         <entry key="app/src/main/res/drawable/button_background_red.xml" value="0.3145" />
+        <entry key="app/src/main/res/drawable/card_grey_outline.xml" value="0.3055" />
         <entry key="app/src/main/res/drawable/circular_bar.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/circular_white_bg.xml" value="0.2115" />
         <entry key="app/src/main/res/drawable/city_info_background.xml" value="0.291" />
@@ -182,12 +184,17 @@
         <entry key="app/src/main/res/drawable/empty_tall_divider.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/green_outline.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/grey_background.xml" value="0.2805" />
+        <entry key="app/src/main/res/drawable/grey_outline.xml" value="0.3055" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3055" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1925" />
+        <entry key="app/src/main/res/drawable/ic_logo_did.xml" value="0.1925" />
+        <entry key="app/src/main/res/drawable/light_green_background.xml" value="0.3055" />
         <entry key="app/src/main/res/drawable/purple_background.xml" value="0.2805" />
         <entry key="app/src/main/res/drawable/red_background.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/red_outline.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/round_image_btn_bg.xml" value="0.3055" />
         <entry key="app/src/main/res/drawable/rounded_rectangle_full.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/rounded_rectangle_watering_can.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/yellow_background.xml" value="0.2805" />
@@ -201,12 +208,12 @@
         <entry key="app/src/main/res/layout/fragment_add_plant_vase.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_add_plants_sensor.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_add_room.xml" value="0.34717948717948716" />
-        <entry key="app/src/main/res/layout/fragment_calendarizzazione.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_calendarizzazione.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_commitment.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_custom_death_dialog.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.3503362019856771" />
         <entry key="app/src/main/res/layout/fragment_discover_add_plant_in_room.xml" value="0.26458333333333334" />
-        <entry key="app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment_discover_plant_detail.xml" value="0.6285979572887651" />
         <entry key="app/src/main/res/layout/fragment_discovery_category_detail.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_edit_commitment_level.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_edit_skill_level.xml" value="0.26458333333333334" />
@@ -218,13 +225,13 @@
         <entry key="app/src/main/res/layout/fragment_loading_water_plant.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_vase.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.55" />
         <entry key="app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.55" />
         <entry key="app/src/main/res/layout/fragment_piante.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_profilo.xml" value="0.40970357259114587" />
@@ -240,7 +247,7 @@
         <entry key="app/src/main/res/layout/item_calendar_room_card.xml" value="0.5856760660807292" />
         <entry key="app/src/main/res/layout/item_calendar_switch_card.xml" value="0.55" />
         <entry key="app/src/main/res/layout/item_category_plant.xml" value="0.55" />
-        <entry key="app/src/main/res/layout/item_discover_plants.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/item_discover_plants.xml" value="0.45" />
         <entry key="app/src/main/res/layout/item_dropdown_vase_settings.xml" value="0.34717948717948716" />
         <entry key="app/src/main/res/layout/item_liked_plants.xml" value="0.49545644124348964" />
         <entry key="app/src/main/res/layout/item_liked_plants_profilo.xml" value="0.20277777777777778" />
@@ -251,6 +258,7 @@
         <entry key="app/src/main/res/layout/item_room_image.xml" value="0.625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2005" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_custom.xml" value="0.2005" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_custom_round.xml" value="0.3055" />
       </map>
     </option>
   </component>

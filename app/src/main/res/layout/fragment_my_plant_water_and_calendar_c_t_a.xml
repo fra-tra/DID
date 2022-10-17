@@ -14,7 +14,7 @@
         app:icon="@drawable/ic_wateringcan"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btnCalendarPlant"
@@ -31,51 +31,6 @@
         app:tint="@color/green"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/tvLastWatered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="135 days ago"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline26"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/MyPlantWaterAndCalendar_LastWater"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/tvLastWatered"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/MyPlantWaterAndCalendar_AutomaticWater"
-        android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvLastWatered"
-        app:layout_constraintEnd_toStartOf="@+id/tvAutomaticWatering"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/guideline26" />
-
-    <TextView
-        android:id="@+id/tvAutomaticWatering"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yes"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView10" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline26"
         android:layout_width="wrap_content"
@@ -85,29 +40,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintGuide_percent="0.5" />
 
-    <SeekBar
-        android:id="@+id/seekBarBrightness"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-10dp"
-        android:layout_marginTop="24dp"
-        android:paddingStart="16dip"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="@string/MyPlantWaterAndCalendar_BrightnessTitle"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/btnWaterPlant" />
+        app:layout_constraintBottom_toBottomOf="@+id/switchBrightness"
+        app:layout_constraintStart_toStartOf="@+id/btnWaterPlant"
+        app:layout_constraintTop_toTopOf="@+id/switchBrightness" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/card_grey_outline"
+        app:layout_constraintEnd_toEndOf="@+id/tvAutomaticWatering"
+        app:layout_constraintStart_toStartOf="@+id/tvAutomaticWatering"
+        app:layout_constraintTop_toBottomOf="@+id/tvAutomaticWatering" />
 
     <ImageView
         android:id="@+id/icBrightness"
@@ -123,5 +75,46 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:tint="@color/yellow_warning" />
+
+    <TextView
+        android:id="@+id/tvLastWatered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/light_green_background"
+        android:gravity="start"
+        android:padding="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/MyPlantWaterAndCalendar_LastWater"
+        app:layout_constraintTop_toBottomOf="@+id/btnWaterPlant" />
+
+    <TextView
+        android:id="@+id/tvAutomaticWatering"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/light_green_background"
+        android:gravity="start"
+        android:padding="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/MyPlantWaterAndCalendar_AutomaticWater"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastWatered" />
+
+    <Switch
+        android:id="@+id/switchBrightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
