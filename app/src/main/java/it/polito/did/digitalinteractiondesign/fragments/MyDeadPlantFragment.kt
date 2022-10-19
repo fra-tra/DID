@@ -120,9 +120,9 @@ class MyDeadPlantFragment : Fragment() {
 
                 causeDeathTextTV.text=activePlant.causeDeath + String(Character.toChars(0x1F614))
                 datesDeadPlantTV.text="${activePlant.dayBorn.split("T")[0]}"+ " -> " + "${activePlant.dayDied.split("T")[0]}"
-                wateredTimesTV.text=activePlant.timesWetted.toString()
+                wateredTimesTV.text=activePlant.timesWetted.toString() + " times"
                 Glide.with(view).load(activePlant.image).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(imagePlant)
-                dayLivedTV.text= activePlant.daysLived.toString()
+                dayLivedTV.text= activePlant.daysLived.toString() + " days"
 
             }
 

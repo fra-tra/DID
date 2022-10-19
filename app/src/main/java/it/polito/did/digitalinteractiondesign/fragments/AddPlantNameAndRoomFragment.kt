@@ -115,10 +115,10 @@ class AddPlantNameAndRoomFragment : Fragment() {
 
 
 
-        var btnAddRoom = view.findViewById<ImageView>(R.id.btnAddRoom)
+      /*  var btnAddRoom = view.findViewById<ImageView>(R.id.btnAddRoom)
         btnAddRoom.setOnClickListener {
             findNavController().navigate(R.id.action_addPlantNameAndRoomFragment_to_addRoomFragment)
-        }
+        }*/
 
     }
 
