@@ -14,7 +14,10 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
 import it.polito.did.digitalinteractiondesign.R
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -124,6 +127,21 @@ class SelectCalendarRangeFragment : Fragment() {
 
                 datePicker.addOnPositiveButtonClickListener {
                     selectedRangeTv.text = "${datePicker.headerText} >"
+                    datePicker.selection?.let { it1 -> convertLongToTime(it1.first) }?.let { it2 ->
+                        Log.d("Selection at positive ",
+                            it2
+                        )
+                    }
+
+                    datePicker.selection?.let { it1 -> convertLongToTime(it1.second) }?.let { it2 ->
+                        Log.d("Selection at positive ",
+                            it2
+                        )
+                    }
+
+                //    ManagerFirebase.updateValuePlantAlive()
+
+
                 }
 
                 }
@@ -150,5 +168,11 @@ class SelectCalendarRangeFragment : Fragment() {
         btnBack.setOnClickListener {
             findNavController().navigateUp()
         }
+    }
+
+    fun convertLongToTime(time: Long): String {
+        val date = Date(time)
+        val format = SimpleDateFormat("yyyy.MM.dd HH:mm")
+        return format.format(date)
     }
 }

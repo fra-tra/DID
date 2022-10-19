@@ -2,6 +2,7 @@ package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -101,6 +102,8 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
             }
 
             if(activePlant!=null){
+
+
 
                 var lastWateredTitle = getString(R.string.MyPlantWaterAndCalendar_LastWater)
                 tvLastWatered.text= lastWateredTitle + " " + activePlant.lastWateredDate.split("T")[0]

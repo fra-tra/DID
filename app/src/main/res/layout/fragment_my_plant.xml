@@ -25,7 +25,8 @@
             app:expandedTitleMarginBottom="40dp"
             app:expandedTitleMarginStart="40dp"
             app:title="@string/my_plant_title"
-            app:expandedTitleTextAppearance="@style/expandedBarTextStyleMyplant">
+            app:expandedTitleTextAppearance="@style/expandedBarTextStyleMyplant"
+            app:collapsedTitleTextAppearance="@style/collapsedBarTextStyleMyplant">
 
             <ImageView
                 android:id="@+id/imagePlant"
@@ -66,7 +67,7 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarLayout"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="?actionBarSize"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
@@ -85,9 +86,10 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarLayoutsetting"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="?actionBarSize"
-                android:layout_marginStart="340dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="16dp"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
                 app:layout_collapseMode="pin">
@@ -96,10 +98,10 @@
                     android:id="@+id/settings"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/whitetransparentellipse"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_gravity="center"
                     android:src="@drawable/ic_baseline_settings_culo" />
             </androidx.appcompat.widget.Toolbar>
 
@@ -112,6 +114,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:overScrollMode="never"
+        android:paddingBottom="32dp"
         android:scrollbars="none"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
