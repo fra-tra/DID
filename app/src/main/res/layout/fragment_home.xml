@@ -73,7 +73,6 @@
                         android:autoSizeStepGranularity="2sp"
                         android:autoSizeTextType="uniform"
 
-                        android:text="Valdobbiadene"
                         android:textColor="@color/dark_grey"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -88,7 +87,6 @@
                         android:id="@+id/country"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Italia"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/city"
                         app:layout_constraintTop_toBottomOf="@+id/city" />
@@ -98,7 +96,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:elevation="8dp"
-                        android:text="@string/Home_Placeholder_Degrees"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
                         app:layout_constraintEnd_toEndOf="@+id/imageView5"
