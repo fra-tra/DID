@@ -186,17 +186,11 @@ companion object{
             // UPDATE BY NAME
 
 
-                if(positionTemp=="Light"  || positionTemp=="Pump Water" ){
+                if(positionTemp=="Light"  || positionTemp=="Pump Water" || positionTemp=="Status Auto Water" ){
                     referenceDBAlive.child(idPlant).child(positionTemp).setValue(value.toBoolean())
                 }else{
                     referenceDBAlive.child(idPlant).child(positionTemp).setValue(value)
                 }
-
-
-
-
-
-
 
 
             }

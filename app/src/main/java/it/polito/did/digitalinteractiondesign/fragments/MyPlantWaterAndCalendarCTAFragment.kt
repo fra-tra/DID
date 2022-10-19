@@ -84,18 +84,7 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
             context?.let { ContextCompat.getColor(it, R.color.grey) }
                 ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
         }
-        switchBrightness.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
-            // do something, the isChecked will be
-            // true if the switch is in the On position
-            if(isChecked) {
-                context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
-                    ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
-            }
-            else {
-                context?.let { ContextCompat.getColor(it, R.color.grey) }
-                    ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
-            }
-        })
+
 
         // prendo i dati da questo percorso
         var tvLastWatered = view.findViewById<TextView>(R.id.tvLastWatered)
@@ -118,6 +107,7 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
 
                 var lastWateredTitle = getString(R.string.MyPlantWaterAndCalendar_LastWater)
                 tvLastWatered.text= lastWateredTitle + " " + activePlant.lastWateredDate.split("T")[0]
+                switchBrightness.isChecked=activePlant.light
 
                 var btnWaterPlant = view.findViewById<Button>(R.id.btnWaterPlant)
                 btnWaterPlant.setOnClickListener {
@@ -127,10 +117,24 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
                     findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment,bundleActivePlant)
                     //BAGNA LE PIANTE SPEDISCI DATO NEL DATABASE - PUMP ON
                 }
+                switchBrightness.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+                    // do something, the isChecked will be
+                    // true if the switch is in the On position
+                    if(isChecked) {
+                        context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
+                            ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+                        ManagerFirebase.updateValuePlantAlive(Companion.activePlantID,"Light","${!(activePlant.light)}")
+                    }
+                    else {
+                        context?.let { ContextCompat.getColor(it, R.color.grey) }
+                            ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+                        ManagerFirebase.updateValuePlantAlive(Companion.activePlantID,"Light","${!(activePlant.light)}")
+                    }
+                })
             /*
                 //var btnLight = view.findViewById<SeekBar>(R.id.)
                 btnLigt.setOnClickListener {
-                    ManagerFirebase.updateValuePlantAlive(Companion.activePlantID,"Light","${!(activePlant.light)}")
+
                 }
                 */
             }

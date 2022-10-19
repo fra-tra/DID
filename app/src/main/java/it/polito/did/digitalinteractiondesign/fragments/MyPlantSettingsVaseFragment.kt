@@ -39,7 +39,21 @@ class MyPlantSettingsVaseFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentMyPlantSettingsVaseBinding.inflate(inflater, container, false )
-        val vaseType = resources.getStringArray(R.array.vase_type)
+
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var vaseTypePlant:String =""
+
+        var vaseSizePlant:String =""
+
+        var soilTypePlant:String=""
+
+
+        var vaseType = resources.getStringArray(R.array.vase_type)
         val vaseTypeArrayAdapter = ArrayAdapter(requireContext(), R.layout.item_dropdown_vase_settings, vaseType)
         binding.textViewVaseType.setAdapter(vaseTypeArrayAdapter)
 
@@ -50,7 +64,7 @@ class MyPlantSettingsVaseFragment : Fragment() {
         val soilType = resources.getStringArray(R.array.soil_type)
         val soilTypeArrayAdapter = ArrayAdapter(requireContext(), R.layout.item_dropdown_vase_settings, soilType)
         binding.textViewSoilType.setAdapter(soilTypeArrayAdapter)
-        binding.textViewSoilType.setText("Type 3", false);
+
 
         return binding.root
     }
@@ -58,7 +72,33 @@ class MyPlantSettingsVaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+        binding.textViewVaseType.onItemClickListener =
+            AdapterView.OnItemClickListener { adapterView, view, position, id ->
+                val selectedValue: String? = vaseTypeArrayAdapter.getItem(position)
+                if (selectedValue != null) {
+                    Log.d("Selected vase type: ", selectedValue)
+                    vaseTypePlant =selectedValue
+                }
+            }
+        binding.textViewVaseSize.onItemClickListener =
+            AdapterView.OnItemClickListener { adapterView, view, position, id ->
+                val selectedValue: String? = vaseSizeArrayAdapter.getItem(position)
+                if (selectedValue != null) {
+                    Log.d("Selected vase size: ", selectedValue)
+                   vaseSizePlant =selectedValue
+                }
+            }
+        binding.textViewSoilType.onItemClickListener =
+            AdapterView.OnItemClickListener { adapterView, view, position, id ->
+                val selectedValue: String? = soilTypeArrayAdapter.getItem(position)
+                if (selectedValue != null) {
+                    Log.d("Selected soil type: ", selectedValue)
+                    soilTypePlant =selectedValue
+                }
+            }
+
         viewModelDB.getPlantsFromDBRealtime("Alive")
 
         viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
@@ -66,16 +106,25 @@ class MyPlantSettingsVaseFragment : Fragment() {
 
             var activePlantID = arguments?.get("activePlant")
 
-            Log.d("IdActivePlant", activePlantID.toString())
+            Log.d("IdActivePlantVase", activePlantID.toString())
             var tempPlant = it.get(activePlantID)
             var activePlant: Plant? =null
             if(tempPlant!=null)  activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
             if(activePlant!=null){
+               // salvataggio sbagliato va bene solo in questa casistica, da ripensare per implementazioni
+                   //ulteriori
+
+                binding.textViewSoilType.setText("${activePlant.soilType}",false)
+                binding.textViewVaseSize.setText("${activePlant.vaseSize}",false)
+                binding.textViewVaseType.setText("${activePlant.vaseType}",false)
 
 
             }
             var btnBack = view.findViewById<ImageButton>(R.id.backButtonVaseSettings)
             btnBack.setOnClickListener {
+                ManagerFirebase.updateValuePlantAlive(activePlantID.toString(),"Vase Size",vaseSizePlant)
+                ManagerFirebase.updateValuePlantAlive(activePlantID.toString(),"Soil Type",soilTypePlant)
+                ManagerFirebase.updateValuePlantAlive(activePlantID.toString(),"Vase Type",vaseTypePlant)
                 findNavController().navigateUp()
             }
 
