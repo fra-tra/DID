@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ItemCalendarSwitchCardBinding
 import it.polito.did.digitalinteractiondesign.databinding.ItemPlantImageBinding
@@ -40,10 +41,10 @@ class CalendarPlantsAdapter (var plants: List <Plant>)
              val calendarChild = plants[position]
 
              nestedRVText00.text = calendarChild.name
-             nestedRVSwitch00.isChecked = calendarChild.switchStatus
+             nestedRVSwitch00.isChecked = calendarChild.statusAutoWater
 
 
-             if (calendarChild.switchStatus) {
+             if (calendarChild.statusAutoWater) {
                  //  holder.infoCalendarButton.setVisibility(View.VISIBLE);
                  switchCard.setCardBackgroundColor(Color.WHITE)
                  infoSelectedRange.setVisibility(View.VISIBLE)
@@ -94,8 +95,9 @@ class CalendarPlantsAdapter (var plants: List <Plant>)
                      infoSelectedRange.setVisibility(View.GONE)
                      selectDateRange.setVisibility(View.GONE)
                  }
-                 calendarChild.switchStatus = isChecked
-                 Log.d("switchStatus: ", calendarChild.switchStatus.toString())
+                 ManagerFirebase.updateValuePlantAlive(calendarChild.idIdentification,"Status Auto Water",isChecked.toString())
+                 //calendarChild.statusAutoWater = isChecked
+
              })
 
              infoSelectedRange.setOnClickListener(View.OnClickListener {

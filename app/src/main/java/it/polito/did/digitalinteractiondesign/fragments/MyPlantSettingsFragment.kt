@@ -95,7 +95,7 @@ class MyPlantSettingsFragment : Fragment() {
             // ci serve sapere la pianta schiacciata
             var activePlantID = arguments?.get("activePlant")
 
-            Log.d("IdActivePlant", activePlantID.toString())
+            //Log.d("IdActivePlant", activePlantID.toString())
             var tempPlant = it.get(activePlantID)
             var activePlant: Plant? =null
             if(tempPlant!=null)  activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
