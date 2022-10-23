@@ -88,6 +88,10 @@ class Profilo : Fragment() {
                 findNavController().navigate(R.id.action_profilo_to_editCommitmentLevelFragment)
             }
 
+            tvCity.setOnClickListener {
+                findNavController().navigate(R.id.action_profilo_to_profileSetCityFragment)
+            }
+
         })
 
 

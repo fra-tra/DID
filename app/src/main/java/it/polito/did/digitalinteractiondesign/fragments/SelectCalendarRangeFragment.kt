@@ -99,7 +99,6 @@ class SelectCalendarRangeFragment : Fragment() {
         var radioGroup = view.findViewById<RadioGroup>(R.id.calendarRangeRadioGroup);
         var btnForever = view.findViewById<RadioButton>(R.id.btnForever)
         var btnRange = view.findViewById<RadioButton>(R.id.btnSpecificDateRange)
-        var btnNever = view.findViewById<RadioButton>(R.id.btnNever)
         var selectedRangeTv = view.findViewById<TextView>(R.id.selectedRangeTV)
 
         //default action

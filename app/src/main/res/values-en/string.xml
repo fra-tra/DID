@@ -381,7 +381,8 @@
         <string name="SignUp_Title">Begin your adventure on Plant-e!</string>
 
         <!--fragment_watering_can-->
-        <string name="WateringCan_Title">The watering can needs to be filled!</string>
+        <string name="WateringCan_Danger_Title">The watering can needs to be filled!</string>
+        <string name="WateringCan_Warning_Title">The watering can is almost empty</string>
 
         <!--item_calendar_calendar-->
         <string name="ItemCalendarCalendar_From">From: DD/MM/YY</string>

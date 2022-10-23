@@ -154,7 +154,7 @@
         app:layout_constraintStart_toEndOf="@+id/countryDropdownMenu"
         app:layout_constraintTop_toTopOf="@+id/countryDropdownMenu">
 
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        <EditText
             android:id="@+id/cityEditT"
             style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
             android:layout_width="match_parent"

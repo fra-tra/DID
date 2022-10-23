@@ -2,7 +2,7 @@
     <!--general -->
     <string name="app_name">Digital Interaction Design</string>
     <string name="Placeholder_MyPlant">Mia pianta</string>
-    <string name = "yes"> Si </string>
+    <string name="yes"> Si </string>
     <string name="Placeholder_PlantName">Nome Pianta</string>
 
 
@@ -44,7 +44,6 @@
     <string name="Vaso">Vaso</string>
 
 
-
     <string name="Temperature">Temperatura</string>
 
 
@@ -82,9 +81,6 @@
     <string name="SelectCalendarRangeFragment_materialDateBuilder">SELEZIONA UNA DATA</string>
 
 
-
-
-
     <!--activity_login -->
     <string name="login_app_name">Plant-e</string>
     <string name="login_SloganLogin">Prendersi cura delle tue piante non è mai stato così facile</string>
@@ -116,7 +112,6 @@
     <string name="AddPlantVase_SelecetSizeVase">Selezione la grandezza del tuo vaso</string>
 
     <string name="AddPlantVase_SizeVase">Dimensione Vaso</string>
-
 
 
     <string name="AddPlantVase_SelectSoil">Seleziona il tipo di terra usata</string>
@@ -218,7 +213,6 @@
     <string name="SkilLevel_SL01_Title">Killer di piante</string>
 
 
-
     <string name="SkilLevel_SL01_Subtitle">Sembra che qualsiasi cosa tu tocchi...muoia e basta</string>
 
 
@@ -232,11 +226,9 @@
     <string name="SkilLevel_SL03_Subtitle">Tu e le tue piante siete abituati l\'una all\'altra</string>
 
 
-
     <string name="SkilLevel_SL04_Title">Botanico Esperto</string>
 
     <string name="SkilLevel_SL04_Subtitle">Le tue piante ti sorridono e ti salutano tutte le volte che ti vedono</string>
-
 
 
     <string name="SkilLevel_SL05_Title">Sovrano di tutte le piante</string>
@@ -248,13 +240,11 @@
     <string name="Graveyard_Title">Cimitero delle Piante</string>
 
 
-
     <!--home-->
     <string name="Home_Placeholder_City">Torino</string>
 
-    
-    <string name="Home_Placeholder_Degrees">12 °C</string>
 
+    <string name="Home_Placeholder_Degrees">12 °C</string>
 
 
     <!--fragment_loading_add_plant-->
@@ -359,7 +349,6 @@
     <string name="MyPlantSettingsVase_Title">Impostazioni Pianta</string>
 
 
-
     <string name="MyPlantSettingsVase_SubtilteVase">In quale vaso ha messo la tua amata pianta?</string>
 
 
@@ -371,7 +360,6 @@
     <string name="MyPlantSettingsVase_SelecetSizeVase">Selezione la grandezza del tuo vaso</string>
 
     <string name="MyPlantSettingsVase_SizeVase">Dimensione Vaso</string>
-
 
 
     <string name="MyPlantSettingsVase_SelectSoil">Seleziona il tipo di terra usata</string>
@@ -410,10 +398,10 @@
 
     <!--fragment_profilo_settings-->
     <string name="ProfiloSettings_Account">Account</string>
-    
+
     <string name="ProfiloSettings_Privacy">Impostazione Privacy</string>
 
-    
+
     <string name="ProfiloSettings_Notification">Notifiche</string>
 
 
@@ -439,8 +427,8 @@
 
 
     <!--fragment_watering_can-->
-    <string name="WateringCan_Title">L\'annaffiatoio deve essere riempito!</string>
-
+    <string name="WateringCan_Danger_Title">L\'annaffiatoio deve essere riempito!</string>
+    <string name="WateringCan_Warning_Title">L\'annaffiatoio è quasi vuoto</string>
 
     <!--item_calendar_calendar-->
     <string name="ItemCalendarCalendar_From">Da: DD/MM/YY</string>
