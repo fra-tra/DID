@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_profilo_to_editCommitmentLevelFragment"
             app:destination="@id/editCommitmentLevelFragment" />
+        <action
+            android:id="@+id/action_profilo_to_profileSetCityFragment"
+            app:destination="@id/profileSetCityFragment" />
 
     </fragment>
 
@@ -241,6 +244,11 @@
         android:name="it.polito.did.digitalinteractiondesign.fragments.EditCommitmentLevelFragment"
         android:label="fragment_edit_commitment_level"
         tools:layout="@layout/fragment_edit_commitment_level" />
+    <fragment
+        android:id="@+id/profileSetCityFragment"
+        android:name="it.polito.did.digitalinteractiondesign.fragments.ProfileSetCityFragment"
+        android:label="fragment_profile_set_city"
+        tools:layout="@layout/fragment_profile_set_city" />
 
 
 </navigation>

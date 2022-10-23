@@ -138,7 +138,7 @@
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="@string/ProfiloSettings_Account"
+        android:text="About"
 
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView19"
@@ -162,7 +162,7 @@
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="@string/ProfiloSettings_Privacy"
+        android:text="Policy"
 
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView21"
@@ -187,7 +187,7 @@
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="@string/ProfiloSettings_Notification"
+        android:text="Terms and Conditions"
 
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/settings_textView23"
@@ -213,7 +213,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
-        android:text="@string/ProfiloSettings_Theme"
+        android:text="Contact us "
 
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_2"

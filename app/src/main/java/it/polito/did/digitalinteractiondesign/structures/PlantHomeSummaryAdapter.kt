@@ -53,7 +53,7 @@ class PlantHomeSummaryAdapter(val plants: MutableList<Plant>): RecyclerView.Adap
             //SET MEASURES ALERT
             //SHOW ALERT FOR HUMIDITY - TEST
             showMeasureAlert(
-                progressBarWaterHome, alertWater, 15, 20, 90, 95
+                progressBarWaterHome, alertWater, 15, 20, 65, 70
             )
 
             //SHOW ALERT FOR BRIGHTNESS AND TEMPERATURE - DEFAULT

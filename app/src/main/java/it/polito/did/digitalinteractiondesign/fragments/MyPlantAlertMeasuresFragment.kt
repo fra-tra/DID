@@ -66,7 +66,7 @@ class MyPlantAlertMeasuresFragment : Fragment() {
                 activePlant= ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
                 if(activePlant!=null){
                     var humidityMeasure = activePlant.humidity.toLong()
-                    isToAlertW = showMeasureAlert(messageWater, humidityMeasure, 15, 20, 90, 95)
+                    isToAlertW = showMeasureAlert(messageWater, humidityMeasure, 15, 20, 65, 70)
                     //per ogni misura (water, temperature, brightness) si setta il testo in base allo stato di allerta (danger negativo/positivo o warning negativo/positivo)
                     if (isToAlertW == 1) {
                         messageWater.setText(R.string.MyPlantAlert_Water_Danger_N);

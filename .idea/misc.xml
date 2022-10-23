@@ -229,7 +229,7 @@
         <entry key="app/src/main/res/layout/fragment_my_dead_plant.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_my_dead_plant_stats.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_my_plant.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/fragment_my_plant_alert_measures.xml" value="0.625" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_name.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_my_plant_settings_room.xml" value="0.335" />
@@ -237,6 +237,7 @@
         <entry key="app/src/main/res/layout/fragment_my_plant_stats.xml" value="0.55" />
         <entry key="app/src/main/res/layout/fragment_my_plant_water_and_calendar_c_t_a.xml" value="0.55" />
         <entry key="app/src/main/res/layout/fragment_piante.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_profile_set_city.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_profilo.xml" value="0.40970357259114587" />
         <entry key="app/src/main/res/layout/fragment_profilo_settings.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_room.xml" value="0.335" />

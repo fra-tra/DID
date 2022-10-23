@@ -101,6 +101,7 @@ class WateringCanFragment : Fragment() {
             if(activePlant!=null){
                 //gestione alert annaffiatoio vuoto
                 var alertEmptyWateringCan = view.findViewById<Group>(R.id.groupAlertWateringCan)
+                var warningWateringCan = view.findViewById<Group>(R.id.groupWarningWateringCan)
 
                 //GESTIONE (TEMPORANEA) PROGRESSO ANNAFFIATOIO TRAMITE SEEK BAR
                 var wave = view.findViewById<WaveLoadingView>(R.id.waveLoadingView)
@@ -111,14 +112,27 @@ class WateringCanFragment : Fragment() {
 
                // wave.progressValue = bar.progress;
               // bar.progress= activePlant.waterLevelMeasure.toInt()
-                wave.progressValue = mapWaterValue(activePlant.waterLevelMeasure.toInt(), 4, 12)
-
-
+                wave.progressValue = mapWaterValue(activePlant.waterLevelMeasure.toInt(), 4, 13)
 
                 var amp = 30;
 
                 //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
-                alertEmptyWateringCan.isGone = wave.progressValue <= 12
+              //  alertEmptyWateringCan.isGone = wave.progressValue <= 12
+
+                if (wave.progressValue > 11) {
+                    alertEmptyWateringCan.visibility = View.VISIBLE
+                    warningWateringCan.visibility = View.GONE
+                }
+                else if (wave.progressValue in 10..11) {
+                    alertEmptyWateringCan.visibility = View.GONE
+                    warningWateringCan.visibility = View.VISIBLE
+                }
+                else {
+                    alertEmptyWateringCan.visibility = View.GONE
+                    warningWateringCan.visibility = View.GONE
+                }
+
+
 
                 if(wave.progressValue < amp){
                     wave.setAmplitudeRatio(wave.progressValue)

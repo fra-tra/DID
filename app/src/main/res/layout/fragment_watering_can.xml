@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -112,7 +112,7 @@
         android:padding="4dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="@string/WateringCan_Title"
+        android:text="@string/WateringCan_Danger_Title"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
@@ -120,4 +120,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/warningEmptyWateringCanBorder" />
+
+    <TextView
+        android:id="@+id/warningEmptyWateringCanText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/yellow_background"
+        android:gravity="center"
+        android:padding="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/WateringCan_Warning_Title"
+        android:textAlignment="center"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warningEmptyWateringCanBorder" />
+
+    <ImageView
+        android:id="@+id/warningEmptyWateringCanIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_warning"
+        app:layout_constraintBottom_toTopOf="@+id/warningEmptyWateringCanBorder"
+        app:layout_constraintEnd_toEndOf="@+id/warningEmptyWateringCanBorder"
+        app:layout_constraintStart_toEndOf="@+id/warningEmptyWateringCanBorder"
+        app:layout_constraintTop_toTopOf="@+id/warningEmptyWateringCanBorder" />
+
+    <ImageView
+        android:id="@+id/warningEmptyWateringCanBorder2"
+        android:layout_width="160dp"
+        android:layout_height="140dp"
+        android:padding="0dp"
+        android:src="@drawable/yellow_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupWarningWateringCan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="warningEmptyWateringCanText2,warningEmptyWateringCanIcon2,warningEmptyWateringCanBorder2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -119,8 +119,6 @@ class SignUp_Activity : AppCompatActivity() {
 
         //inserisco tre paesi come prova nell'array
         countries.add("Italy")
-        countries.add("Argentina")
-        countries.add("Netherlands")
 
         //lego i paesi dell'array alle opzioni del dropdown menu (riutilizzo il layout gia usato per il dropdown menu del vase type)
         val countryArrayAdapter = ArrayAdapter(this, R.layout.item_dropdown_vase_settings, countries)
@@ -143,13 +141,11 @@ class SignUp_Activity : AppCompatActivity() {
 
 
         //processo analogo a countries
-        val cities = ArrayList<String>()
-        cities.add("Torino")
-        cities.add("Milano")
-        cities.add("Firenze")
+      /*  val cities = ArrayList<String>()
+        cities.add("Turin")
         val cityArrayAdapter = ArrayAdapter(this, R.layout.item_dropdown_vase_settings, cities)
         binding.cityEditT.threshold=1;
-        binding.cityEditT.setAdapter(cityArrayAdapter)
+        binding.cityEditT.setAdapter(cityArrayAdapter)*/
 
         //dipendenza tra country e city: city è disabled a meno che non venga inserito un valore in country
         var selectedCountry : String

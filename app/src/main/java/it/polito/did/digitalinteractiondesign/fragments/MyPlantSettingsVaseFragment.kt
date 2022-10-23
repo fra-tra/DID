@@ -44,7 +44,7 @@ class MyPlantSettingsVaseFragment : Fragment() {
     }
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+   /* override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var vaseTypePlant:String =""
 
@@ -67,11 +67,31 @@ class MyPlantSettingsVaseFragment : Fragment() {
 
 
         return binding.root
-    }
+    }*/
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var vaseTypePlant:String =""
+
+        var vaseSizePlant:String =""
+
+        var soilTypePlant:String=""
+
+
+        var vaseType = resources.getStringArray(R.array.vase_type)
+        val vaseTypeArrayAdapter = ArrayAdapter(requireContext(), R.layout.item_dropdown_vase_settings, vaseType)
+        binding.textViewVaseType.setAdapter(vaseTypeArrayAdapter)
+
+        val vaseSize = resources.getStringArray(R.array.vase_size)
+        val vaseSizeArrayAdapter = ArrayAdapter(requireContext(), R.layout.item_dropdown_vase_settings, vaseSize)
+        binding.textViewVaseSize.setAdapter(vaseSizeArrayAdapter)
+
+        val soilType = resources.getStringArray(R.array.soil_type)
+        val soilTypeArrayAdapter = ArrayAdapter(requireContext(), R.layout.item_dropdown_vase_settings, soilType)
+        binding.textViewSoilType.setAdapter(soilTypeArrayAdapter)
+
 
         val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
         binding.textViewVaseType.onItemClickListener =

@@ -86,7 +86,7 @@ class MyPlantStatsFragment : Fragment() {
                     pbBrightness.progress = activePlant.brightness
                     tvBrightnessMeasure.text = pbBrightness.progress.toString() + "%"
 
-                    showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 15, 20, 90, 95)
+                    showMeasureAlert(pbWater, icAlertWater, icAlertOutlineWater, 15, 20, 65, 70)
 
                     //show alert for temperature -> DEFAULT RESTA COSI
                     showMeasureAlert(pbTemperature, icAlertTemperature, icAlertOutlineTemperature, 0, 5, 40, 45)
