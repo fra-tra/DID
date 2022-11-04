@@ -71,7 +71,9 @@ class Profilo : Fragment() {
 
             tvEmail.text=it.get("Email").toString()
             tvName.text=it.get("Name").toString()
-            tvCity.text=it.get("City").toString()
+            tvCity.text=it.get("City").toString() + " >"
+            var bundleCityNow=it.get("City").toString()
+
             tvAbility.text= it.get("Ability Level").toString()
             tvDedication.text= it.get("Dedication Level").toString()
 
@@ -89,7 +91,8 @@ class Profilo : Fragment() {
             }
 
             tvCity.setOnClickListener {
-                findNavController().navigate(R.id.action_profilo_to_profileSetCityFragment)
+                var bundleActivePlant= bundleOf(Pair("cityNow",bundleCityNow))
+                findNavController().navigate(R.id.action_profilo_to_profileSetCityFragment,bundleActivePlant)
             }
 
         })

@@ -9,8 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
+import it.polito.did.digitalinteractiondesign.ManagerFirebase
+import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -66,11 +70,8 @@ class ProfileSetCityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activeCity = arguments?.get("cityNow")
 
-        var backBtn = view.findViewById<ImageButton>(R.id.backButtonSetCity)
-        backBtn.setOnClickListener {
-            findNavController().navigateUp()
-        }
 
 
         val countries = ArrayList<String>()
@@ -79,12 +80,30 @@ class ProfileSetCityFragment : Fragment() {
         var tvCountry = view.findViewById<AutoCompleteTextView>(R.id.tvCountry)
         val countryArrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown_vase_settings, countries)
         tvCountry.setAdapter(countryArrayAdapter)
-        var tvCity = view.findViewById<EditText>(R.id.tvCity)
 
+        var tvCity = view.findViewById<EditText>(R.id.tvCity)
 
         //SET HERE COUNTRY AND CITY
         tvCountry.setText("Italy",false)
-        tvCity.setText("Turin")
+        //Log.d("Test", it.get("City").toString())
+        tvCity.setText(activeCity.toString())
+
+        var backBtn = view.findViewById<ImageButton>(R.id.backButtonSetCity)
+        backBtn.setOnClickListener {
+            findNavController().navigateUp()
+            ManagerFirebase.updateValueUser("City",tvCity.text.toString())
+        }
+
+        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
+
+        viewModelDB.getUserInfo(ManagerFirebase.refereceDBUser.toString())
+
+
+        viewModelDB.returndListUserData().observe(viewLifecycleOwner, Observer {
+
+
+
+        })
 
 
     }

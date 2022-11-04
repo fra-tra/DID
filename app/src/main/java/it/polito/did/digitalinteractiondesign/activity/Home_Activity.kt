@@ -3,35 +3,21 @@ package it.polito.did.digitalinteractiondesign.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
-import it.polito.did.digitalinteractiondesign.ListPlants
 import it.polito.did.digitalinteractiondesign.ManagerFirebase
-import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
 import it.polito.did.digitalinteractiondesign.databinding.ActivityHomeBinding
-import it.polito.did.digitalinteractiondesign.fragments.Home
-import it.polito.did.digitalinteractiondesign.structures.PlantHomeSummaryAdapter
 import it.polito.did.digitalinteractiondesign.structures.User
-import org.json.JSONObject
-import java.net.URL
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class Home_Activity : AppCompatActivity() {
@@ -161,7 +147,9 @@ class Home_Activity : AppCompatActivity() {
             // extract data from intent
             val signUpUser = intent.getBooleanExtra("SignUp",false)
             if(signUpUser){
-                getUserFromSignUp()?.let { ManagerFirebase.addUserToDBRealTime(it) }
+                Log.d("TestSignUo","SUUUU")
+                ManagerFirebase.addUserToDBRealTime(getUserFromSignUp())
+                //getUserFromSignUp()?.let { ManagerFirebase.addUserToDBRealTime(it) }
             }
 
         }else {
@@ -177,24 +165,15 @@ class Home_Activity : AppCompatActivity() {
         checkUser()
     }
 
-    internal fun getDataOfUser(emailTextView: TextView){
-        val firebaseUser=firebaseAuth.currentUser
-        if (firebaseUser != null) {
-            emailTextView.text =firebaseUser.email.toString()
 
-        }
+    fun getUserFromSignUp(): User {
+        nameUserStatic = intent.getStringExtra("NameUser").toString()
+        emailUserStatic = intent.getStringExtra("EmailUser").toString()
+        countryUserStatic = intent.getStringExtra("CountryUser").toString()
+        cittyUserStatic = intent.getStringExtra("CityUser").toString()
 
-    }
-
-     fun getUserFromSignUp() : User {
-         nameUserStatic = intent.getStringExtra("NameUser").toString()
-         emailUserStatic = intent.getStringExtra("EmailUser").toString()
-         countryUserStatic = intent.getStringExtra("CountryUser").toString()
-         cittyUserStatic = intent.getStringExtra("CityUser").toString()
-
-
-        val userTemp=User(nameUserStatic, emailUserStatic, countryUserStatic, cittyUserStatic)
-        return userTemp
+        val user=User(nameUserStatic, emailUserStatic, countryUserStatic, cittyUserStatic)
+        return user
     }//[m] getUserFromSignUp()
 
 

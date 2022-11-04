@@ -2,19 +2,15 @@ package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import it.polito.did.digitalinteractiondesign.ManagerFirebase
-import it.polito.did.digitalinteractiondesign.ManagerPlants
 import it.polito.did.digitalinteractiondesign.R
-import it.polito.did.digitalinteractiondesign.structures.Plant
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,33 +65,33 @@ class MyPlantSettingsNameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var activePlantNameArray = arguments?.get("activePlantName")
+        var namePlant=""
+        var idPlant=""
         var textNamePlant=view.findViewById<EditText>(R.id.editTextTPlantName)
+        var btnBack = view.findViewById<ImageButton>(R.id.backButtonNameSettings)
 
-        val viewModelDB = ViewModelProvider(this).get(ManagerPlants::class.java)
-        viewModelDB.getPlantsFromDBRealtime("Alive")
-
-        viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
-            //salto le verifiche delle variabili
-
-            var activePlantID = arguments?.get("activePlant")
-
-            Log.d("IdActivePlant", activePlantID.toString())
-            var tempPlant = it.get(activePlantID)
-            var activePlant: Plant? =null
-            if(tempPlant!=null)  activePlant=ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
-            if(activePlant!=null){
-
-                textNamePlant.setText(activePlant.name)
-            }
-            var btnBack = view.findViewById<ImageButton>(R.id.backButtonNameSettings)
-
+        val bundle = this.arguments
+        if (bundle != null) {
+            namePlant = bundle.getString("name").toString()
+            idPlant=bundle.getString("id").toString()
+            textNamePlant.setText(namePlant.toString())
             btnBack.setOnClickListener {
 
-                ManagerFirebase.updateValuePlantAlive(activePlantID.toString(),"Name",textNamePlant.text.toString())
+                ManagerFirebase.updateValuePlantAlive(idPlant.toString(),"Name",textNamePlant.text.toString())
                 findNavController().navigateUp()
             }
 
-        })
+        }
+        Log.d("TestID", idPlant)
+
+
+
+
+
+
+
+
 
 
 

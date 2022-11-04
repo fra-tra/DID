@@ -141,8 +141,8 @@ companion object{
         val user: MutableMap<String, Any?> = HashMap()
         user["Name"] = if(tempUser.name!=null) tempUser.name else "StandardUser"
         user["Email"] = tempUser.email
-        user["Country"]=if(tempUser.country!=null) tempUser.name else "Missing info!"
-        user["City"] = if(tempUser.city!=null) tempUser.name else "Missing info!"
+        user["Country"]=if(tempUser.country!=null) tempUser.country else "Missing info!"
+        user["City"] = if(tempUser.city!=null) tempUser.city else "Missing info!"
         user["Ability Level"]=if(tempUser.abilityLevel!=null) tempUser.abilityLevel+">" else "Missing info! >"
         user["Dedication Level"]=if(tempUser.dedicationLevel!=null) tempUser.dedicationLevel+">" else "Missing info! >"
 
