@@ -1,5 +1,6 @@
  <img src="./app/src/main/res/drawable/logo_did.png" width="100" align="center">
 
+
 ## **PIANT-E!**
 
 Al giorno d’oggi la cura per le piante di casa può essere un momento di relax… Quanto un’onerosa incombenza. I ritmi frenetici ed incalzanti della vita quotidiana ci obbligano, spesso, all’incuria e al conseguente senso di colpa verso i nostri “amici fogliuti”. Non è quasi più una questione di **polliceverde** quanto una questione di **tempo**.
