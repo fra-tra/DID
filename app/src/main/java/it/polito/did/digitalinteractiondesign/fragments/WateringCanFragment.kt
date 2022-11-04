@@ -92,7 +92,7 @@ class WateringCanFragment : Fragment() {
         viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
             // ci serve sapere la pianta schiacciata
 
-            var tempPlant = it.get("Herbs_2022-10-15T16:47:36")
+            var tempPlant = it.get("Cactus and Succulents_2022-11-02T17:36:38")
             var activePlant: Plant? =null
             if(tempPlant!=null){
                 activePlant=ManagerFirebase.fromHashMapToPlant(tempPlant as HashMap<String,Any?>)
@@ -113,23 +113,23 @@ class WateringCanFragment : Fragment() {
                // wave.progressValue = bar.progress;
               // bar.progress= activePlant.waterLevelMeasure.toInt()
                 wave.progressValue = mapWaterValue(activePlant.waterLevelMeasure.toInt(), 4, 13)
-
+                Log.d("LEVEL", wave.progressValue.toString())
                 var amp = 30;
 
                 //either isgone or isinvisible depending on the desired effect if water measure is greater than 10
               //  alertEmptyWateringCan.isGone = wave.progressValue <= 12
 
-                if (wave.progressValue > 11) {
+                if (activePlant.waterLevelMeasure.toInt() > 11) {
                     alertEmptyWateringCan.visibility = View.VISIBLE
-                    warningWateringCan.visibility = View.GONE
+                    warningWateringCan.visibility = View.INVISIBLE
                 }
-                else if (wave.progressValue in 10..11) {
-                    alertEmptyWateringCan.visibility = View.GONE
+                else if (activePlant.waterLevelMeasure.toInt() in 10..11) {
+                    alertEmptyWateringCan.visibility = View.INVISIBLE
                     warningWateringCan.visibility = View.VISIBLE
                 }
                 else {
-                    alertEmptyWateringCan.visibility = View.GONE
-                    warningWateringCan.visibility = View.GONE
+                    alertEmptyWateringCan.visibility = View.INVISIBLE
+                    warningWateringCan.visibility = View.INVISIBLE
                 }
 
 

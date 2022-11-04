@@ -27,6 +27,7 @@ import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
+import kotlin.math.roundToInt
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -114,10 +115,6 @@ companion object{
             val rvPlantsHome = view.findViewById<RecyclerView>(R.id.rvPlantsHome)
             rvPlantsHome.adapter = adapter
             rvPlantsHome.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-
-
-
-
 
         })
 
@@ -234,7 +231,7 @@ companion object{
                 val updatedAtText = "Updated at: "+ SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(
                     Date(updatedAt*1000)
                 )
-                val temp = main.getString("temp")+"°C"
+                val temp = main.getString("temp").toDouble().roundToInt().toString()+"°C"
                 val tempMin = "Min Temp: " + main.getString("temp_min")+"°C"
                 val tempMax = "Max Temp: " + main.getString("temp_max")+"°C"
                 val pressure = main.getString("pressure")
@@ -252,7 +249,7 @@ companion object{
                 temperaturaByCity=temp
                 var temperatureTV= view?.findViewById<TextView>(R.id.temperature)
                 if (temperatureTV != null) {
-                    temperatureTV.text=temp
+                    temperatureTV.text= temp
                 }
 
               //  Log.d("temperature", "${cittyUserStatic}=${temp}=${temperaturaByCity}")

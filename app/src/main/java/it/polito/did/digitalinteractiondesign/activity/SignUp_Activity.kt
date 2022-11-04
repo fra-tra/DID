@@ -166,9 +166,10 @@ class SignUp_Activity : AppCompatActivity() {
     private fun validateData(){
         // get data
         email=binding.emailEditT.text.toString().trim()
+
         password=binding.passwordEditT.text.toString().trim()
-        country=binding.tvCountry.text.toString()
-        city=binding.cityEditT.text.toString()
+        country=binding.tvCountry.text.toString().trim()
+        city=binding.cityEditT.text.toString().trim()
         // validate data
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             //invalid email format
@@ -218,7 +219,9 @@ class SignUp_Activity : AppCompatActivity() {
                     it.putExtra("NameUser", userTemp?.name)
                     it.putExtra("EmailUser", userTemp?.email)
                     it.putExtra("CountryUser", userTemp?.country)
+
                     it.putExtra("CityUser", userTemp?.city)
+
                     startActivity(it)
                     finish()
                 }

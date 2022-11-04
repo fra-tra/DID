@@ -76,22 +76,13 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
         var switchBrightness = view.findViewById<Switch>(R.id.switchBrightness)
         var lightIcon = view.findViewById<ImageView>(R.id.icBrightness)
         //il valore selezionato si accede tramite seekBarBrightness.progress
-        if(switchBrightness.isChecked()) {
-            context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
-                ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
-        }
-        else {
-            context?.let { ContextCompat.getColor(it, R.color.grey) }
-                ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
-        }
+
 
 
         // prendo i dati da questo percorso
         var tvLastWatered = view.findViewById<TextView>(R.id.tvLastWatered)
         viewModelDB.getPlantsFromDBRealtime("Alive")
         var tvAutomaticWatering = view.findViewById<TextView>(R.id.tvAutomaticWatering)
-        tvAutomaticWatering.text = getString(R.string.MyPlantWaterAndCalendar_AutomaticWater) + " " + getString(R.string.yes)
-
 
         viewModelDB.returnListPlantsAlive().observe(viewLifecycleOwner, Observer {
             var bundleActivePlant= bundleOf(Pair("activePlant", Companion.activePlantID))
@@ -109,6 +100,7 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
                 tvLastWatered.text= lastWateredTitle + " " + activePlant.lastWateredDate.split("T")[0]
                 switchBrightness.isChecked=activePlant.light
 
+
                 var btnWaterPlant = view.findViewById<Button>(R.id.btnWaterPlant)
                 btnWaterPlant.setOnClickListener {
                     ManagerFirebase.updateValuePlantAlive(Companion.activePlantID,"Times Wetted","${activePlant?.timesWetted?.plus(1)}")
@@ -117,10 +109,19 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
                     findNavController().navigate(R.id.action_myPlantFragment_to_loadingWaterPlantFragment,bundleActivePlant)
                     //BAGNA LE PIANTE SPEDISCI DATO NEL DATABASE - PUMP ON
                 }
+
+                if(switchBrightness.isChecked()) {
+                    context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
+                        ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+                }
+                else {
+                    context?.let { ContextCompat.getColor(it, R.color.grey) }
+                        ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
+                }
                 switchBrightness.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
                     // do something, the isChecked will be
                     // true if the switch is in the On position
-                    if(isChecked) {
+                    if(isChecked ) {
                         context?.let { ContextCompat.getColor(it, R.color.yellow_warning) }
                             ?.let { lightIcon.setColorFilter(it, android.graphics.PorterDuff.Mode.MULTIPLY) }
                         ManagerFirebase.updateValuePlantAlive(Companion.activePlantID,"Light","${!(activePlant.light)}")
@@ -131,12 +132,12 @@ class MyPlantWaterAndCalendarCTAFragment : Fragment() {
                         ManagerFirebase.updateValuePlantAlive(Companion.activePlantID,"Light","${!(activePlant.light)}")
                     }
                 })
-            /*
-                //var btnLight = view.findViewById<SeekBar>(R.id.)
-                btnLigt.setOnClickListener {
-
+                if(activePlant.statusAutoWater){
+                    tvAutomaticWatering.text = getString(R.string.MyPlantWaterAndCalendar_AutomaticWater) + " " + getString(R.string.yes)
+                }else{
+                    tvAutomaticWatering.text = getString(R.string.MyPlantWaterAndCalendar_AutomaticWater) + " " + getString(R.string.no)
                 }
-                */
+
             }
 
 

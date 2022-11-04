@@ -1,8 +1,6 @@
 package it.polito.did.digitalinteractiondesign.fragments
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -103,9 +102,13 @@ class MyPlantSettingsFragment : Fragment() {
            if(activePlant!=null){
                 var btnName = view.findViewById<TextView>(R.id.plantNameSettings)
                 btnName.text=activePlant.name + ">"
+               val bundle = Bundle()
+               bundle.putString("name", activePlant.name)
+               bundle.putString("id",activePlant.idIdentification)
                 btnName.setOnClickListener {
-                    var bundleActivePlant= bundleOf(Pair("activePlant",activePlantID))
-                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsNameFragment,bundleActivePlant)
+                    var bundleActivePlant= bundleOf(Pair("activePlantName",activePlant.name + "S" + activePlant.idIdentification))
+
+                    findNavController().navigate(R.id.action_myPlantSettingsFragment_to_myPlantSettingsNameFragment,bundle)
                 }
 
                 var btnRoom = view.findViewById<TextView>(R.id.roomNameSettings)
